@@ -49,6 +49,8 @@ int main(int argc, char *argv[]){
         }
     }
     fclose(file);
+    printf("Parent: %d child processes created.\n", n);
+    printf("Waiting for child processes to read database.\n");
     sleep(2);
 
     printf("\t");
