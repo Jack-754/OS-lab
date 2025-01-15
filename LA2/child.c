@@ -49,9 +49,9 @@ void handler( int sig ){
     } 
     else if (sig == SIGUSR2) {
         int random=rand();
-        FILE* file=fopen("test.txt", "a");
-        fprintf(file, "%d %d %d\n", idx, pid, random);
-        fclose(file);
+        // FILE* file=fopen("test.txt", "a");
+        // fprintf(file, "%d %d %d\n", idx, pid, random);
+        // fclose(file);
         random%=5;
         int ppid=getppid();
         if(random==0){
