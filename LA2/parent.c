@@ -9,7 +9,9 @@
 int next=0;
 int cnt;
 int *active;
+int *proc;
 int n;
+int flag;
 
 void childSigHandler ( int sig ){
     if (sig == SIGUSR1) {
@@ -21,6 +23,9 @@ void childSigHandler ( int sig ){
         next++;
     }
     if(next>=n)next=0;
+    printf("|    ");
+    fflush(stdout);        
+    kill(proc[0], SIGUSR1);
 }
 
 int main(int argc, char *argv[]){
@@ -31,9 +36,9 @@ int main(int argc, char *argv[]){
     }
     n=atoi(argv[1]);
     int pid;
-    int proc[n];
     cnt=n;
     active=malloc(sizeof(int)*n);
+    proc=malloc(sizeof(int)*n);
 
     FILE* file=fopen("childpid.txt", "w");
     fprintf(file, "%d\n", n);
@@ -55,7 +60,7 @@ int main(int argc, char *argv[]){
 
     printf("\t");
     for(int i=0; i<n; i++){
-        printf("%d\t", i);
+        printf("%d\t", i+1);
     }
     printf("\n");
     fflush(stdout);
@@ -64,6 +69,16 @@ int main(int argc, char *argv[]){
     signal(SIGUSR2, childSigHandler);
     next=0;
     while(cnt>1){
+        
+        pid=fork();
+        if(pid==0){
+            execlp("./dummy", "./dummy", NULL);
+        }
+        FILE* file=fopen("dummycpid.txt", "w");
+        fprintf(file, "%d", pid);
+        fclose(file);
+
+        flag=0;
         printf("+----");
         for(int i=0; i<n*8; i++){
             printf("-");
@@ -76,18 +91,8 @@ int main(int argc, char *argv[]){
             if(next>=n)next=0;
         }
         kill(proc[next], SIGUSR2);
-        pause();
-        printf("|    ");
-        fflush(stdout);
-
-        pid=fork();
-        if(pid==0){
-            execlp("./dummy", "./dummy", NULL);
-        }
-        FILE* file=fopen("dummycpid.txt", "w");
-        fprintf(file, "%d", pid);
-        fclose(file);
-        kill(proc[0], SIGUSR1);
+        //if(flag==0)pause();         // added flag to check if signal has already been received from child before executing pause();
+        
         int status;
         waitpid(pid, &status, 0);
         printf("    |\n");
@@ -102,7 +107,7 @@ int main(int argc, char *argv[]){
 
     printf("\t");
     for(int i=0; i<n; i++){
-        printf("%d\t", i);
+        printf("%d\t", i+1);
     }
     printf("\n");
 
@@ -111,6 +116,7 @@ int main(int argc, char *argv[]){
         kill(proc[i], SIGINT);
     }
     free(active);
+    free(proc);
 
 
     return 0;
