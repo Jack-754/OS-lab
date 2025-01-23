@@ -1,0 +1,976 @@
+
+
+**** RR Scheduling with q = 10 ****
+0         : Starting
+0         : Process 1 joins ready queue upon arrival
+0         : Process 1 is scheduled to run for time 10
+10        : Process 1 joins ready queue after timeout
+10        : Process 1 is scheduled to run for time 1
+11        : CPU goes idle
+91        : Process 2 joins ready queue upon arrival
+91        : Process 2 is scheduled to run for time 10
+101       : Process 2 joins ready queue after timeout
+101       : Process 2 is scheduled to run for time 4
+105       : CPU goes idle
+126       : Process 1 joins ready queue after IO completion
+126       : Process 1 is scheduled to run for time 8
+134       : CPU goes idle
+234       : Process 2 joins ready queue after IO completion
+234       : Process 2 is scheduled to run for time 8
+242       : CPU goes idle
+278       : Process 1 joins ready queue after IO completion
+278       : Process 1 is scheduled to run for time 10
+288       : CPU goes idle
+326       : Process 2 joins ready queue after IO completion
+326       : Process 2 is scheduled to run for time 2
+328       : CPU goes idle
+399       : Process 1 joins ready queue after IO completion
+399       : Process 1 is scheduled to run for time 3
+402       : CPU goes idle
+459       : Process 2 joins ready queue after IO completion
+459       : Process 2 is scheduled to run for time 8
+467       : CPU goes idle
+493       : Process 3 joins ready queue upon arrival
+493       : Process 3 is scheduled to run for time 10
+503       : Process 3 joins ready queue after timeout
+503       : Process 3 is scheduled to run for time 3
+506       : CPU goes idle
+511       : Process 1 joins ready queue after IO completion
+511       : Process 1 is scheduled to run for time 10
+521       : Process 1 joins ready queue after timeout
+521       : Process 1 is scheduled to run for time 2
+523       : CPU goes idle
+599       : Process 1 joins ready queue after IO completion
+599       : Process 1 is scheduled to run for time 5
+604       : CPU goes idle
+644       : Process 3 joins ready queue after IO completion
+644       : Process 3 is scheduled to run for time 1
+645       : CPU goes idle
+653       : Process 2 joins ready queue after IO completion
+653       : Process 2 is scheduled to run for time 10
+663       : Process 2 joins ready queue after timeout
+663       : Process 2 is scheduled to run for time 5
+668       : CPU goes idle
+705       : Process 3 joins ready queue after IO completion
+705       : Process 3 is scheduled to run for time 1
+706       : CPU goes idle
+735       : Process 2 joins ready queue after IO completion
+735       : Process 2 is scheduled to run for time 4
+739       : Process      2 exits. Turnaround time =  648 (100%), Wait time = 0
+739       : CPU goes idle
+774       : Process 1 joins ready queue after IO completion
+774       : Process 1 is scheduled to run for time 9
+783       : Process      1 exits. Turnaround time =  783 (100%), Wait time = 0
+783       : CPU goes idle
+796       : Process 4 joins ready queue upon arrival
+796       : Process 4 is scheduled to run for time 4
+800       : CPU goes idle
+840       : Process 3 joins ready queue after IO completion
+840       : Process 3 is scheduled to run for time 9
+849       : CPU goes idle
+891       : Process 4 joins ready queue after IO completion
+891       : Process 4 is scheduled to run for time 10
+901       : Process 4 joins ready queue after timeout
+901       : Process 4 is scheduled to run for time 2
+903       : CPU goes idle
+913       : Process 3 joins ready queue after IO completion
+913       : Process 3 is scheduled to run for time 9
+922       : CPU goes idle
+978       : Process 5 joins ready queue upon arrival
+978       : Process 5 is scheduled to run for time 10
+988       : Process 5 joins ready queue after timeout
+988       : Process 5 is scheduled to run for time 10
+998       : Process 5 joins ready queue after timeout
+998       : Process 5 is scheduled to run for time 10
+1008      : Process 5 joins ready queue after timeout
+1008      : Process 5 is scheduled to run for time 10
+1018      : Process 5 joins ready queue after timeout
+1018      : Process 5 is scheduled to run for time 10
+1028      : Process 5 joins ready queue after timeout
+1028      : Process 5 is scheduled to run for time 10
+1037      : Process 4 joins ready queue after IO completion
+1038      : Process 5 joins ready queue after timeout
+1038      : Process 4 is scheduled to run for time 10
+1048      : Process 4 joins ready queue after timeout
+1048      : Process 5 is scheduled to run for time 10
+1058      : Process 5 joins ready queue after timeout
+1058      : Process 4 is scheduled to run for time 3
+1061      : Process 5 is scheduled to run for time 10
+1071      : Process 5 joins ready queue after timeout
+1071      : Process 5 is scheduled to run for time 10
+1081      : Process 5 joins ready queue after timeout
+1081      : Process 5 is scheduled to run for time 10
+1091      : Process 5 joins ready queue after timeout
+1091      : Process 5 is scheduled to run for time 10
+1098      : Process 3 joins ready queue after IO completion
+1101      : Process 5 joins ready queue after timeout
+1101      : Process 3 is scheduled to run for time 5
+1106      : Process 5 is scheduled to run for time 10
+1112      : Process 4 joins ready queue after IO completion
+1116      : Process 6 joins ready queue upon arrival
+1116      : Process 5 joins ready queue after timeout
+1116      : Process 4 is scheduled to run for time 7
+1123      : Process 6 is scheduled to run for time 10
+1133      : Process 6 joins ready queue after timeout
+1133      : Process 5 is scheduled to run for time 10
+1143      : Process 5 joins ready queue after timeout
+1143      : Process 6 is scheduled to run for time 4
+1147      : Process 5 is scheduled to run for time 10
+1156      : Process 3 joins ready queue after IO completion
+1157      : Process 5 joins ready queue after timeout
+1157      : Process 3 is scheduled to run for time 6
+1163      : Process 5 is scheduled to run for time 10
+1173      : Process 5 joins ready queue after timeout
+1173      : Process 5 is scheduled to run for time 10
+1183      : Process 5 joins ready queue after timeout
+1183      : Process 5 is scheduled to run for time 10
+1193      : CPU goes idle
+1200      : Process 6 joins ready queue after IO completion
+1200      : Process 6 is scheduled to run for time 4
+1204      : CPU goes idle
+1241      : Process 4 joins ready queue after IO completion
+1241      : Process 4 is scheduled to run for time 3
+1244      : CPU goes idle
+1269      : Process 6 joins ready queue after IO completion
+1269      : Process 6 is scheduled to run for time 7
+1276      : CPU goes idle
+1283      : Process 5 joins ready queue after IO completion
+1283      : Process 5 is scheduled to run for time 10
+1293      : Process 5 joins ready queue after timeout
+1293      : Process 5 is scheduled to run for time 10
+1303      : Process 5 joins ready queue after timeout
+1303      : Process 5 is scheduled to run for time 10
+1307      : Process 3 joins ready queue after IO completion
+1313      : Process 5 joins ready queue after timeout
+1313      : Process 3 is scheduled to run for time 5
+1316      : Process 4 joins ready queue after IO completion
+1318      : Process 5 is scheduled to run for time 10
+1328      : Process 5 joins ready queue after timeout
+1328      : Process 4 is scheduled to run for time 10
+1338      : Process 4 joins ready queue after timeout
+1338      : Process 5 is scheduled to run for time 10
+1347      : Process 7 joins ready queue upon arrival
+1348      : Process 5 joins ready queue after timeout
+1348      : Process 4 is scheduled to run for time 1
+1349      : Process 7 is scheduled to run for time 10
+1356      : Process 6 joins ready queue after IO completion
+1359      : Process 7 joins ready queue after timeout
+1359      : Process 5 is scheduled to run for time 10
+1369      : Process 5 joins ready queue after timeout
+1369      : Process 6 is scheduled to run for time 8
+1377      : Process 7 is scheduled to run for time 5
+1382      : Process 5 is scheduled to run for time 10
+1392      : Process 5 joins ready queue after timeout
+1392      : Process 5 is scheduled to run for time 10
+1402      : Process 5 joins ready queue after timeout
+1402      : Process 5 is scheduled to run for time 10
+1412      : Process 5 joins ready queue after timeout
+1412      : Process 5 is scheduled to run for time 10
+1422      : Process 5 joins ready queue after timeout
+1422      : Process 5 is scheduled to run for time 10
+1429      : Process 4 joins ready queue after IO completion
+1432      : Process 5 joins ready queue after timeout
+1432      : Process 4 is scheduled to run for time 5
+1437      : Process 5 is scheduled to run for time 10
+1447      : Process 5 joins ready queue after timeout
+1447      : Process 5 is scheduled to run for time 10
+1451      : Process 7 joins ready queue after IO completion
+1457      : Process 5 joins ready queue after timeout
+1457      : Process 7 is scheduled to run for time 5
+1462      : Process 5 is scheduled to run for time 10
+1472      : Process 5 joins ready queue after timeout
+1472      : Process 5 is scheduled to run for time 10
+1482      : Process 5 joins ready queue after timeout
+1482      : Process 5 is scheduled to run for time 10
+1485      : Process 6 joins ready queue after IO completion
+1492      : Process 5 joins ready queue after timeout
+1492      : Process 6 is scheduled to run for time 10
+1502      : Process 6 joins ready queue after timeout
+1502      : Process 5 is scheduled to run for time 10
+1512      : Process 5 joins ready queue after timeout
+1512      : Process 6 is scheduled to run for time 2
+1514      : Process 5 is scheduled to run for time 10
+1516      : Process 3 joins ready queue after IO completion
+1524      : Process 5 joins ready queue after timeout
+1524      : Process 3 is scheduled to run for time 10
+1534      : Process 3 joins ready queue after timeout
+1534      : Process 5 is scheduled to run for time 10
+1544      : Process 5 joins ready queue after timeout
+1544      : Process 3 is scheduled to run for time 4
+1548      : Process 7 joins ready queue after IO completion
+1548      : Process      3 exits. Turnaround time = 1055 (103%), Wait time = 28
+1548      : Process 5 is scheduled to run for time 10
+1558      : Process 5 joins ready queue after timeout
+1558      : Process 7 is scheduled to run for time 6
+1564      : Process 5 is scheduled to run for time 10
+1574      : Process 5 joins ready queue after timeout
+1574      : Process 5 is scheduled to run for time 10
+1584      : Process 5 joins ready queue after timeout
+1584      : Process 5 is scheduled to run for time 7
+1591      : CPU goes idle
+1611      : Process 4 joins ready queue after IO completion
+1611      : Process 4 is scheduled to run for time 3
+1614      : CPU goes idle
+1663      : Process 5 joins ready queue after IO completion
+1663      : Process 5 is scheduled to run for time 10
+1673      : Process 5 joins ready queue after timeout
+1673      : Process 5 is scheduled to run for time 10
+1683      : Process 8 joins ready queue upon arrival
+1683      : Process 5 joins ready queue after timeout
+1683      : Process 8 is scheduled to run for time 10
+1693      : Process 8 joins ready queue after timeout
+1693      : Process 5 is scheduled to run for time 10
+1703      : Process 5 joins ready queue after timeout
+1703      : Process 8 is scheduled to run for time 2
+1705      : Process 5 is scheduled to run for time 10
+1710      : Process 6 joins ready queue after IO completion
+1715      : Process 5 joins ready queue after timeout
+1715      : Process 6 is scheduled to run for time 10
+1724      : Process 7 joins ready queue after IO completion
+1725      : Process 6 joins ready queue after timeout
+1725      : Process 5 is scheduled to run for time 10
+1735      : Process 5 joins ready queue after timeout
+1735      : Process 7 is scheduled to run for time 4
+1739      : Process 6 is scheduled to run for time 2
+1741      : Process 5 is scheduled to run for time 10
+1751      : Process 5 joins ready queue after timeout
+1751      : Process 5 is scheduled to run for time 10
+1761      : Process 5 joins ready queue after timeout
+1761      : Process 5 is scheduled to run for time 10
+1771      : Process 5 joins ready queue after timeout
+1771      : Process 5 is scheduled to run for time 10
+1774      : Process 9 joins ready queue upon arrival
+1781      : Process 5 joins ready queue after timeout
+1781      : Process 9 is scheduled to run for time 10
+1791      : Process 9 joins ready queue after timeout
+1791      : Process 5 is scheduled to run for time 10
+1801      : Process 5 joins ready queue after timeout
+1801      : Process 9 is scheduled to run for time 4
+1804      : Process 4 joins ready queue after IO completion
+1805      : Process 5 is scheduled to run for time 10
+1815      : Process 5 joins ready queue after timeout
+1815      : Process 4 is scheduled to run for time 10
+1825      : Process 4 joins ready queue after timeout
+1825      : Process 5 is scheduled to run for time 10
+1835      : Process 5 joins ready queue after timeout
+1835      : Process 4 is scheduled to run for time 3
+1838      : Process      4 exits. Turnaround time = 1042 (106%), Wait time = 61
+1838      : Process 5 is scheduled to run for time 10
+1848      : Process 5 joins ready queue after timeout
+1848      : Process 5 is scheduled to run for time 10
+1858      : Process 5 joins ready queue after timeout
+1858      : Process 5 is scheduled to run for time 10
+1868      : Process 5 joins ready queue after timeout
+1868      : Process 5 is scheduled to run for time 10
+1878      : Process 7 joins ready queue after IO completion
+1878      : Process 5 joins ready queue after timeout
+1878      : Process 7 is scheduled to run for time 10
+1886      : Process 6 joins ready queue after IO completion
+1888      : Process 7 joins ready queue after timeout
+1888      : Process 5 is scheduled to run for time 5
+1890      : Process 8 joins ready queue after IO completion
+1893      : Process 6 is scheduled to run for time 2
+1895      : Process 7 is scheduled to run for time 1
+1896      : Process 8 is scheduled to run for time 5
+1901      : CPU goes idle
+1971      : Process 9 joins ready queue after IO completion
+1971      : Process 9 is scheduled to run for time 8
+1979      : CPU goes idle
+2001      : Process 8 joins ready queue after IO completion
+2001      : Process 8 is scheduled to run for time 10
+2011      : CPU goes idle
+2030      : Process 7 joins ready queue after IO completion
+2030      : Process 7 is scheduled to run for time 10
+2031      : Process 6 joins ready queue after IO completion
+2040      : Process      7 exits. Turnaround time =  693 (108%), Wait time = 54
+2040      : Process 6 is scheduled to run for time 2
+2042      : CPU goes idle
+2054      : Process 9 joins ready queue after IO completion
+2054      : Process 9 is scheduled to run for time 10
+2064      : Process 9 joins ready queue after timeout
+2064      : Process 9 is scheduled to run for time 1
+2065      : CPU goes idle
+2072      : Process 5 joins ready queue after IO completion
+2072      : Process 5 is scheduled to run for time 10
+2082      : Process 5 joins ready queue after timeout
+2082      : Process 5 is scheduled to run for time 10
+2092      : Process 5 joins ready queue after timeout
+2092      : Process 5 is scheduled to run for time 10
+2102      : Process 5 joins ready queue after timeout
+2102      : Process 5 is scheduled to run for time 10
+2112      : Process 5 joins ready queue after timeout
+2112      : Process 5 is scheduled to run for time 10
+2122      : Process 5 joins ready queue after timeout
+2122      : Process 5 is scheduled to run for time 10
+2132      : Process 5 joins ready queue after timeout
+2132      : Process 5 is scheduled to run for time 10
+2140      : Process 9 joins ready queue after IO completion
+2142      : Process 5 joins ready queue after timeout
+2142      : Process 9 is scheduled to run for time 8
+2150      : Process 5 is scheduled to run for time 10
+2158      : Process 8 joins ready queue after IO completion
+2160      : Process 5 joins ready queue after timeout
+2160      : Process 8 is scheduled to run for time 6
+2166      : Process 5 is scheduled to run for time 10
+2172      : Process 10 joins ready queue upon arrival
+2176      : Process 5 joins ready queue after timeout
+2176      : Process 10 is scheduled to run for time 10
+2186      : Process 10 joins ready queue after timeout
+2186      : Process 5 is scheduled to run for time 10
+2196      : Process 5 joins ready queue after timeout
+2196      : Process 10 is scheduled to run for time 1
+2197      : Process 5 is scheduled to run for time 10
+2207      : Process 5 joins ready queue after timeout
+2207      : Process 5 is scheduled to run for time 10
+2217      : Process 5 joins ready queue after timeout
+2217      : Process 5 is scheduled to run for time 10
+2219      : Process 9 joins ready queue after IO completion
+2227      : Process 6 joins ready queue after IO completion
+2227      : Process 5 joins ready queue after timeout
+2227      : Process 9 is scheduled to run for time 10
+2237      : Process 9 joins ready queue after timeout
+2237      : Process 6 is scheduled to run for time 7
+2244      : Process 5 is scheduled to run for time 10
+2249      : Process 11 joins ready queue upon arrival
+2254      : Process 5 joins ready queue after timeout
+2254      : Process 9 is scheduled to run for time 5
+2259      : Process 11 is scheduled to run for time 10
+2269      : Process 11 joins ready queue after timeout
+2269      : Process 5 is scheduled to run for time 10
+2279      : Process 5 joins ready queue after timeout
+2279      : Process 11 is scheduled to run for time 2
+2281      : Process 5 is scheduled to run for time 10
+2291      : Process 5 joins ready queue after timeout
+2291      : Process 5 is scheduled to run for time 10
+2301      : Process 5 joins ready queue after timeout
+2301      : Process 5 is scheduled to run for time 10
+2311      : Process 9 joins ready queue after IO completion
+2311      : Process 5 joins ready queue after timeout
+2311      : Process 9 is scheduled to run for time 2
+2313      : Process 5 is scheduled to run for time 10
+2323      : Process 5 joins ready queue after timeout
+2323      : Process 5 is scheduled to run for time 10
+2328      : Process 8 joins ready queue after IO completion
+2333      : Process 5 joins ready queue after timeout
+2333      : Process 8 is scheduled to run for time 3
+2336      : Process      8 exits. Turnaround time =  653 (104%), Wait time = 23
+2336      : Process 5 is scheduled to run for time 7
+2343      : CPU goes idle
+2354      : Process 10 joins ready queue after IO completion
+2354      : Process 10 is scheduled to run for time 10
+2364      : Process 10 joins ready queue after timeout
+2364      : Process 10 is scheduled to run for time 3
+2367      : CPU goes idle
+2425      : Process 6 joins ready queue after IO completion
+2425      : Process 6 is scheduled to run for time 1
+2426      : Process      6 exits. Turnaround time = 1310 (108%), Wait time = 92
+2426      : CPU goes idle
+2441      : Process 5 joins ready queue after IO completion
+2441      : Process 5 is scheduled to run for time 10
+2441      : Process 9 joins ready queue after IO completion
+2445      : Process 11 joins ready queue after IO completion
+2451      : Process 5 joins ready queue after timeout
+2451      : Process 9 is scheduled to run for time 10
+2459      : Process 10 joins ready queue after IO completion
+2461      : Process      9 exits. Turnaround time =  687 (109%), Wait time = 54
+2461      : Process 11 is scheduled to run for time 3
+2464      : Process 5 is scheduled to run for time 10
+2474      : Process 5 joins ready queue after timeout
+2474      : Process 10 is scheduled to run for time 10
+2484      : Process 10 joins ready queue after timeout
+2484      : Process 5 is scheduled to run for time 10
+2494      : Process 5 joins ready queue after timeout
+2494      : Process 10 is scheduled to run for time 4
+2498      : Process 5 is scheduled to run for time 10
+2508      : Process 5 joins ready queue after timeout
+2508      : Process 5 is scheduled to run for time 10
+2518      : Process 5 joins ready queue after timeout
+2518      : Process 5 is scheduled to run for time 10
+2528      : Process 5 joins ready queue after timeout
+2528      : Process 5 is scheduled to run for time 10
+2538      : Process 5 joins ready queue after timeout
+2538      : Process 5 is scheduled to run for time 10
+2548      : Process 5 joins ready queue after timeout
+2548      : Process 5 is scheduled to run for time 10
+2558      : Process 5 joins ready queue after timeout
+2558      : Process 5 is scheduled to run for time 10
+2568      : Process 5 joins ready queue after timeout
+2568      : Process 5 is scheduled to run for time 10
+2569      : Process 11 joins ready queue after IO completion
+2578      : Process 5 joins ready queue after timeout
+2578      : Process 11 is scheduled to run for time 10
+2588      : Process 11 joins ready queue after timeout
+2588      : Process 5 is scheduled to run for time 3
+2591      : Process 11 is scheduled to run for time 5
+2596      : CPU goes idle
+2653      : Process 10 joins ready queue after IO completion
+2653      : Process 10 is scheduled to run for time 10
+2663      : Process 10 joins ready queue after timeout
+2663      : Process 10 is scheduled to run for time 4
+2667      : CPU goes idle
+2674      : Process 12 joins ready queue upon arrival
+2674      : Process 12 is scheduled to run for time 5
+2679      : CPU goes idle
+2715      : Process 11 joins ready queue after IO completion
+2715      : Process 11 is scheduled to run for time 10
+2725      : Process 11 joins ready queue after timeout
+2725      : Process 11 is scheduled to run for time 5
+2730      : CPU goes idle
+2732      : Process 5 joins ready queue after IO completion
+2732      : Process 5 is scheduled to run for time 10
+2742      : Process 5 joins ready queue after timeout
+2742      : Process 5 is scheduled to run for time 10
+2751      : Process 12 joins ready queue after IO completion
+2752      : Process 5 joins ready queue after timeout
+2752      : Process 12 is scheduled to run for time 8
+2760      : Process 5 is scheduled to run for time 10
+2770      : Process 5 joins ready queue after timeout
+2770      : Process 5 is scheduled to run for time 10
+2780      : Process 5 joins ready queue after timeout
+2780      : Process 5 is scheduled to run for time 10
+2785      : Process 10 joins ready queue after IO completion
+2790      : Process 5 joins ready queue after timeout
+2790      : Process 10 is scheduled to run for time 9
+2799      : Process 5 is scheduled to run for time 10
+2809      : Process 5 joins ready queue after timeout
+2809      : Process 5 is scheduled to run for time 10
+2819      : Process 5 joins ready queue after timeout
+2819      : Process 5 is scheduled to run for time 10
+2828      : Process 11 joins ready queue after IO completion
+2829      : Process 5 joins ready queue after timeout
+2829      : Process 11 is scheduled to run for time 10
+2839      : Process 11 joins ready queue after timeout
+2839      : Process 5 is scheduled to run for time 10
+2849      : Process 5 joins ready queue after timeout
+2849      : Process 11 is scheduled to run for time 4
+2853      : Process 5 is scheduled to run for time 10
+2863      : Process 5 joins ready queue after timeout
+2863      : Process 5 is scheduled to run for time 10
+2873      : Process 5 joins ready queue after timeout
+2873      : Process 5 is scheduled to run for time 10
+2883      : Process 5 joins ready queue after timeout
+2883      : Process 5 is scheduled to run for time 10
+2884      : Process 12 joins ready queue after IO completion
+2884      : Process 13 joins ready queue upon arrival
+2893      : Process 5 joins ready queue after timeout
+2893      : Process 12 is scheduled to run for time 10
+2903      : Process 12 joins ready queue after timeout
+2903      : Process 13 is scheduled to run for time 5
+2908      : Process 5 is scheduled to run for time 10
+2918      : Process      5 exits. Turnaround time = 1940 (121%), Wait time = 338
+2918      : Process 12 is scheduled to run for time 5
+2923      : CPU goes idle
+2935      : Process 10 joins ready queue after IO completion
+2935      : Process 10 is scheduled to run for time 10
+2945      : CPU goes idle
+2955      : Process 11 joins ready queue after IO completion
+2955      : Process 11 is scheduled to run for time 7
+2962      : CPU goes idle
+2998      : Process 14 joins ready queue upon arrival
+2998      : Process 14 is scheduled to run for time 5
+3003      : CPU goes idle
+3014      : Process 13 joins ready queue after IO completion
+3014      : Process 13 is scheduled to run for time 2
+3016      : CPU goes idle
+3019      : Process 11 joins ready queue after IO completion
+3019      : Process 11 is scheduled to run for time 10
+3029      : Process 11 joins ready queue after timeout
+3029      : Process 11 is scheduled to run for time 2
+3031      : CPU goes idle
+3075      : Process 10 joins ready queue after IO completion
+3075      : Process 10 is scheduled to run for time 2
+3077      : Process     10 exits. Turnaround time =  905 (105%), Wait time = 44
+3077      : CPU goes idle
+3098      : Process 12 joins ready queue after IO completion
+3098      : Process 12 is scheduled to run for time 7
+3105      : CPU goes idle
+3113      : Process 13 joins ready queue after IO completion
+3113      : Process 13 is scheduled to run for time 10
+3123      : CPU goes idle
+3133      : Process 14 joins ready queue after IO completion
+3133      : Process 14 is scheduled to run for time 1
+3134      : CPU goes idle
+3215      : Process 11 joins ready queue after IO completion
+3215      : Process 11 is scheduled to run for time 10
+3222      : Process 15 joins ready queue upon arrival
+3225      : Process 11 joins ready queue after timeout
+3225      : Process 15 is scheduled to run for time 10
+3235      : Process 15 joins ready queue after timeout
+3235      : Process 11 is scheduled to run for time 5
+3240      : Process 12 joins ready queue after IO completion
+3240      : Process 15 is scheduled to run for time 5
+3245      : Process 12 is scheduled to run for time 10
+3255      : Process 12 joins ready queue after timeout
+3255      : Process 12 is scheduled to run for time 1
+3256      : CPU goes idle
+3284      : Process 14 joins ready queue after IO completion
+3284      : Process 14 is scheduled to run for time 3
+3287      : CPU goes idle
+3309      : Process 13 joins ready queue after IO completion
+3309      : Process 13 is scheduled to run for time 8
+3317      : Process     13 exits. Turnaround time =  433 (105%), Wait time = 19
+3317      : CPU goes idle
+3329      : Process 11 joins ready queue after IO completion
+3329      : Process 11 is scheduled to run for time 7
+3336      : Process     11 exits. Turnaround time = 1087 (107%), Wait time = 69
+3336      : CPU goes idle
+3345      : Process 15 joins ready queue after IO completion
+3345      : Process 15 is scheduled to run for time 10
+3355      : Process 15 joins ready queue after timeout
+3355      : Process 15 is scheduled to run for time 1
+3356      : CPU goes idle
+3393      : Process 12 joins ready queue after IO completion
+3393      : Process 12 is scheduled to run for time 3
+3396      : CPU goes idle
+3441      : Process 15 joins ready queue after IO completion
+3441      : Process 15 is scheduled to run for time 6
+3447      : CPU goes idle
+3477      : Process 12 joins ready queue after IO completion
+3477      : Process 12 is scheduled to run for time 7
+3477      : Process 14 joins ready queue after IO completion
+3484      : Process 14 is scheduled to run for time 5
+3489      : CPU goes idle
+3539      : Process 15 joins ready queue after IO completion
+3539      : Process 15 is scheduled to run for time 10
+3540      : Process 14 joins ready queue after IO completion
+3549      : Process 15 joins ready queue after timeout
+3549      : Process 14 is scheduled to run for time 1
+3550      : Process 15 is scheduled to run for time 5
+3555      : CPU goes idle
+3587      : Process 16 joins ready queue upon arrival
+3587      : Process 16 is scheduled to run for time 3
+3590      : CPU goes idle
+3618      : Process 14 joins ready queue after IO completion
+3618      : Process 14 is scheduled to run for time 10
+3628      : Process 14 joins ready queue after timeout
+3628      : Process 14 is scheduled to run for time 5
+3633      : CPU goes idle
+3634      : Process 15 joins ready queue after IO completion
+3634      : Process 15 is scheduled to run for time 2
+3636      : CPU goes idle
+3645      : Process 12 joins ready queue after IO completion
+3645      : Process 12 is scheduled to run for time 10
+3655      : Process 12 joins ready queue after timeout
+3655      : Process 12 is scheduled to run for time 4
+3659      : CPU goes idle
+3689      : Process 14 joins ready queue after IO completion
+3689      : Process 14 is scheduled to run for time 10
+3699      : Process 14 joins ready queue after timeout
+3699      : Process 14 is scheduled to run for time 4
+3703      : CPU goes idle
+3724      : Process 17 joins ready queue upon arrival
+3724      : Process 17 is scheduled to run for time 6
+3730      : CPU goes idle
+3745      : Process 12 joins ready queue after IO completion
+3745      : Process 12 is scheduled to run for time 10
+3746      : Process 16 joins ready queue after IO completion
+3755      : Process 12 joins ready queue after timeout
+3755      : Process 16 is scheduled to run for time 7
+3760      : Process 15 joins ready queue after IO completion
+3761      : Process 18 joins ready queue upon arrival
+3762      : Process 12 is scheduled to run for time 3
+3765      : Process     12 exits. Turnaround time = 1091 (104%), Wait time = 37
+3765      : Process 15 is scheduled to run for time 9
+3774      : Process 18 is scheduled to run for time 10
+3784      : Process 18 joins ready queue after timeout
+3784      : Process 18 is scheduled to run for time 4
+3788      : CPU goes idle
+3844      : Process 15 joins ready queue after IO completion
+3844      : Process 15 is scheduled to run for time 8
+3852      : CPU goes idle
+3884      : Process 18 joins ready queue after IO completion
+3884      : Process 18 is scheduled to run for time 10
+3889      : Process 14 joins ready queue after IO completion
+3891      : Process 17 joins ready queue after IO completion
+3894      : Process 14 is scheduled to run for time 10
+3904      : Process 14 joins ready queue after timeout
+3904      : Process 17 is scheduled to run for time 10
+3912      : Process 16 joins ready queue after IO completion
+3914      : Process 17 joins ready queue after timeout
+3914      : Process 14 is scheduled to run for time 4
+3918      : Process 16 is scheduled to run for time 7
+3925      : Process 17 is scheduled to run for time 1
+3926      : CPU goes idle
+3958      : Process 19 joins ready queue upon arrival
+3958      : Process 19 is scheduled to run for time 10
+3968      : Process 19 joins ready queue after timeout
+3968      : Process 19 is scheduled to run for time 4
+3972      : CPU goes idle
+3976      : Process 15 joins ready queue after IO completion
+3976      : Process 15 is scheduled to run for time 2
+3978      : CPU goes idle
+4027      : Process 18 joins ready queue after IO completion
+4027      : Process 18 is scheduled to run for time 8
+4031      : Process 15 joins ready queue after IO completion
+4035      : Process 15 is scheduled to run for time 1
+4036      : CPU goes idle
+4072      : Process 16 joins ready queue after IO completion
+4072      : Process 16 is scheduled to run for time 10
+4082      : Process 16 joins ready queue after timeout
+4082      : Process 16 is scheduled to run for time 1
+4083      : CPU goes idle
+4103      : Process 14 joins ready queue after IO completion
+4103      : Process 14 is scheduled to run for time 10
+4110      : Process 18 joins ready queue after IO completion
+4112      : Process 17 joins ready queue after IO completion
+4113      : Process 14 joins ready queue after timeout
+4113      : Process 18 is scheduled to run for time 8
+4121      : Process 17 is scheduled to run for time 9
+4128      : Process 15 joins ready queue after IO completion
+4130      : Process 14 is scheduled to run for time 2
+4132      : Process     14 exits. Turnaround time = 1134 (104%), Wait time = 48
+4132      : Process 15 is scheduled to run for time 10
+4142      : Process 15 joins ready queue after timeout
+4142      : Process 15 is scheduled to run for time 4
+4146      : Process     15 exits. Turnaround time =  924 (102%), Wait time = 22
+4146      : CPU goes idle
+4158      : Process 19 joins ready queue after IO completion
+4158      : Process 19 is scheduled to run for time 4
+4162      : CPU goes idle
+4183      : Process 17 joins ready queue after IO completion
+4183      : Process 17 is scheduled to run for time 10
+4193      : Process 17 joins ready queue after timeout
+4193      : Process 17 is scheduled to run for time 5
+4198      : CPU goes idle
+4210      : Process 16 joins ready queue after IO completion
+4210      : Process 16 is scheduled to run for time 3
+4213      : CPU goes idle
+4257      : Process 18 joins ready queue after IO completion
+4257      : Process 18 is scheduled to run for time 1
+4258      : CPU goes idle
+4290      : Process 16 joins ready queue after IO completion
+4290      : Process 16 is scheduled to run for time 10
+4300      : Process 16 joins ready queue after timeout
+4300      : Process 16 is scheduled to run for time 1
+4301      : CPU goes idle
+4307      : Process 19 joins ready queue after IO completion
+4307      : Process 19 is scheduled to run for time 10
+4317      : Process 19 joins ready queue after timeout
+4317      : Process 19 is scheduled to run for time 4
+4321      : CPU goes idle
+4335      : Process 20 joins ready queue upon arrival
+4335      : Process 20 is scheduled to run for time 10
+4345      : Process 20 joins ready queue after timeout
+4345      : Process 20 is scheduled to run for time 10
+4347      : Process 17 joins ready queue after IO completion
+4355      : Process 20 joins ready queue after timeout
+4355      : Process 17 is scheduled to run for time 3
+4358      : Process     17 exits. Turnaround time =  634 (107%), Wait time = 41
+4358      : Process 20 is scheduled to run for time 10
+4368      : Process 20 joins ready queue after timeout
+4368      : Process 20 is scheduled to run for time 10
+4378      : Process 20 joins ready queue after timeout
+4378      : Process 20 is scheduled to run for time 10
+4388      : Process 20 joins ready queue after timeout
+4388      : Process 20 is scheduled to run for time 10
+4398      : Process 20 joins ready queue after timeout
+4398      : Process 20 is scheduled to run for time 10
+4403      : Process 16 joins ready queue after IO completion
+4408      : Process 20 joins ready queue after timeout
+4408      : Process 16 is scheduled to run for time 10
+4413      : Process 19 joins ready queue after IO completion
+4418      : Process 16 joins ready queue after timeout
+4418      : Process 20 is scheduled to run for time 10
+4428      : Process 20 joins ready queue after timeout
+4428      : Process 19 is scheduled to run for time 9
+4431      : Process 18 joins ready queue after IO completion
+4437      : Process 16 is scheduled to run for time 4
+4441      : Process     16 exits. Turnaround time =  854 (105%), Wait time = 39
+4441      : Process 20 is scheduled to run for time 10
+4451      : Process 20 joins ready queue after timeout
+4451      : Process 18 is scheduled to run for time 5
+4456      : Process 20 is scheduled to run for time 10
+4466      : Process 20 joins ready queue after timeout
+4466      : Process 20 is scheduled to run for time 10
+4476      : Process 20 joins ready queue after timeout
+4476      : Process 20 is scheduled to run for time 10
+4486      : Process 20 joins ready queue after timeout
+4486      : Process 20 is scheduled to run for time 10
+4496      : Process 20 joins ready queue after timeout
+4496      : Process 20 is scheduled to run for time 10
+4506      : Process 20 joins ready queue after timeout
+4506      : Process 20 is scheduled to run for time 10
+4516      : Process 20 joins ready queue after timeout
+4516      : Process 20 is scheduled to run for time 10
+4520      : Process 18 joins ready queue after IO completion
+4526      : Process 20 joins ready queue after timeout
+4526      : Process 18 is scheduled to run for time 10
+4536      : Process 18 joins ready queue after timeout
+4536      : Process 20 is scheduled to run for time 10
+4546      : Process 20 joins ready queue after timeout
+4546      : Process 18 is scheduled to run for time 3
+4549      : Process 20 is scheduled to run for time 10
+4559      : Process 20 joins ready queue after timeout
+4559      : Process 20 is scheduled to run for time 10
+4569      : Process 20 joins ready queue after timeout
+4569      : Process 20 is scheduled to run for time 10
+4579      : Process 20 joins ready queue after timeout
+4579      : Process 20 is scheduled to run for time 10
+4589      : Process 20 joins ready queue after timeout
+4589      : Process 20 is scheduled to run for time 10
+4599      : Process 20 joins ready queue after timeout
+4599      : Process 20 is scheduled to run for time 10
+4609      : Process 20 joins ready queue after timeout
+4609      : Process 20 is scheduled to run for time 10
+4619      : Process 20 joins ready queue after timeout
+4619      : Process 20 is scheduled to run for time 10
+4629      : Process 20 joins ready queue after timeout
+4629      : Process 20 is scheduled to run for time 10
+4632      : Process 19 joins ready queue after IO completion
+4639      : Process 20 joins ready queue after timeout
+4639      : Process 19 is scheduled to run for time 9
+4648      : Process 20 is scheduled to run for time 10
+4658      : Process 20 joins ready queue after timeout
+4658      : Process 20 is scheduled to run for time 10
+4668      : CPU goes idle
+4729      : Process 19 joins ready queue after IO completion
+4729      : Process 19 is scheduled to run for time 10
+4737      : Process 18 joins ready queue after IO completion
+4739      : Process 18 is scheduled to run for time 8
+4747      : CPU goes idle
+4784      : Process 20 joins ready queue after IO completion
+4784      : Process 20 is scheduled to run for time 10
+4794      : Process 20 joins ready queue after timeout
+4794      : Process 20 is scheduled to run for time 10
+4804      : Process 20 joins ready queue after timeout
+4804      : Process 20 is scheduled to run for time 10
+4814      : Process 20 joins ready queue after timeout
+4814      : Process 20 is scheduled to run for time 10
+4824      : Process 20 joins ready queue after timeout
+4824      : Process 20 is scheduled to run for time 10
+4834      : Process 20 joins ready queue after timeout
+4834      : Process 20 is scheduled to run for time 10
+4844      : Process 20 joins ready queue after timeout
+4844      : Process 20 is scheduled to run for time 10
+4854      : Process 18 joins ready queue after IO completion
+4854      : Process 20 joins ready queue after timeout
+4854      : Process 18 is scheduled to run for time 10
+4864      : Process 18 joins ready queue after timeout
+4864      : Process 20 is scheduled to run for time 10
+4874      : Process 20 joins ready queue after timeout
+4874      : Process 18 is scheduled to run for time 5
+4879      : Process     18 exits. Turnaround time = 1118 (106%), Wait time = 64
+4879      : Process 20 is scheduled to run for time 10
+4889      : Process 20 joins ready queue after timeout
+4889      : Process 20 is scheduled to run for time 10
+4893      : Process 19 joins ready queue after IO completion
+4899      : Process 20 joins ready queue after timeout
+4899      : Process 19 is scheduled to run for time 7
+4906      : Process     19 exits. Turnaround time =  948 (103%), Wait time = 28
+4906      : Process 20 is scheduled to run for time 10
+4916      : Process 20 joins ready queue after timeout
+4916      : Process 20 is scheduled to run for time 10
+4926      : Process 20 joins ready queue after timeout
+4926      : Process 20 is scheduled to run for time 10
+4936      : Process 20 joins ready queue after timeout
+4936      : Process 20 is scheduled to run for time 10
+4946      : Process 20 joins ready queue after timeout
+4946      : Process 20 is scheduled to run for time 10
+4956      : Process 20 joins ready queue after timeout
+4956      : Process 20 is scheduled to run for time 10
+4966      : Process 20 joins ready queue after timeout
+4966      : Process 20 is scheduled to run for time 10
+4976      : Process 20 joins ready queue after timeout
+4976      : Process 20 is scheduled to run for time 10
+4986      : Process 20 joins ready queue after timeout
+4986      : Process 20 is scheduled to run for time 10
+4996      : Process 20 joins ready queue after timeout
+4996      : Process 20 is scheduled to run for time 10
+5006      : Process 20 joins ready queue after timeout
+5006      : Process 20 is scheduled to run for time 10
+5016      : Process 20 joins ready queue after timeout
+5016      : Process 20 is scheduled to run for time 10
+5026      : Process 20 joins ready queue after timeout
+5026      : Process 20 is scheduled to run for time 1
+5027      : CPU goes idle
+5169      : Process 20 joins ready queue after IO completion
+5169      : Process 20 is scheduled to run for time 10
+5179      : Process 20 joins ready queue after timeout
+5179      : Process 20 is scheduled to run for time 10
+5189      : Process 20 joins ready queue after timeout
+5189      : Process 20 is scheduled to run for time 10
+5199      : Process 20 joins ready queue after timeout
+5199      : Process 20 is scheduled to run for time 10
+5209      : Process 20 joins ready queue after timeout
+5209      : Process 20 is scheduled to run for time 10
+5219      : Process 20 joins ready queue after timeout
+5219      : Process 20 is scheduled to run for time 10
+5229      : Process 20 joins ready queue after timeout
+5229      : Process 20 is scheduled to run for time 10
+5239      : Process 20 joins ready queue after timeout
+5239      : Process 20 is scheduled to run for time 10
+5249      : Process 20 joins ready queue after timeout
+5249      : Process 20 is scheduled to run for time 10
+5259      : Process 20 joins ready queue after timeout
+5259      : Process 20 is scheduled to run for time 10
+5269      : Process 20 joins ready queue after timeout
+5269      : Process 20 is scheduled to run for time 10
+5279      : Process 20 joins ready queue after timeout
+5279      : Process 20 is scheduled to run for time 10
+5289      : Process 20 joins ready queue after timeout
+5289      : Process 20 is scheduled to run for time 10
+5299      : Process 20 joins ready queue after timeout
+5299      : Process 20 is scheduled to run for time 10
+5309      : Process 20 joins ready queue after timeout
+5309      : Process 20 is scheduled to run for time 7
+5316      : CPU goes idle
+5386      : Process 20 joins ready queue after IO completion
+5386      : Process 20 is scheduled to run for time 10
+5396      : Process 20 joins ready queue after timeout
+5396      : Process 20 is scheduled to run for time 10
+5406      : Process 20 joins ready queue after timeout
+5406      : Process 20 is scheduled to run for time 10
+5416      : Process 20 joins ready queue after timeout
+5416      : Process 20 is scheduled to run for time 10
+5426      : Process 20 joins ready queue after timeout
+5426      : Process 20 is scheduled to run for time 10
+5436      : Process 20 joins ready queue after timeout
+5436      : Process 20 is scheduled to run for time 10
+5446      : Process 20 joins ready queue after timeout
+5446      : Process 20 is scheduled to run for time 10
+5456      : Process 20 joins ready queue after timeout
+5456      : Process 20 is scheduled to run for time 10
+5466      : Process 20 joins ready queue after timeout
+5466      : Process 20 is scheduled to run for time 10
+5476      : Process 20 joins ready queue after timeout
+5476      : Process 20 is scheduled to run for time 10
+5486      : Process 20 joins ready queue after timeout
+5486      : Process 20 is scheduled to run for time 10
+5496      : Process 20 joins ready queue after timeout
+5496      : Process 20 is scheduled to run for time 10
+5506      : Process 20 joins ready queue after timeout
+5506      : Process 20 is scheduled to run for time 10
+5516      : Process 20 joins ready queue after timeout
+5516      : Process 20 is scheduled to run for time 10
+5526      : Process 20 joins ready queue after timeout
+5526      : Process 20 is scheduled to run for time 10
+5536      : Process 20 joins ready queue after timeout
+5536      : Process 20 is scheduled to run for time 10
+5546      : Process 20 joins ready queue after timeout
+5546      : Process 20 is scheduled to run for time 10
+5556      : Process 20 joins ready queue after timeout
+5556      : Process 20 is scheduled to run for time 5
+5561      : CPU goes idle
+5642      : Process 20 joins ready queue after IO completion
+5642      : Process 20 is scheduled to run for time 10
+5652      : Process 20 joins ready queue after timeout
+5652      : Process 20 is scheduled to run for time 10
+5662      : Process 20 joins ready queue after timeout
+5662      : Process 20 is scheduled to run for time 10
+5672      : Process 20 joins ready queue after timeout
+5672      : Process 20 is scheduled to run for time 10
+5682      : Process 20 joins ready queue after timeout
+5682      : Process 20 is scheduled to run for time 10
+5692      : Process 20 joins ready queue after timeout
+5692      : Process 20 is scheduled to run for time 10
+5702      : Process 20 joins ready queue after timeout
+5702      : Process 20 is scheduled to run for time 10
+5712      : Process 20 joins ready queue after timeout
+5712      : Process 20 is scheduled to run for time 10
+5722      : Process 20 joins ready queue after timeout
+5722      : Process 20 is scheduled to run for time 10
+5732      : Process 20 joins ready queue after timeout
+5732      : Process 20 is scheduled to run for time 10
+5742      : Process 20 joins ready queue after timeout
+5742      : Process 20 is scheduled to run for time 10
+5752      : Process 20 joins ready queue after timeout
+5752      : Process 20 is scheduled to run for time 10
+5762      : Process 20 joins ready queue after timeout
+5762      : Process 20 is scheduled to run for time 10
+5772      : Process 20 joins ready queue after timeout
+5772      : Process 20 is scheduled to run for time 4
+5776      : CPU goes idle
+5845      : Process 20 joins ready queue after IO completion
+5845      : Process 20 is scheduled to run for time 10
+5855      : Process 20 joins ready queue after timeout
+5855      : Process 20 is scheduled to run for time 10
+5865      : Process 20 joins ready queue after timeout
+5865      : Process 20 is scheduled to run for time 10
+5875      : Process 20 joins ready queue after timeout
+5875      : Process 20 is scheduled to run for time 10
+5885      : Process 20 joins ready queue after timeout
+5885      : Process 20 is scheduled to run for time 10
+5895      : Process 20 joins ready queue after timeout
+5895      : Process 20 is scheduled to run for time 10
+5905      : Process 20 joins ready queue after timeout
+5905      : Process 20 is scheduled to run for time 10
+5915      : Process 20 joins ready queue after timeout
+5915      : Process 20 is scheduled to run for time 10
+5925      : Process 20 joins ready queue after timeout
+5925      : Process 20 is scheduled to run for time 10
+5935      : Process 20 joins ready queue after timeout
+5935      : Process 20 is scheduled to run for time 10
+5945      : Process 20 joins ready queue after timeout
+5945      : Process 20 is scheduled to run for time 10
+5955      : Process 20 joins ready queue after timeout
+5955      : Process 20 is scheduled to run for time 10
+5965      : Process 20 joins ready queue after timeout
+5965      : Process 20 is scheduled to run for time 10
+5975      : Process 20 joins ready queue after timeout
+5975      : Process 20 is scheduled to run for time 10
+5985      : Process 20 joins ready queue after timeout
+5985      : Process 20 is scheduled to run for time 10
+5995      : Process 20 joins ready queue after timeout
+5995      : Process 20 is scheduled to run for time 10
+6005      : Process 20 joins ready queue after timeout
+6005      : Process 20 is scheduled to run for time 10
+6015      : Process 20 joins ready queue after timeout
+6015      : Process 20 is scheduled to run for time 10
+6025      : Process 20 joins ready queue after timeout
+6025      : Process 20 is scheduled to run for time 10
+6035      : CPU goes idle
+6146      : Process 20 joins ready queue after IO completion
+6146      : Process 20 is scheduled to run for time 10
+6156      : Process 20 joins ready queue after timeout
+6156      : Process 20 is scheduled to run for time 10
+6166      : Process 20 joins ready queue after timeout
+6166      : Process 20 is scheduled to run for time 10
+6176      : Process 20 joins ready queue after timeout
+6176      : Process 20 is scheduled to run for time 10
+6186      : Process 20 joins ready queue after timeout
+6186      : Process 20 is scheduled to run for time 10
+6196      : Process 20 joins ready queue after timeout
+6196      : Process 20 is scheduled to run for time 10
+6206      : Process 20 joins ready queue after timeout
+6206      : Process 20 is scheduled to run for time 10
+6216      : Process 20 joins ready queue after timeout
+6216      : Process 20 is scheduled to run for time 10
+6226      : Process 20 joins ready queue after timeout
+6226      : Process 20 is scheduled to run for time 10
+6236      : Process 20 joins ready queue after timeout
+6236      : Process 20 is scheduled to run for time 10
+6246      : Process 20 joins ready queue after timeout
+6246      : Process 20 is scheduled to run for time 10
+6256      : Process 20 joins ready queue after timeout
+6256      : Process 20 is scheduled to run for time 10
+6266      : Process 20 joins ready queue after timeout
+6266      : Process 20 is scheduled to run for time 10
+6276      : Process 20 joins ready queue after timeout
+6276      : Process 20 is scheduled to run for time 10
+6286      : Process 20 joins ready queue after timeout
+6286      : Process 20 is scheduled to run for time 10
+6296      : Process 20 joins ready queue after timeout
+6296      : Process 20 is scheduled to run for time 10
+6306      : Process 20 joins ready queue after timeout
+6306      : Process 20 is scheduled to run for time 10
+6316      : Process 20 joins ready queue after timeout
+6316      : Process 20 is scheduled to run for time 10
+6326      : Process 20 joins ready queue after timeout
+6326      : Process 20 is scheduled to run for time 10
+6336      : Process 20 joins ready queue after timeout
+6336      : Process 20 is scheduled to run for time 10
+6346      : Process 20 joins ready queue after timeout
+6346      : Process 20 is scheduled to run for time 10
+6356      : Process 20 joins ready queue after timeout
+6356      : Process 20 is scheduled to run for time 10
+6366      : Process 20 joins ready queue after timeout
+6366      : Process 20 is scheduled to run for time 10
+6376      : Process 20 joins ready queue after timeout
+6376      : Process 20 is scheduled to run for time 7
+6383      : Process     20 exits. Turnaround time = 2048 (104%), Wait time = 75
+6383      : CPU goes idle
+
+Average wait time = 56.80
+Total turnaround time = 6383
+CPU idle time = 2827
+CPU utilization = 55.71%

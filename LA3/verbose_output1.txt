@@ -1,447 +1,3037 @@
 **** FCFS scheduling ****
-         0: Starting.
-         0: Process 1 joins ready queue.
-         0: Process 1 scheduled to run for 11 (IO).
-        11: CPU goes idle.
-        91: Process 2 joins ready queue.
-        91: Process 2 scheduled to run for 14 (IO).
-       105: CPU goes idle.
-       126: Process 1 joins ready queue.
-       126: Process 1 scheduled to run for 8 (IO).
-       134: CPU goes idle.
-       234: Process 2 joins ready queue.
-       234: Process 2 scheduled to run for 8 (IO).
-       242: CPU goes idle.
-       278: Process 1 joins ready queue.
-       278: Process 1 scheduled to run for 10 (IO).
-       288: CPU goes idle.
-       326: Process 2 joins ready queue.
-       326: Process 2 scheduled to run for 2 (IO).
-       328: CPU goes idle.
-       399: Process 1 joins ready queue.
-       399: Process 1 scheduled to run for 3 (IO).
-       402: CPU goes idle.
-       459: Process 2 joins ready queue.
-       459: Process 2 scheduled to run for 8 (IO).
-       467: CPU goes idle.
-       493: Process 3 joins ready queue.
-       493: Process 3 scheduled to run for 13 (IO).
-       506: CPU goes idle.
-       511: Process 1 joins ready queue.
-       511: Process 1 scheduled to run for 12 (IO).
-       523: CPU goes idle.
-       599: Process 1 joins ready queue.
-       599: Process 1 scheduled to run for 5 (IO).
-       604: CPU goes idle.
-       644: Process 3 joins ready queue.
-       644: Process 3 scheduled to run for 1 (IO).
-       645: CPU goes idle.
-       653: Process 2 joins ready queue.
-       653: Process 2 scheduled to run for 15 (IO).
-       668: CPU goes idle.
-       705: Process 3 joins ready queue.
-       705: Process 3 scheduled to run for 1 (IO).
-       706: CPU goes idle.
-       735: Process 2 joins ready queue.
-       735: Process 2 scheduled to run for 4 (IO).
-       739 :Process          2 exits. Turnaround time =        648 ( 100%), Wait time =          0
-       739: CPU goes idle.
-       774: Process 1 joins ready queue.
-       774: Process 1 scheduled to run for 9 (IO).
-       783 :Process          1 exits. Turnaround time =        783 ( 100%), Wait time =          0
-       783: CPU goes idle.
-       796: Process 4 joins ready queue.
-       796: Process 4 scheduled to run for 4 (IO).
-       800: CPU goes idle.
-       840: Process 3 joins ready queue.
-       840: Process 3 scheduled to run for 9 (IO).
-       849: CPU goes idle.
-       891: Process 4 joins ready queue.
-       891: Process 4 scheduled to run for 12 (IO).
-       903: CPU goes idle.
-       913: Process 3 joins ready queue.
-       913: Process 3 scheduled to run for 9 (IO).
-       922: CPU goes idle.
-       978: Process 5 joins ready queue.
-       978: Process 5 scheduled to run for 170 (IO).
-      1037: Process 4 joins ready queue.
-      1037: CPU goes idle.
-      1098: CPU goes idle.
-      1116: CPU goes idle.
-      1148: Process 4 scheduled to run for 13 (IO).
-      1050: Process 3 scheduled to run for 5 (IO).
-      1101: CPU goes idle.
-      1103: Process 6 scheduled to run for 14 (IO).
-      1130: Process 4 scheduled to run for 7 (IO).
-      1108: CPU goes idle.
-      1153: Process 3 joins ready queue.
-      1153: Process 3 scheduled to run for 6 (IO).
-      1159: CPU goes idle.
-      1183: Process 6 joins ready queue.
-      1183: Process 6 scheduled to run for 4 (IO).
-      1187: CPU goes idle.
-      1226: Process 4 joins ready queue.
-      1226: Process 4 scheduled to run for 3 (IO).
-      1229: CPU goes idle.
-      1238: Process 5 joins ready queue.
-      1238: Process 5 scheduled to run for 227 (IO).
-      1252: Process 6 joins ready queue.
-      1252: CPU goes idle.
-      1301: CPU goes idle.
-      1303: CPU goes idle.
-      1347: CPU goes idle.
-      1465: Process 6 scheduled to run for 7 (IO).
-      1259: Process 4 scheduled to run for 11 (IO).
-      1312: Process 3 scheduled to run for 5 (IO).
-      1308: Process 7 scheduled to run for 15 (IO).
-      1339: Process 6 joins ready queue.
-      1339: CPU goes idle.
-      1362: Process 6 scheduled to run for 8 (IO).
-      1347: CPU goes idle.
-      1392: Process 4 joins ready queue.
-      1392: Process 4 scheduled to run for 5 (IO).
-      1397: CPU goes idle.
-      1431: Process 7 joins ready queue.
-      1431: Process 7 scheduled to run for 5 (IO).
-      1436: CPU goes idle.
-      1455: Process 6 joins ready queue.
-      1455: Process 6 scheduled to run for 12 (IO).
-      1467: CPU goes idle.
-      1506: Process 3 joins ready queue.
-      1506: Process 3 scheduled to run for 14 (IO).
-      1520 :Process          3 exits. Turnaround time =       1027 ( 100%), Wait time =          0
-      1520: CPU goes idle.
-      1522: Process 7 joins ready queue.
-      1522: Process 7 scheduled to run for 6 (IO).
-      1528: CPU goes idle.
-      1537: Process 5 joins ready queue.
-      1537: Process 5 scheduled to run for 165 (IO).
-      1571: Process 4 joins ready queue.
-      1571: CPU goes idle.
-      1663: CPU goes idle.
-      1683: CPU goes idle.
-      1688: CPU goes idle.
-      1702: Process 4 scheduled to run for 3 (IO).
-      1574: Process 6 scheduled to run for 12 (IO).
-      1675: Process 8 scheduled to run for 12 (IO).
-      1695: Process 7 scheduled to run for 4 (IO).
-      1692: CPU goes idle.
-      1764: Process 4 joins ready queue.
-      1764: Process 4 scheduled to run for 13 (IO).
-      1774: Process 9 joins ready queue.
-      1774: CPU goes idle.
-      1777 :Process          4 exits. Turnaround time =        981 ( 100%), Wait time =          0
-      1777: Process 9 scheduled to run for 14 (IO).
-      1788: CPU goes idle.
-      1820: Process 6 joins ready queue.
-      1820: Process 6 scheduled to run for 2 (IO).
-      1822: CPU goes idle.
-      1831: Process 7 joins ready queue.
-      1831: Process 7 scheduled to run for 11 (IO).
-      1842: CPU goes idle.
-      1880: Process 8 joins ready queue.
-      1880: Process 8 scheduled to run for 5 (IO).
-      1881: Process 5 joins ready queue.
-      1881: CPU goes idle.
-      1885: Process 5 scheduled to run for 207 (IO).
-      1954: Process 9 joins ready queue.
-      1954: CPU goes idle.
-      1958: CPU goes idle.
-      1976: CPU goes idle.
-      1985: CPU goes idle.
-      2088: Process 9 scheduled to run for 8 (IO).
-      1962: Process 6 scheduled to run for 2 (IO).
-      1960: Process 7 scheduled to run for 10 (IO).
-      1986 :Process          7 exits. Turnaround time =        639 ( 100%), Wait time =          0
-      1986: Process 8 scheduled to run for 10 (IO).
-      1995: CPU goes idle.
-      2037: Process 9 joins ready queue.
-      2037: Process 9 scheduled to run for 11 (IO).
-      2048: CPU goes idle.
-      2123: Process 9 joins ready queue.
-      2123: Process 9 scheduled to run for 8 (IO).
-      2131: CPU goes idle.
-      2142: Process 8 joins ready queue.
-      2142: Process 8 scheduled to run for 6 (IO).
-      2145: Process 6 joins ready queue.
-      2145: CPU goes idle.
-      2148: Process 6 scheduled to run for 7 (IO).
-      2152: CPU goes idle.
-      2172: Process 10 joins ready queue.
-      2172: Process 10 scheduled to run for 11 (IO).
-      2183: CPU goes idle.
-      2186: Process 5 joins ready queue.
-      2186: Process 5 scheduled to run for 113 (IO).
-      2200: Process 9 joins ready queue.
-      2200: CPU goes idle.
-      2249: CPU goes idle.
-      2299: Process 9 scheduled to run for 15 (IO).
-      2215: Process 11 scheduled to run for 12 (IO).
-      2261: CPU goes idle.
-      2267: Process 9 joins ready queue.
-      2267: Process 9 scheduled to run for 2 (IO).
-      2269: CPU goes idle.
-      2310: Process 8 joins ready queue.
-      2310: Process 8 scheduled to run for 3 (IO).
-      2313 :Process          8 exits. Turnaround time =        630 ( 100%), Wait time =          0
-      2313: CPU goes idle.
-      2333: Process 6 joins ready queue.
-      2333: Process 6 scheduled to run for 1 (IO).
-      2334 :Process          6 exits. Turnaround time =       1218 ( 100%), Wait time =          0
-      2334: CPU goes idle.
-      2340: Process 10 joins ready queue.
-      2340: Process 10 scheduled to run for 13 (IO).
-      2353: CPU goes idle.
-      2397: Process 9 joins ready queue.
-      2397: Process 9 scheduled to run for 10 (IO).
-      2407 :Process          9 exits. Turnaround time =        633 ( 100%), Wait time =          0
-      2407: CPU goes idle.
-      2425: Process 11 joins ready queue.
-      2425: Process 11 scheduled to run for 3 (IO).
-      2428: CPU goes idle.
-      2440: Process 5 joins ready queue.
-      2440: Process 5 scheduled to run for 140 (IO).
-      2445: Process 10 joins ready queue.
-      2445: CPU goes idle.
-      2533: CPU goes idle.
-      2580 :Process          5 exits. Turnaround time =       1602 ( 100%), Wait time =          0
-      2580: Process 10 scheduled to run for 14 (IO).
-      2459: Process 11 scheduled to run for 15 (IO).
-      2548: CPU goes idle.
-      2614: Process 10 joins ready queue.
-      2614: Process 10 scheduled to run for 14 (IO).
-      2628: CPU goes idle.
-      2667: Process 11 joins ready queue.
-      2667: Process 11 scheduled to run for 15 (IO).
-      2674: Process 12 joins ready queue.
-      2674: CPU goes idle.
-      2682: Process 12 scheduled to run for 5 (IO).
-      2679: CPU goes idle.
-      2746: Process 10 joins ready queue.
-      2746: Process 10 scheduled to run for 9 (IO).
-      2751: Process 12 joins ready queue.
-      2751: CPU goes idle.
-      2755: Process 12 scheduled to run for 8 (IO).
-      2759: CPU goes idle.
-      2780: Process 11 joins ready queue.
-      2780: Process 11 scheduled to run for 14 (IO).
-      2794: CPU goes idle.
-      2883: Process 12 joins ready queue.
-      2883: Process 12 scheduled to run for 15 (IO).
-      2884: Process 13 joins ready queue.
-      2884: CPU goes idle.
-      2891: CPU goes idle.
-      2896: CPU goes idle.
-      2898: Process 13 scheduled to run for 5 (IO).
-      2889: Process 10 scheduled to run for 10 (IO).
-      2901: Process 11 scheduled to run for 7 (IO).
-      2903: CPU goes idle.
-      2960: Process 11 joins ready queue.
-      2960: Process 11 scheduled to run for 12 (IO).
-      2972: CPU goes idle.
-      2995: Process 13 joins ready queue.
-      2995: Process 13 scheduled to run for 2 (IO).
-      2997: CPU goes idle.
-      2998: Process 14 joins ready queue.
-      2998: Process 14 scheduled to run for 5 (IO).
-      3003: CPU goes idle.
-      3031: Process 10 joins ready queue.
-      3031: Process 10 scheduled to run for 2 (IO).
-      3033 :Process         10 exits. Turnaround time =        861 ( 100%), Wait time =          0
-      3033: CPU goes idle.
-      3073: Process 12 joins ready queue.
-      3073: Process 12 scheduled to run for 7 (IO).
-      3080: CPU goes idle.
-      3094: Process 13 joins ready queue.
-      3094: Process 13 scheduled to run for 10 (IO).
-      3104: CPU goes idle.
-      3133: Process 14 joins ready queue.
-      3133: Process 14 scheduled to run for 1 (IO).
-      3134: CPU goes idle.
-      3156: Process 11 joins ready queue.
-      3156: Process 11 scheduled to run for 15 (IO).
-      3171: CPU goes idle.
-      3215: Process 12 joins ready queue.
-      3215: Process 12 scheduled to run for 11 (IO).
-      3222: Process 15 joins ready queue.
-      3222: CPU goes idle.
-      3226: Process 15 scheduled to run for 15 (IO).
-      3237: CPU goes idle.
-      3260: Process 11 joins ready queue.
-      3260: Process 11 scheduled to run for 7 (IO).
-      3267 :Process         11 exits. Turnaround time =       1018 ( 100%), Wait time =          0
-      3267: CPU goes idle.
-      3284: Process 14 joins ready queue.
-      3284: Process 14 scheduled to run for 3 (IO).
-      3287: CPU goes idle.
-      3290: Process 13 joins ready queue.
-      3290: Process 13 scheduled to run for 8 (IO).
-      3298 :Process         13 exits. Turnaround time =        414 ( 100%), Wait time =          0
-      3298: CPU goes idle.
-      3337: Process 15 joins ready queue.
-      3337: Process 15 scheduled to run for 11 (IO).
-      3348: CPU goes idle.
-      3363: Process 12 joins ready queue.
-      3363: Process 12 scheduled to run for 3 (IO).
-      3366: CPU goes idle.
-      3433: Process 15 joins ready queue.
-      3433: Process 15 scheduled to run for 6 (IO).
-      3439: CPU goes idle.
-      3447: Process 12 joins ready queue.
-      3447: Process 12 scheduled to run for 7 (IO).
-      3454: CPU goes idle.
-      3477: Process 14 joins ready queue.
-      3477: Process 14 scheduled to run for 5 (IO).
-      3482: CPU goes idle.
-      3531: Process 15 joins ready queue.
-      3531: Process 15 scheduled to run for 15 (IO).
-      3533: Process 14 joins ready queue.
-      3533: CPU goes idle.
-      3546: Process 14 scheduled to run for 1 (IO).
-      3534: CPU goes idle.
-      3587: Process 16 joins ready queue.
-      3587: Process 16 scheduled to run for 3 (IO).
-      3590: CPU goes idle.
-      3602: Process 14 joins ready queue.
-      3602: Process 14 scheduled to run for 15 (IO).
-      3615: Process 12 joins ready queue.
-      3615: CPU goes idle.
-      3617: Process 12 scheduled to run for 14 (IO).
-      3625: Process 15 joins ready queue.
-      3625: CPU goes idle.
-      3629: Process 15 scheduled to run for 2 (IO).
-      3627: CPU goes idle.
-      3673: Process 14 joins ready queue.
-      3673: Process 14 scheduled to run for 14 (IO).
-      3687: CPU goes idle.
-      3715: Process 12 joins ready queue.
-      3715: Process 12 scheduled to run for 13 (IO).
-      3724: Process 17 joins ready queue.
-      3724: CPU goes idle.
-      3728 :Process         12 exits. Turnaround time =       1054 ( 100%), Wait time =          0
-      3728: Process 17 scheduled to run for 6 (IO).
-      3730: CPU goes idle.
-      3746: Process 16 joins ready queue.
-      3746: Process 16 scheduled to run for 7 (IO).
-      3751: Process 15 joins ready queue.
-      3751: CPU goes idle.
-      3753: Process 15 scheduled to run for 9 (IO).
-      3760: CPU goes idle.
-      3761: Process 18 joins ready queue.
-      3761: Process 18 scheduled to run for 14 (IO).
-      3775: CPU goes idle.
-      3830: Process 15 joins ready queue.
-      3830: Process 15 scheduled to run for 8 (IO).
-      3838: CPU goes idle.
-      3871: Process 18 joins ready queue.
-      3871: Process 18 scheduled to run for 10 (IO).
-      3873: Process 14 joins ready queue.
-      3873: CPU goes idle.
-      3881: Process 14 scheduled to run for 14 (IO).
-      3887: CPU goes idle.
-      3891: Process 17 joins ready queue.
-      3891: Process 17 scheduled to run for 11 (IO).
-      3902: CPU goes idle.
-      3903: Process 16 joins ready queue.
-      3903: Process 16 scheduled to run for 7 (IO).
-      3910: CPU goes idle.
-      3958: Process 19 joins ready queue.
-      3958: Process 19 scheduled to run for 14 (IO).
-      3962: Process 15 joins ready queue.
-      3962: CPU goes idle.
-      3972: Process 15 scheduled to run for 2 (IO).
-      3964: CPU goes idle.
-      4014: Process 18 joins ready queue.
-      4014: Process 18 scheduled to run for 8 (IO).
-      4017: Process 15 joins ready queue.
-      4017: CPU goes idle.
-      4022: Process 15 scheduled to run for 1 (IO).
-      4018: CPU goes idle.
-      4057: Process 16 joins ready queue.
-      4057: Process 16 scheduled to run for 11 (IO).
-      4068: CPU goes idle.
-      4072: Process 14 joins ready queue.
-      4072: Process 14 scheduled to run for 12 (IO).
-      4084 :Process         14 exits. Turnaround time =       1086 ( 100%), Wait time =          0
-      4084: CPU goes idle.
-      4088: Process 17 joins ready queue.
-      4088: Process 17 scheduled to run for 9 (IO).
-      4097: CPU goes idle.
-      4097: Process 18 joins ready queue.
-      4097: Process 18 scheduled to run for 8 (IO).
-      4105: CPU goes idle.
-      4110: Process 15 joins ready queue.
-      4110: Process 15 scheduled to run for 14 (IO).
-      4124 :Process         15 exits. Turnaround time =        902 ( 100%), Wait time =          0
-      4124: CPU goes idle.
-      4150: Process 17 joins ready queue.
-      4150: Process 17 scheduled to run for 15 (IO).
-      4158: Process 19 joins ready queue.
-      4158: CPU goes idle.
-      4165: Process 19 scheduled to run for 4 (IO).
-      4162: CPU goes idle.
-      4195: Process 16 joins ready queue.
-      4195: Process 16 scheduled to run for 3 (IO).
-      4198: CPU goes idle.
-      4241: Process 18 joins ready queue.
-      4241: Process 18 scheduled to run for 1 (IO).
-      4242: CPU goes idle.
-      4275: Process 16 joins ready queue.
-      4275: Process 16 scheduled to run for 11 (IO).
-      4286: CPU goes idle.
-      4307: Process 19 joins ready queue.
-      4307: Process 19 scheduled to run for 14 (IO).
-      4314: Process 17 joins ready queue.
-      4314: CPU goes idle.
-      4321: Process 17 scheduled to run for 3 (IO).
-      4317 :Process         17 exits. Turnaround time =        593 ( 100%), Wait time =          0
-      4317: CPU goes idle.
-      4335: Process 20 joins ready queue.
-      4335: Process 20 scheduled to run for 280 (IO).
-      4388: Process 16 joins ready queue.
-      4388: CPU goes idle.
-      4413: CPU goes idle.
-      4415: CPU goes idle.
-      4615: Process 16 scheduled to run for 14 (IO).
-      4402 :Process         16 exits. Turnaround time =        815 ( 100%), Wait time =          0
-      4402: Process 19 scheduled to run for 9 (IO).
-      4422: Process 18 scheduled to run for 5 (IO).
-      4420: CPU goes idle.
-      4484: Process 18 joins ready queue.
-      4484: Process 18 scheduled to run for 13 (IO).
-      4497: CPU goes idle.
-      4617: Process 19 joins ready queue.
-      4617: Process 19 scheduled to run for 9 (IO).
-      4626: CPU goes idle.
-      4685: Process 18 joins ready queue.
-      4685: Process 18 scheduled to run for 8 (IO).
-      4693: CPU goes idle.
-      4707: Process 19 joins ready queue.
-      4707: Process 19 scheduled to run for 10 (IO).
-      4717: CPU goes idle.
-      4731: Process 20 joins ready queue.
-      4731: Process 20 scheduled to run for 221 (IO).
-      4800: Process 18 joins ready queue.
-      4800: CPU goes idle.
-      4871: CPU goes idle.
-      4952: Process 18 scheduled to run for 15 (IO).
-      4815 :Process         18 exits. Turnaround time =       1054 ( 100%), Wait time =          0
-      4815: Process 19 scheduled to run for 7 (IO).
-      4878 :Process         19 exits. Turnaround time =        920 ( 100%), Wait time =          0
-      4878: CPU goes idle.
-      5094: Process 20 joins ready queue.
-      5094: Process 20 scheduled to run for 147 (IO).
-      5241: CPU goes idle.
-      5311: Process 20 joins ready queue.
-      5311: Process 20 scheduled to run for 175 (IO).
-      5486: CPU goes idle.
-      5567: Process 20 joins ready queue.
-      5567: Process 20 scheduled to run for 134 (IO).
-      5701: CPU goes idle.
-      5770: Process 20 joins ready queue.
-      5770: Process 20 scheduled to run for 190 (IO).
-      5960: CPU goes idle.
-      6071: Process 20 joins ready queue.
-      6071: Process 20 scheduled to run for 237 (IO).
-      6308 :Process         20 exits. Turnaround time =       1973 ( 100%), Wait time =          0
-      6308: CPU goes idle.
+0         : Starting.
+0         : Process 1 joins ready queue.
+0         : Process 1 scheduled to run for 11 (IO).   11
+11        : CPU goes idle.
+91        : Process 2 joins ready queue.
+91        : Process 2 scheduled to run for 14 (IO).   105
+105       : CPU goes idle.
+126       : Process 1 joins ready queue.
+126       : Process 1 scheduled to run for 8 (IO).   134
+134       : CPU goes idle.
+234       : Process 2 joins ready queue.
+234       : Process 2 scheduled to run for 8 (IO).   242
+242       : CPU goes idle.
+278       : Process 1 joins ready queue.
+278       : Process 1 scheduled to run for 10 (IO).   288
+288       : CPU goes idle.
+326       : Process 2 joins ready queue.
+326       : Process 2 scheduled to run for 2 (IO).   328
+328       : CPU goes idle.
+399       : Process 1 joins ready queue.
+399       : Process 1 scheduled to run for 3 (IO).   402
+402       : CPU goes idle.
+459       : Process 2 joins ready queue.
+459       : Process 2 scheduled to run for 8 (IO).   467
+467       : CPU goes idle.
+493       : Process 3 joins ready queue.
+493       : Process 3 scheduled to run for 13 (IO).   506
+506       : CPU goes idle.
+511       : Process 1 joins ready queue.
+511       : Process 1 scheduled to run for 12 (IO).   523
+523       : CPU goes idle.
+599       : Process 1 joins ready queue.
+599       : Process 1 scheduled to run for 5 (IO).   604
+604       : CPU goes idle.
+644       : Process 3 joins ready queue.
+644       : Process 3 scheduled to run for 1 (IO).   645
+645       : CPU goes idle.
+653       : Process 2 joins ready queue.
+653       : Process 2 scheduled to run for 15 (IO).   668
+668       : CPU goes idle.
+705       : Process 3 joins ready queue.
+705       : Process 3 scheduled to run for 1 (IO).   706
+706       : CPU goes idle.
+735       : Process 2 joins ready queue.
+735       : Process 2 scheduled to run for 4 (IO).   739
+739        : Process      2 exits. Turnaround time =   648 (100%), Wait time = 0
+739       : CPU goes idle.
+774       : Process 1 joins ready queue.
+774       : Process 1 scheduled to run for 9 (IO).   783
+783        : Process      1 exits. Turnaround time =   783 (100%), Wait time = 0
+783       : CPU goes idle.
+796       : Process 4 joins ready queue.
+796       : Process 4 scheduled to run for 4 (IO).   800
+800       : CPU goes idle.
+840       : Process 3 joins ready queue.
+840       : Process 3 scheduled to run for 9 (IO).   849
+849       : CPU goes idle.
+891       : Process 4 joins ready queue.
+891       : Process 4 scheduled to run for 12 (IO).   903
+903       : CPU goes idle.
+913       : Process 3 joins ready queue.
+913       : Process 3 scheduled to run for 9 (IO).   922
+922       : CPU goes idle.
+978       : Process 5 joins ready queue.
+978       : Process 5 scheduled to run for 170 (IO).   1148
+1037      : Process 4 joins ready queue.
+1098      : Process 3 joins ready queue.
+1116      : Process 6 joins ready queue.
+1148      : Process 4 scheduled to run for 13 (IO).   1161
+1161      : Process 3 scheduled to run for 5 (IO).   1166
+1166      : Process 6 scheduled to run for 14 (IO).   1180
+1180      : CPU goes idle.
+1212      : Process 4 joins ready queue.
+1212      : Process 4 scheduled to run for 7 (IO).   1219
+1216      : Process 3 joins ready queue.
+1219      : Process 3 scheduled to run for 6 (IO).   1225
+1225      : CPU goes idle.
+1233      : Process 6 joins ready queue.
+1233      : Process 6 scheduled to run for 4 (IO).   1237
+1237      : CPU goes idle.
+1238      : Process 5 joins ready queue.
+1238      : Process 5 scheduled to run for 227 (IO).   1465
+1302      : Process 6 joins ready queue.
+1337      : Process 4 joins ready queue.
+1347      : Process 7 joins ready queue.
+1369      : Process 3 joins ready queue.
+1465      : Process 6 scheduled to run for 7 (IO).   1472
+1472      : Process 4 scheduled to run for 3 (IO).   1475
+1475      : Process 7 scheduled to run for 15 (IO).   1490
+1490      : Process 3 scheduled to run for 5 (IO).   1495
+1495      : CPU goes idle.
+1537      : Process 5 joins ready queue.
+1537      : Process 5 scheduled to run for 165 (IO).   1702
+1547      : Process 4 joins ready queue.
+1552      : Process 6 joins ready queue.
+1559      : Process 7 joins ready queue.
+1683      : Process 8 joins ready queue.
+1693      : Process 3 joins ready queue.
+1702      : Process 4 scheduled to run for 11 (IO).   1713
+1713      : Process 6 scheduled to run for 8 (IO).   1721
+1721      : Process 7 scheduled to run for 5 (IO).   1726
+1726      : Process 8 scheduled to run for 12 (IO).   1738
+1738      : Process 3 scheduled to run for 14 (IO).   1752
+1752       : Process      3 exits. Turnaround time =  1259 (123%), Wait time = 232
+1752      : CPU goes idle.
+1774      : Process 9 joins ready queue.
+1774      : Process 9 scheduled to run for 14 (IO).   1788
+1788      : CPU goes idle.
+1793      : Process 4 joins ready queue.
+1793      : Process 4 scheduled to run for 5 (IO).   1798
+1798      : CPU goes idle.
+1812      : Process 7 joins ready queue.
+1812      : Process 7 scheduled to run for 6 (IO).   1818
+1818      : CPU goes idle.
+1829      : Process 6 joins ready queue.
+1829      : Process 6 scheduled to run for 12 (IO).   1841
+1841      : CPU goes idle.
+1881      : Process 5 joins ready queue.
+1881      : Process 5 scheduled to run for 207 (IO).   2088
+1923      : Process 8 joins ready queue.
+1954      : Process 9 joins ready queue.
+1972      : Process 4 joins ready queue.
+1978      : Process 7 joins ready queue.
+2037      : Process 6 joins ready queue.
+2088      : Process 8 scheduled to run for 5 (IO).   2093
+2093      : Process 9 scheduled to run for 8 (IO).   2101
+2101      : Process 4 scheduled to run for 3 (IO).   2104
+2104      : Process 7 scheduled to run for 4 (IO).   2108
+2108      : Process 6 scheduled to run for 12 (IO).   2120
+2120      : CPU goes idle.
+2172      : Process 10 joins ready queue.
+2172      : Process 10 scheduled to run for 11 (IO).   2183
+2176      : Process 9 joins ready queue.
+2183      : Process 9 scheduled to run for 11 (IO).   2194
+2186      : Process 5 joins ready queue.
+2193      : Process 8 joins ready queue.
+2194      : Process 5 scheduled to run for 113 (IO).   2307
+2247      : Process 7 joins ready queue.
+2249      : Process 11 joins ready queue.
+2265      : Process 6 joins ready queue.
+2269      : Process 9 joins ready queue.
+2294      : Process 4 joins ready queue.
+2307      : Process 8 scheduled to run for 10 (IO).   2317
+2317      : Process 7 scheduled to run for 11 (IO).   2328
+2328      : Process 11 scheduled to run for 12 (IO).   2340
+2340      : Process 10 joins ready queue.
+2340      : Process 6 scheduled to run for 2 (IO).   2342
+2342      : Process 9 scheduled to run for 8 (IO).   2350
+2350      : Process 4 scheduled to run for 13 (IO).   2363
+2363       : Process      4 exits. Turnaround time =  1567 (160%), Wait time = 586
+2363      : Process 10 scheduled to run for 13 (IO).   2376
+2376      : CPU goes idle.
+2419      : Process 9 joins ready queue.
+2419      : Process 9 scheduled to run for 15 (IO).   2434
+2434      : CPU goes idle.
+2448      : Process 5 joins ready queue.
+2448      : Process 5 scheduled to run for 140 (IO).   2588
+2462      : Process 7 joins ready queue.
+2464      : Process 8 joins ready queue.
+2468      : Process 10 joins ready queue.
+2478      : Process 6 joins ready queue.
+2486      : Process 9 joins ready queue.
+2504      : Process 11 joins ready queue.
+2588       : Process      5 exits. Turnaround time =  1610 (100%), Wait time = 8
+2588      : Process 7 scheduled to run for 10 (IO).   2598
+2598       : Process      7 exits. Turnaround time =  1251 (196%), Wait time = 612
+2598      : Process 8 scheduled to run for 6 (IO).   2604
+2604      : Process 10 scheduled to run for 14 (IO).   2618
+2618      : Process 6 scheduled to run for 2 (IO).   2620
+2620      : Process 9 scheduled to run for 2 (IO).   2622
+2622      : Process 11 scheduled to run for 3 (IO).   2625
+2625      : CPU goes idle.
+2674      : Process 12 joins ready queue.
+2674      : Process 12 scheduled to run for 5 (IO).   2679
+2679      : CPU goes idle.
+2730      : Process 11 joins ready queue.
+2730      : Process 11 scheduled to run for 15 (IO).   2745
+2745      : CPU goes idle.
+2750      : Process 9 joins ready queue.
+2750      : Process 9 scheduled to run for 10 (IO).   2760
+2751      : Process 12 joins ready queue.
+2760       : Process      9 exits. Turnaround time =   986 (156%), Wait time = 353
+2760      : Process 12 scheduled to run for 8 (IO).   2768
+2766      : Process 8 joins ready queue.
+2768      : Process 8 scheduled to run for 3 (IO).   2771
+2771       : Process      8 exits. Turnaround time =  1088 (173%), Wait time = 458
+2771      : CPU goes idle.
+2773      : Process 10 joins ready queue.
+2773      : Process 10 scheduled to run for 14 (IO).   2787
+2787      : CPU goes idle.
+2805      : Process 6 joins ready queue.
+2805      : Process 6 scheduled to run for 7 (IO).   2812
+2812      : CPU goes idle.
+2864      : Process 11 joins ready queue.
+2864      : Process 11 scheduled to run for 15 (IO).   2879
+2879      : CPU goes idle.
+2884      : Process 13 joins ready queue.
+2884      : Process 13 scheduled to run for 5 (IO).   2889
+2889      : CPU goes idle.
+2892      : Process 12 joins ready queue.
+2892      : Process 12 scheduled to run for 15 (IO).   2907
+2905      : Process 10 joins ready queue.
+2907      : Process 10 scheduled to run for 9 (IO).   2916
+2916      : CPU goes idle.
+2977      : Process 11 joins ready queue.
+2977      : Process 11 scheduled to run for 14 (IO).   2991
+2991      : CPU goes idle.
+2993      : Process 6 joins ready queue.
+2993      : Process 6 scheduled to run for 1 (IO).   2994
+2994       : Process      6 exits. Turnaround time =  1878 (154%), Wait time = 660
+2994      : CPU goes idle.
+2995      : Process 13 joins ready queue.
+2995      : Process 13 scheduled to run for 2 (IO).   2997
+2997      : CPU goes idle.
+2998      : Process 14 joins ready queue.
+2998      : Process 14 scheduled to run for 5 (IO).   3003
+3003      : CPU goes idle.
+3052      : Process 10 joins ready queue.
+3052      : Process 10 scheduled to run for 10 (IO).   3062
+3062      : CPU goes idle.
+3082      : Process 12 joins ready queue.
+3082      : Process 12 scheduled to run for 7 (IO).   3089
+3089      : CPU goes idle.
+3093      : Process 11 joins ready queue.
+3093      : Process 11 scheduled to run for 7 (IO).   3100
+3094      : Process 13 joins ready queue.
+3100      : Process 13 scheduled to run for 10 (IO).   3110
+3110      : CPU goes idle.
+3133      : Process 14 joins ready queue.
+3133      : Process 14 scheduled to run for 1 (IO).   3134
+3134      : CPU goes idle.
+3157      : Process 11 joins ready queue.
+3157      : Process 11 scheduled to run for 12 (IO).   3169
+3169      : CPU goes idle.
+3192      : Process 10 joins ready queue.
+3192      : Process 10 scheduled to run for 2 (IO).   3194
+3194       : Process     10 exits. Turnaround time =  1022 (119%), Wait time = 161
+3194      : CPU goes idle.
+3222      : Process 15 joins ready queue.
+3222      : Process 15 scheduled to run for 15 (IO).   3237
+3224      : Process 12 joins ready queue.
+3237      : Process 12 scheduled to run for 11 (IO).   3248
+3248      : CPU goes idle.
+3284      : Process 14 joins ready queue.
+3284      : Process 14 scheduled to run for 3 (IO).   3287
+3287      : CPU goes idle.
+3296      : Process 13 joins ready queue.
+3296      : Process 13 scheduled to run for 8 (IO).   3304
+3304       : Process     13 exits. Turnaround time =   420 (101%), Wait time = 6
+3304      : CPU goes idle.
+3337      : Process 15 joins ready queue.
+3337      : Process 15 scheduled to run for 11 (IO).   3348
+3348      : CPU goes idle.
+3353      : Process 11 joins ready queue.
+3353      : Process 11 scheduled to run for 15 (IO).   3368
+3368      : CPU goes idle.
+3385      : Process 12 joins ready queue.
+3385      : Process 12 scheduled to run for 3 (IO).   3388
+3388      : CPU goes idle.
+3433      : Process 15 joins ready queue.
+3433      : Process 15 scheduled to run for 6 (IO).   3439
+3439      : CPU goes idle.
+3457      : Process 11 joins ready queue.
+3457      : Process 11 scheduled to run for 7 (IO).   3464
+3464       : Process     11 exits. Turnaround time =  1215 (119%), Wait time = 197
+3464      : CPU goes idle.
+3469      : Process 12 joins ready queue.
+3469      : Process 12 scheduled to run for 7 (IO).   3476
+3476      : CPU goes idle.
+3477      : Process 14 joins ready queue.
+3477      : Process 14 scheduled to run for 5 (IO).   3482
+3482      : CPU goes idle.
+3531      : Process 15 joins ready queue.
+3531      : Process 15 scheduled to run for 15 (IO).   3546
+3533      : Process 14 joins ready queue.
+3546      : Process 14 scheduled to run for 1 (IO).   3547
+3547      : CPU goes idle.
+3587      : Process 16 joins ready queue.
+3587      : Process 16 scheduled to run for 3 (IO).   3590
+3590      : CPU goes idle.
+3615      : Process 14 joins ready queue.
+3615      : Process 14 scheduled to run for 15 (IO).   3630
+3625      : Process 15 joins ready queue.
+3630      : Process 15 scheduled to run for 2 (IO).   3632
+3632      : CPU goes idle.
+3637      : Process 12 joins ready queue.
+3637      : Process 12 scheduled to run for 14 (IO).   3651
+3651      : CPU goes idle.
+3686      : Process 14 joins ready queue.
+3686      : Process 14 scheduled to run for 14 (IO).   3700
+3700      : CPU goes idle.
+3724      : Process 17 joins ready queue.
+3724      : Process 17 scheduled to run for 6 (IO).   3730
+3730      : CPU goes idle.
+3737      : Process 12 joins ready queue.
+3737      : Process 12 scheduled to run for 13 (IO).   3750
+3746      : Process 16 joins ready queue.
+3750       : Process     12 exits. Turnaround time =  1076 (102%), Wait time = 22
+3750      : Process 16 scheduled to run for 7 (IO).   3757
+3756      : Process 15 joins ready queue.
+3757      : Process 15 scheduled to run for 9 (IO).   3766
+3761      : Process 18 joins ready queue.
+3766      : Process 18 scheduled to run for 14 (IO).   3780
+3780      : CPU goes idle.
+3836      : Process 15 joins ready queue.
+3836      : Process 15 scheduled to run for 8 (IO).   3844
+3844      : CPU goes idle.
+3876      : Process 18 joins ready queue.
+3876      : Process 18 scheduled to run for 10 (IO).   3886
+3886      : Process 14 joins ready queue.
+3886      : Process 14 scheduled to run for 14 (IO).   3900
+3891      : Process 17 joins ready queue.
+3900      : Process 17 scheduled to run for 11 (IO).   3911
+3907      : Process 16 joins ready queue.
+3911      : Process 16 scheduled to run for 7 (IO).   3918
+3918      : CPU goes idle.
+3958      : Process 19 joins ready queue.
+3958      : Process 19 scheduled to run for 14 (IO).   3972
+3968      : Process 15 joins ready queue.
+3972      : Process 15 scheduled to run for 2 (IO).   3974
+3974      : CPU goes idle.
+4019      : Process 18 joins ready queue.
+4019      : Process 18 scheduled to run for 8 (IO).   4027
+4027      : Process 15 joins ready queue.
+4027      : Process 15 scheduled to run for 1 (IO).   4028
+4028      : CPU goes idle.
+4065      : Process 16 joins ready queue.
+4065      : Process 16 scheduled to run for 11 (IO).   4076
+4076      : CPU goes idle.
+4085      : Process 14 joins ready queue.
+4085      : Process 14 scheduled to run for 12 (IO).   4097
+4097      : Process 17 joins ready queue.
+4097       : Process     14 exits. Turnaround time =  1099 (101%), Wait time = 13
+4097      : Process 17 scheduled to run for 9 (IO).   4106
+4102      : Process 18 joins ready queue.
+4106      : Process 18 scheduled to run for 8 (IO).   4114
+4114      : CPU goes idle.
+4120      : Process 15 joins ready queue.
+4120      : Process 15 scheduled to run for 14 (IO).   4134
+4134       : Process     15 exits. Turnaround time =   912 (101%), Wait time = 10
+4134      : CPU goes idle.
+4158      : Process 19 joins ready queue.
+4158      : Process 19 scheduled to run for 4 (IO).   4162
+4159      : Process 17 joins ready queue.
+4162      : Process 17 scheduled to run for 15 (IO).   4177
+4177      : CPU goes idle.
+4203      : Process 16 joins ready queue.
+4203      : Process 16 scheduled to run for 3 (IO).   4206
+4206      : CPU goes idle.
+4250      : Process 18 joins ready queue.
+4250      : Process 18 scheduled to run for 1 (IO).   4251
+4251      : CPU goes idle.
+4283      : Process 16 joins ready queue.
+4283      : Process 16 scheduled to run for 11 (IO).   4294
+4294      : CPU goes idle.
+4307      : Process 19 joins ready queue.
+4307      : Process 19 scheduled to run for 14 (IO).   4321
+4321      : CPU goes idle.
+4326      : Process 17 joins ready queue.
+4326      : Process 17 scheduled to run for 3 (IO).   4329
+4329       : Process     17 exits. Turnaround time =   605 (102%), Wait time = 12
+4329      : CPU goes idle.
+4335      : Process 20 joins ready queue.
+4335      : Process 20 scheduled to run for 280 (IO).   4615
+4396      : Process 16 joins ready queue.
+4413      : Process 19 joins ready queue.
+4424      : Process 18 joins ready queue.
+4615      : Process 16 scheduled to run for 14 (IO).   4629
+4629       : Process     16 exits. Turnaround time =  1042 (128%), Wait time = 227
+4629      : Process 19 scheduled to run for 9 (IO).   4638
+4638      : Process 18 scheduled to run for 5 (IO).   4643
+4643      : CPU goes idle.
+4707      : Process 18 joins ready queue.
+4707      : Process 18 scheduled to run for 13 (IO).   4720
+4720      : CPU goes idle.
+4731      : Process 20 joins ready queue.
+4731      : Process 20 scheduled to run for 221 (IO).   4952
+4833      : Process 19 joins ready queue.
+4908      : Process 18 joins ready queue.
+4952      : Process 19 scheduled to run for 9 (IO).   4961
+4961      : Process 18 scheduled to run for 8 (IO).   4969
+4969      : CPU goes idle.
+5042      : Process 19 joins ready queue.
+5042      : Process 19 scheduled to run for 10 (IO).   5052
+5052      : CPU goes idle.
+5076      : Process 18 joins ready queue.
+5076      : Process 18 scheduled to run for 15 (IO).   5091
+5091       : Process     18 exits. Turnaround time =  1330 (126%), Wait time = 276
+5091      : CPU goes idle.
+5094      : Process 20 joins ready queue.
+5094      : Process 20 scheduled to run for 147 (IO).   5241
+5206      : Process 19 joins ready queue.
+5241      : Process 19 scheduled to run for 7 (IO).   5248
+5248       : Process     19 exits. Turnaround time =  1290 (140%), Wait time = 370
+5248      : CPU goes idle.
+5311      : Process 20 joins ready queue.
+5311      : Process 20 scheduled to run for 175 (IO).   5486
+5486      : CPU goes idle.
+5567      : Process 20 joins ready queue.
+5567      : Process 20 scheduled to run for 134 (IO).   5701
+5701      : CPU goes idle.
+5770      : Process 20 joins ready queue.
+5770      : Process 20 scheduled to run for 190 (IO).   5960
+5960      : CPU goes idle.
+6071      : Process 20 joins ready queue.
+6071      : Process 20 scheduled to run for 237 (IO).   6308
+6308       : Process     20 exits. Turnaround time =  1973 (100%), Wait time = 0
+6308      : CPU goes idle.
+
+Average wait time: 210.15
+Total turnaround time: 6308
+CPU idle time: 2752
+CPU utilization: 56.37%
+
+
+**** RR scheduling with q = 10 ****
+0         : Starting.
+0         : Process 1 joins ready queue.
+0         : Process 1 scheduled to run for 10  (premepted).  10
+10        : Process 1 joins ready queue.
+10        : Process 1 scheduled to run for 1 (IO).   11
+11        : CPU goes idle.
+91        : Process 2 joins ready queue.
+91        : Process 2 scheduled to run for 10  (premepted).  101
+101       : Process 2 joins ready queue.
+101       : Process 2 scheduled to run for 4 (IO).   105
+105       : CPU goes idle.
+126       : Process 1 joins ready queue.
+126       : Process 1 scheduled to run for 8 (IO).   134
+134       : CPU goes idle.
+234       : Process 2 joins ready queue.
+234       : Process 2 scheduled to run for 8 (IO).   242
+242       : CPU goes idle.
+278       : Process 1 joins ready queue.
+278       : Process 1 scheduled to run for 10 (IO).   288
+288       : CPU goes idle.
+326       : Process 2 joins ready queue.
+326       : Process 2 scheduled to run for 2 (IO).   328
+328       : CPU goes idle.
+399       : Process 1 joins ready queue.
+399       : Process 1 scheduled to run for 3 (IO).   402
+402       : CPU goes idle.
+459       : Process 2 joins ready queue.
+459       : Process 2 scheduled to run for 8 (IO).   467
+467       : CPU goes idle.
+493       : Process 3 joins ready queue.
+493       : Process 3 scheduled to run for 10  (premepted).  503
+503       : Process 3 joins ready queue.
+503       : Process 3 scheduled to run for 3 (IO).   506
+506       : CPU goes idle.
+511       : Process 1 joins ready queue.
+511       : Process 1 scheduled to run for 10  (premepted).  521
+521       : Process 1 joins ready queue.
+521       : Process 1 scheduled to run for 2 (IO).   523
+523       : CPU goes idle.
+599       : Process 1 joins ready queue.
+599       : Process 1 scheduled to run for 5 (IO).   604
+604       : CPU goes idle.
+644       : Process 3 joins ready queue.
+644       : Process 3 scheduled to run for 1 (IO).   645
+645       : CPU goes idle.
+653       : Process 2 joins ready queue.
+653       : Process 2 scheduled to run for 10  (premepted).  663
+663       : Process 2 joins ready queue.
+663       : Process 2 scheduled to run for 5 (IO).   668
+668       : CPU goes idle.
+705       : Process 3 joins ready queue.
+705       : Process 3 scheduled to run for 1 (IO).   706
+706       : CPU goes idle.
+735       : Process 2 joins ready queue.
+735       : Process 2 scheduled to run for 4 (IO).   739
+739        : Process      2 exits. Turnaround time =   648 (100%), Wait time = 0
+739       : CPU goes idle.
+774       : Process 1 joins ready queue.
+774       : Process 1 scheduled to run for 9 (IO).   783
+783        : Process      1 exits. Turnaround time =   783 (100%), Wait time = 0
+783       : CPU goes idle.
+796       : Process 4 joins ready queue.
+796       : Process 4 scheduled to run for 4 (IO).   800
+800       : CPU goes idle.
+840       : Process 3 joins ready queue.
+840       : Process 3 scheduled to run for 9 (IO).   849
+849       : CPU goes idle.
+891       : Process 4 joins ready queue.
+891       : Process 4 scheduled to run for 10  (premepted).  901
+901       : Process 4 joins ready queue.
+901       : Process 4 scheduled to run for 2 (IO).   903
+903       : CPU goes idle.
+913       : Process 3 joins ready queue.
+913       : Process 3 scheduled to run for 9 (IO).   922
+922       : CPU goes idle.
+978       : Process 5 joins ready queue.
+978       : Process 5 scheduled to run for 10  (premepted).  988
+988       : Process 5 joins ready queue.
+988       : Process 5 scheduled to run for 10  (premepted).  998
+998       : Process 5 joins ready queue.
+998       : Process 5 scheduled to run for 10  (premepted).  1008
+1008      : Process 5 joins ready queue.
+1008      : Process 5 scheduled to run for 10  (premepted).  1018
+1018      : Process 5 joins ready queue.
+1018      : Process 5 scheduled to run for 10  (premepted).  1028
+1028      : Process 5 joins ready queue.
+1028      : Process 5 scheduled to run for 10  (premepted).  1038
+1037      : Process 4 joins ready queue.
+1038      : Process 5 joins ready queue.
+1038      : Process 4 scheduled to run for 10  (premepted).  1048
+1048      : Process 4 joins ready queue.
+1048      : Process 5 scheduled to run for 10  (premepted).  1058
+1058      : Process 5 joins ready queue.
+1058      : Process 4 scheduled to run for 3 (IO).   1061
+1061      : Process 5 scheduled to run for 10  (premepted).  1071
+1071      : Process 5 joins ready queue.
+1071      : Process 5 scheduled to run for 10  (premepted).  1081
+1081      : Process 5 joins ready queue.
+1081      : Process 5 scheduled to run for 10  (premepted).  1091
+1091      : Process 5 joins ready queue.
+1091      : Process 5 scheduled to run for 10  (premepted).  1101
+1098      : Process 3 joins ready queue.
+1101      : Process 5 joins ready queue.
+1101      : Process 3 scheduled to run for 5 (IO).   1106
+1106      : Process 5 scheduled to run for 10  (premepted).  1116
+1112      : Process 4 joins ready queue.
+1116      : Process 6 joins ready queue.
+1116      : Process 5 joins ready queue.
+1116      : Process 4 scheduled to run for 7 (IO).   1123
+1123      : Process 6 scheduled to run for 10  (premepted).  1133
+1133      : Process 6 joins ready queue.
+1133      : Process 5 scheduled to run for 10  (premepted).  1143
+1143      : Process 5 joins ready queue.
+1143      : Process 6 scheduled to run for 4 (IO).   1147
+1147      : Process 5 scheduled to run for 10  (premepted).  1157
+1156      : Process 3 joins ready queue.
+1157      : Process 5 joins ready queue.
+1157      : Process 3 scheduled to run for 6 (IO).   1163
+1163      : Process 5 scheduled to run for 10  (premepted).  1173
+1173      : Process 5 joins ready queue.
+1173      : Process 5 scheduled to run for 10  (premepted).  1183
+1183      : Process 5 joins ready queue.
+1183      : Process 5 scheduled to run for 10 (IO).   1193
+1193      : CPU goes idle.
+1200      : Process 6 joins ready queue.
+1200      : Process 6 scheduled to run for 4 (IO).   1204
+1204      : CPU goes idle.
+1241      : Process 4 joins ready queue.
+1241      : Process 4 scheduled to run for 3 (IO).   1244
+1244      : CPU goes idle.
+1269      : Process 6 joins ready queue.
+1269      : Process 6 scheduled to run for 7 (IO).   1276
+1276      : CPU goes idle.
+1283      : Process 5 joins ready queue.
+1283      : Process 5 scheduled to run for 10  (premepted).  1293
+1293      : Process 5 joins ready queue.
+1293      : Process 5 scheduled to run for 10  (premepted).  1303
+1303      : Process 5 joins ready queue.
+1303      : Process 5 scheduled to run for 10  (premepted).  1313
+1307      : Process 3 joins ready queue.
+1313      : Process 5 joins ready queue.
+1313      : Process 3 scheduled to run for 5 (IO).   1318
+1316      : Process 4 joins ready queue.
+1318      : Process 5 scheduled to run for 10  (premepted).  1328
+1328      : Process 5 joins ready queue.
+1328      : Process 4 scheduled to run for 10  (premepted).  1338
+1338      : Process 4 joins ready queue.
+1338      : Process 5 scheduled to run for 10  (premepted).  1348
+1347      : Process 7 joins ready queue.
+1348      : Process 5 joins ready queue.
+1348      : Process 4 scheduled to run for 1 (IO).   1349
+1349      : Process 7 scheduled to run for 10  (premepted).  1359
+1356      : Process 6 joins ready queue.
+1359      : Process 7 joins ready queue.
+1359      : Process 5 scheduled to run for 10  (premepted).  1369
+1369      : Process 5 joins ready queue.
+1369      : Process 6 scheduled to run for 8 (IO).   1377
+1377      : Process 7 scheduled to run for 5 (IO).   1382
+1382      : Process 5 scheduled to run for 10  (premepted).  1392
+1392      : Process 5 joins ready queue.
+1392      : Process 5 scheduled to run for 10  (premepted).  1402
+1402      : Process 5 joins ready queue.
+1402      : Process 5 scheduled to run for 10  (premepted).  1412
+1412      : Process 5 joins ready queue.
+1412      : Process 5 scheduled to run for 10  (premepted).  1422
+1422      : Process 5 joins ready queue.
+1422      : Process 5 scheduled to run for 10  (premepted).  1432
+1429      : Process 4 joins ready queue.
+1432      : Process 5 joins ready queue.
+1432      : Process 4 scheduled to run for 5 (IO).   1437
+1437      : Process 5 scheduled to run for 10  (premepted).  1447
+1447      : Process 5 joins ready queue.
+1447      : Process 5 scheduled to run for 10  (premepted).  1457
+1451      : Process 7 joins ready queue.
+1457      : Process 5 joins ready queue.
+1457      : Process 7 scheduled to run for 5 (IO).   1462
+1462      : Process 5 scheduled to run for 10  (premepted).  1472
+1472      : Process 5 joins ready queue.
+1472      : Process 5 scheduled to run for 10  (premepted).  1482
+1482      : Process 5 joins ready queue.
+1482      : Process 5 scheduled to run for 10  (premepted).  1492
+1485      : Process 6 joins ready queue.
+1492      : Process 5 joins ready queue.
+1492      : Process 6 scheduled to run for 10  (premepted).  1502
+1502      : Process 6 joins ready queue.
+1502      : Process 5 scheduled to run for 10  (premepted).  1512
+1512      : Process 5 joins ready queue.
+1512      : Process 6 scheduled to run for 2 (IO).   1514
+1514      : Process 5 scheduled to run for 10  (premepted).  1524
+1516      : Process 3 joins ready queue.
+1524      : Process 5 joins ready queue.
+1524      : Process 3 scheduled to run for 10  (premepted).  1534
+1534      : Process 3 joins ready queue.
+1534      : Process 5 scheduled to run for 10  (premepted).  1544
+1544      : Process 5 joins ready queue.
+1544      : Process 3 scheduled to run for 4 (IO).   1548
+1548      : Process 7 joins ready queue.
+1548       : Process      3 exits. Turnaround time =  1055 (103%), Wait time = 28
+1548      : Process 5 scheduled to run for 10  (premepted).  1558
+1558      : Process 5 joins ready queue.
+1558      : Process 7 scheduled to run for 6 (IO).   1564
+1564      : Process 5 scheduled to run for 10  (premepted).  1574
+1574      : Process 5 joins ready queue.
+1574      : Process 5 scheduled to run for 10  (premepted).  1584
+1584      : Process 5 joins ready queue.
+1584      : Process 5 scheduled to run for 7 (IO).   1591
+1591      : CPU goes idle.
+1611      : Process 4 joins ready queue.
+1611      : Process 4 scheduled to run for 3 (IO).   1614
+1614      : CPU goes idle.
+1663      : Process 5 joins ready queue.
+1663      : Process 5 scheduled to run for 10  (premepted).  1673
+1673      : Process 5 joins ready queue.
+1673      : Process 5 scheduled to run for 10  (premepted).  1683
+1683      : Process 8 joins ready queue.
+1683      : Process 5 joins ready queue.
+1683      : Process 8 scheduled to run for 10  (premepted).  1693
+1693      : Process 8 joins ready queue.
+1693      : Process 5 scheduled to run for 10  (premepted).  1703
+1703      : Process 5 joins ready queue.
+1703      : Process 8 scheduled to run for 2 (IO).   1705
+1705      : Process 5 scheduled to run for 10  (premepted).  1715
+1710      : Process 6 joins ready queue.
+1715      : Process 5 joins ready queue.
+1715      : Process 6 scheduled to run for 10  (premepted).  1725
+1724      : Process 7 joins ready queue.
+1725      : Process 6 joins ready queue.
+1725      : Process 5 scheduled to run for 10  (premepted).  1735
+1735      : Process 5 joins ready queue.
+1735      : Process 7 scheduled to run for 4 (IO).   1739
+1739      : Process 6 scheduled to run for 2 (IO).   1741
+1741      : Process 5 scheduled to run for 10  (premepted).  1751
+1751      : Process 5 joins ready queue.
+1751      : Process 5 scheduled to run for 10  (premepted).  1761
+1761      : Process 5 joins ready queue.
+1761      : Process 5 scheduled to run for 10  (premepted).  1771
+1771      : Process 5 joins ready queue.
+1771      : Process 5 scheduled to run for 10  (premepted).  1781
+1774      : Process 9 joins ready queue.
+1781      : Process 5 joins ready queue.
+1781      : Process 9 scheduled to run for 10  (premepted).  1791
+1791      : Process 9 joins ready queue.
+1791      : Process 5 scheduled to run for 10  (premepted).  1801
+1801      : Process 5 joins ready queue.
+1801      : Process 9 scheduled to run for 4 (IO).   1805
+1804      : Process 4 joins ready queue.
+1805      : Process 5 scheduled to run for 10  (premepted).  1815
+1815      : Process 5 joins ready queue.
+1815      : Process 4 scheduled to run for 10  (premepted).  1825
+1825      : Process 4 joins ready queue.
+1825      : Process 5 scheduled to run for 10  (premepted).  1835
+1835      : Process 5 joins ready queue.
+1835      : Process 4 scheduled to run for 3 (IO).   1838
+1838       : Process      4 exits. Turnaround time =  1042 (106%), Wait time = 61
+1838      : Process 5 scheduled to run for 10  (premepted).  1848
+1848      : Process 5 joins ready queue.
+1848      : Process 5 scheduled to run for 10  (premepted).  1858
+1858      : Process 5 joins ready queue.
+1858      : Process 5 scheduled to run for 10  (premepted).  1868
+1868      : Process 5 joins ready queue.
+1868      : Process 5 scheduled to run for 10  (premepted).  1878
+1878      : Process 7 joins ready queue.
+1878      : Process 5 joins ready queue.
+1878      : Process 7 scheduled to run for 10  (premepted).  1888
+1886      : Process 6 joins ready queue.
+1888      : Process 7 joins ready queue.
+1888      : Process 5 scheduled to run for 5 (IO).   1893
+1890      : Process 8 joins ready queue.
+1893      : Process 6 scheduled to run for 2 (IO).   1895
+1895      : Process 7 scheduled to run for 1 (IO).   1896
+1896      : Process 8 scheduled to run for 5 (IO).   1901
+1901      : CPU goes idle.
+1971      : Process 9 joins ready queue.
+1971      : Process 9 scheduled to run for 8 (IO).   1979
+1979      : CPU goes idle.
+2001      : Process 8 joins ready queue.
+2001      : Process 8 scheduled to run for 10 (IO).   2011
+2011      : CPU goes idle.
+2030      : Process 7 joins ready queue.
+2030      : Process 7 scheduled to run for 10 (IO).   2040
+2031      : Process 6 joins ready queue.
+2040       : Process      7 exits. Turnaround time =   693 (108%), Wait time = 54
+2040      : Process 6 scheduled to run for 2 (IO).   2042
+2042      : CPU goes idle.
+2054      : Process 9 joins ready queue.
+2054      : Process 9 scheduled to run for 10  (premepted).  2064
+2064      : Process 9 joins ready queue.
+2064      : Process 9 scheduled to run for 1 (IO).   2065
+2065      : CPU goes idle.
+2072      : Process 5 joins ready queue.
+2072      : Process 5 scheduled to run for 10  (premepted).  2082
+2082      : Process 5 joins ready queue.
+2082      : Process 5 scheduled to run for 10  (premepted).  2092
+2092      : Process 5 joins ready queue.
+2092      : Process 5 scheduled to run for 10  (premepted).  2102
+2102      : Process 5 joins ready queue.
+2102      : Process 5 scheduled to run for 10  (premepted).  2112
+2112      : Process 5 joins ready queue.
+2112      : Process 5 scheduled to run for 10  (premepted).  2122
+2122      : Process 5 joins ready queue.
+2122      : Process 5 scheduled to run for 10  (premepted).  2132
+2132      : Process 5 joins ready queue.
+2132      : Process 5 scheduled to run for 10  (premepted).  2142
+2140      : Process 9 joins ready queue.
+2142      : Process 5 joins ready queue.
+2142      : Process 9 scheduled to run for 8 (IO).   2150
+2150      : Process 5 scheduled to run for 10  (premepted).  2160
+2158      : Process 8 joins ready queue.
+2160      : Process 5 joins ready queue.
+2160      : Process 8 scheduled to run for 6 (IO).   2166
+2166      : Process 5 scheduled to run for 10  (premepted).  2176
+2172      : Process 10 joins ready queue.
+2176      : Process 5 joins ready queue.
+2176      : Process 10 scheduled to run for 10  (premepted).  2186
+2186      : Process 10 joins ready queue.
+2186      : Process 5 scheduled to run for 10  (premepted).  2196
+2196      : Process 5 joins ready queue.
+2196      : Process 10 scheduled to run for 1 (IO).   2197
+2197      : Process 5 scheduled to run for 10  (premepted).  2207
+2207      : Process 5 joins ready queue.
+2207      : Process 5 scheduled to run for 10  (premepted).  2217
+2217      : Process 5 joins ready queue.
+2217      : Process 5 scheduled to run for 10  (premepted).  2227
+2219      : Process 9 joins ready queue.
+2227      : Process 6 joins ready queue.
+2227      : Process 5 joins ready queue.
+2227      : Process 9 scheduled to run for 10  (premepted).  2237
+2237      : Process 9 joins ready queue.
+2237      : Process 6 scheduled to run for 7 (IO).   2244
+2244      : Process 5 scheduled to run for 10  (premepted).  2254
+2249      : Process 11 joins ready queue.
+2254      : Process 5 joins ready queue.
+2254      : Process 9 scheduled to run for 5 (IO).   2259
+2259      : Process 11 scheduled to run for 10  (premepted).  2269
+2269      : Process 11 joins ready queue.
+2269      : Process 5 scheduled to run for 10  (premepted).  2279
+2279      : Process 5 joins ready queue.
+2279      : Process 11 scheduled to run for 2 (IO).   2281
+2281      : Process 5 scheduled to run for 10  (premepted).  2291
+2291      : Process 5 joins ready queue.
+2291      : Process 5 scheduled to run for 10  (premepted).  2301
+2301      : Process 5 joins ready queue.
+2301      : Process 5 scheduled to run for 10  (premepted).  2311
+2311      : Process 9 joins ready queue.
+2311      : Process 5 joins ready queue.
+2311      : Process 9 scheduled to run for 2 (IO).   2313
+2313      : Process 5 scheduled to run for 10  (premepted).  2323
+2323      : Process 5 joins ready queue.
+2323      : Process 5 scheduled to run for 10  (premepted).  2333
+2328      : Process 8 joins ready queue.
+2333      : Process 5 joins ready queue.
+2333      : Process 8 scheduled to run for 3 (IO).   2336
+2336       : Process      8 exits. Turnaround time =   653 (104%), Wait time = 23
+2336      : Process 5 scheduled to run for 7 (IO).   2343
+2343      : CPU goes idle.
+2354      : Process 10 joins ready queue.
+2354      : Process 10 scheduled to run for 10  (premepted).  2364
+2364      : Process 10 joins ready queue.
+2364      : Process 10 scheduled to run for 3 (IO).   2367
+2367      : CPU goes idle.
+2425      : Process 6 joins ready queue.
+2425      : Process 6 scheduled to run for 1 (IO).   2426
+2426       : Process      6 exits. Turnaround time =  1310 (108%), Wait time = 92
+2426      : CPU goes idle.
+2441      : Process 5 joins ready queue.
+2441      : Process 5 scheduled to run for 10  (premepted).  2451
+2441      : Process 9 joins ready queue.
+2445      : Process 11 joins ready queue.
+2451      : Process 5 joins ready queue.
+2451      : Process 9 scheduled to run for 10 (IO).   2461
+2459      : Process 10 joins ready queue.
+2461       : Process      9 exits. Turnaround time =   687 (109%), Wait time = 54
+2461      : Process 11 scheduled to run for 3 (IO).   2464
+2464      : Process 5 scheduled to run for 10  (premepted).  2474
+2474      : Process 5 joins ready queue.
+2474      : Process 10 scheduled to run for 10  (premepted).  2484
+2484      : Process 10 joins ready queue.
+2484      : Process 5 scheduled to run for 10  (premepted).  2494
+2494      : Process 5 joins ready queue.
+2494      : Process 10 scheduled to run for 4 (IO).   2498
+2498      : Process 5 scheduled to run for 10  (premepted).  2508
+2508      : Process 5 joins ready queue.
+2508      : Process 5 scheduled to run for 10  (premepted).  2518
+2518      : Process 5 joins ready queue.
+2518      : Process 5 scheduled to run for 10  (premepted).  2528
+2528      : Process 5 joins ready queue.
+2528      : Process 5 scheduled to run for 10  (premepted).  2538
+2538      : Process 5 joins ready queue.
+2538      : Process 5 scheduled to run for 10  (premepted).  2548
+2548      : Process 5 joins ready queue.
+2548      : Process 5 scheduled to run for 10  (premepted).  2558
+2558      : Process 5 joins ready queue.
+2558      : Process 5 scheduled to run for 10  (premepted).  2568
+2568      : Process 5 joins ready queue.
+2568      : Process 5 scheduled to run for 10  (premepted).  2578
+2569      : Process 11 joins ready queue.
+2578      : Process 5 joins ready queue.
+2578      : Process 11 scheduled to run for 10  (premepted).  2588
+2588      : Process 11 joins ready queue.
+2588      : Process 5 scheduled to run for 3 (IO).   2591
+2591      : Process 11 scheduled to run for 5 (IO).   2596
+2596      : CPU goes idle.
+2653      : Process 10 joins ready queue.
+2653      : Process 10 scheduled to run for 10  (premepted).  2663
+2663      : Process 10 joins ready queue.
+2663      : Process 10 scheduled to run for 4 (IO).   2667
+2667      : CPU goes idle.
+2674      : Process 12 joins ready queue.
+2674      : Process 12 scheduled to run for 5 (IO).   2679
+2679      : CPU goes idle.
+2715      : Process 11 joins ready queue.
+2715      : Process 11 scheduled to run for 10  (premepted).  2725
+2725      : Process 11 joins ready queue.
+2725      : Process 11 scheduled to run for 5 (IO).   2730
+2730      : CPU goes idle.
+2732      : Process 5 joins ready queue.
+2732      : Process 5 scheduled to run for 10  (premepted).  2742
+2742      : Process 5 joins ready queue.
+2742      : Process 5 scheduled to run for 10  (premepted).  2752
+2751      : Process 12 joins ready queue.
+2752      : Process 5 joins ready queue.
+2752      : Process 12 scheduled to run for 8 (IO).   2760
+2760      : Process 5 scheduled to run for 10  (premepted).  2770
+2770      : Process 5 joins ready queue.
+2770      : Process 5 scheduled to run for 10  (premepted).  2780
+2780      : Process 5 joins ready queue.
+2780      : Process 5 scheduled to run for 10  (premepted).  2790
+2785      : Process 10 joins ready queue.
+2790      : Process 5 joins ready queue.
+2790      : Process 10 scheduled to run for 9 (IO).   2799
+2799      : Process 5 scheduled to run for 10  (premepted).  2809
+2809      : Process 5 joins ready queue.
+2809      : Process 5 scheduled to run for 10  (premepted).  2819
+2819      : Process 5 joins ready queue.
+2819      : Process 5 scheduled to run for 10  (premepted).  2829
+2828      : Process 11 joins ready queue.
+2829      : Process 5 joins ready queue.
+2829      : Process 11 scheduled to run for 10  (premepted).  2839
+2839      : Process 11 joins ready queue.
+2839      : Process 5 scheduled to run for 10  (premepted).  2849
+2849      : Process 5 joins ready queue.
+2849      : Process 11 scheduled to run for 4 (IO).   2853
+2853      : Process 5 scheduled to run for 10  (premepted).  2863
+2863      : Process 5 joins ready queue.
+2863      : Process 5 scheduled to run for 10  (premepted).  2873
+2873      : Process 5 joins ready queue.
+2873      : Process 5 scheduled to run for 10  (premepted).  2883
+2883      : Process 5 joins ready queue.
+2883      : Process 5 scheduled to run for 10  (premepted).  2893
+2884      : Process 12 joins ready queue.
+2884      : Process 13 joins ready queue.
+2893      : Process 5 joins ready queue.
+2893      : Process 12 scheduled to run for 10  (premepted).  2903
+2903      : Process 12 joins ready queue.
+2903      : Process 13 scheduled to run for 5 (IO).   2908
+2908      : Process 5 scheduled to run for 10 (IO).   2918
+2918       : Process      5 exits. Turnaround time =  1940 (121%), Wait time = 338
+2918      : Process 12 scheduled to run for 5 (IO).   2923
+2923      : CPU goes idle.
+2935      : Process 10 joins ready queue.
+2935      : Process 10 scheduled to run for 10 (IO).   2945
+2945      : CPU goes idle.
+2955      : Process 11 joins ready queue.
+2955      : Process 11 scheduled to run for 7 (IO).   2962
+2962      : CPU goes idle.
+2998      : Process 14 joins ready queue.
+2998      : Process 14 scheduled to run for 5 (IO).   3003
+3003      : CPU goes idle.
+3014      : Process 13 joins ready queue.
+3014      : Process 13 scheduled to run for 2 (IO).   3016
+3016      : CPU goes idle.
+3019      : Process 11 joins ready queue.
+3019      : Process 11 scheduled to run for 10  (premepted).  3029
+3029      : Process 11 joins ready queue.
+3029      : Process 11 scheduled to run for 2 (IO).   3031
+3031      : CPU goes idle.
+3075      : Process 10 joins ready queue.
+3075      : Process 10 scheduled to run for 2 (IO).   3077
+3077       : Process     10 exits. Turnaround time =   905 (105%), Wait time = 44
+3077      : CPU goes idle.
+3098      : Process 12 joins ready queue.
+3098      : Process 12 scheduled to run for 7 (IO).   3105
+3105      : CPU goes idle.
+3113      : Process 13 joins ready queue.
+3113      : Process 13 scheduled to run for 10 (IO).   3123
+3123      : CPU goes idle.
+3133      : Process 14 joins ready queue.
+3133      : Process 14 scheduled to run for 1 (IO).   3134
+3134      : CPU goes idle.
+3215      : Process 11 joins ready queue.
+3215      : Process 11 scheduled to run for 10  (premepted).  3225
+3222      : Process 15 joins ready queue.
+3225      : Process 11 joins ready queue.
+3225      : Process 15 scheduled to run for 10  (premepted).  3235
+3235      : Process 15 joins ready queue.
+3235      : Process 11 scheduled to run for 5 (IO).   3240
+3240      : Process 12 joins ready queue.
+3240      : Process 15 scheduled to run for 5 (IO).   3245
+3245      : Process 12 scheduled to run for 10  (premepted).  3255
+3255      : Process 12 joins ready queue.
+3255      : Process 12 scheduled to run for 1 (IO).   3256
+3256      : CPU goes idle.
+3284      : Process 14 joins ready queue.
+3284      : Process 14 scheduled to run for 3 (IO).   3287
+3287      : CPU goes idle.
+3309      : Process 13 joins ready queue.
+3309      : Process 13 scheduled to run for 8 (IO).   3317
+3317       : Process     13 exits. Turnaround time =   433 (105%), Wait time = 19
+3317      : CPU goes idle.
+3329      : Process 11 joins ready queue.
+3329      : Process 11 scheduled to run for 7 (IO).   3336
+3336       : Process     11 exits. Turnaround time =  1087 (107%), Wait time = 69
+3336      : CPU goes idle.
+3345      : Process 15 joins ready queue.
+3345      : Process 15 scheduled to run for 10  (premepted).  3355
+3355      : Process 15 joins ready queue.
+3355      : Process 15 scheduled to run for 1 (IO).   3356
+3356      : CPU goes idle.
+3393      : Process 12 joins ready queue.
+3393      : Process 12 scheduled to run for 3 (IO).   3396
+3396      : CPU goes idle.
+3441      : Process 15 joins ready queue.
+3441      : Process 15 scheduled to run for 6 (IO).   3447
+3447      : CPU goes idle.
+3477      : Process 12 joins ready queue.
+3477      : Process 12 scheduled to run for 7 (IO).   3484
+3477      : Process 14 joins ready queue.
+3484      : Process 14 scheduled to run for 5 (IO).   3489
+3489      : CPU goes idle.
+3539      : Process 15 joins ready queue.
+3539      : Process 15 scheduled to run for 10  (premepted).  3549
+3540      : Process 14 joins ready queue.
+3549      : Process 15 joins ready queue.
+3549      : Process 14 scheduled to run for 1 (IO).   3550
+3550      : Process 15 scheduled to run for 5 (IO).   3555
+3555      : CPU goes idle.
+3587      : Process 16 joins ready queue.
+3587      : Process 16 scheduled to run for 3 (IO).   3590
+3590      : CPU goes idle.
+3618      : Process 14 joins ready queue.
+3618      : Process 14 scheduled to run for 10  (premepted).  3628
+3628      : Process 14 joins ready queue.
+3628      : Process 14 scheduled to run for 5 (IO).   3633
+3633      : CPU goes idle.
+3634      : Process 15 joins ready queue.
+3634      : Process 15 scheduled to run for 2 (IO).   3636
+3636      : CPU goes idle.
+3645      : Process 12 joins ready queue.
+3645      : Process 12 scheduled to run for 10  (premepted).  3655
+3655      : Process 12 joins ready queue.
+3655      : Process 12 scheduled to run for 4 (IO).   3659
+3659      : CPU goes idle.
+3689      : Process 14 joins ready queue.
+3689      : Process 14 scheduled to run for 10  (premepted).  3699
+3699      : Process 14 joins ready queue.
+3699      : Process 14 scheduled to run for 4 (IO).   3703
+3703      : CPU goes idle.
+3724      : Process 17 joins ready queue.
+3724      : Process 17 scheduled to run for 6 (IO).   3730
+3730      : CPU goes idle.
+3745      : Process 12 joins ready queue.
+3745      : Process 12 scheduled to run for 10  (premepted).  3755
+3746      : Process 16 joins ready queue.
+3755      : Process 12 joins ready queue.
+3755      : Process 16 scheduled to run for 7 (IO).   3762
+3760      : Process 15 joins ready queue.
+3761      : Process 18 joins ready queue.
+3762      : Process 12 scheduled to run for 3 (IO).   3765
+3765       : Process     12 exits. Turnaround time =  1091 (104%), Wait time = 37
+3765      : Process 15 scheduled to run for 9 (IO).   3774
+3774      : Process 18 scheduled to run for 10  (premepted).  3784
+3784      : Process 18 joins ready queue.
+3784      : Process 18 scheduled to run for 4 (IO).   3788
+3788      : CPU goes idle.
+3844      : Process 15 joins ready queue.
+3844      : Process 15 scheduled to run for 8 (IO).   3852
+3852      : CPU goes idle.
+3884      : Process 18 joins ready queue.
+3884      : Process 18 scheduled to run for 10 (IO).   3894
+3889      : Process 14 joins ready queue.
+3891      : Process 17 joins ready queue.
+3894      : Process 14 scheduled to run for 10  (premepted).  3904
+3904      : Process 14 joins ready queue.
+3904      : Process 17 scheduled to run for 10  (premepted).  3914
+3912      : Process 16 joins ready queue.
+3914      : Process 17 joins ready queue.
+3914      : Process 14 scheduled to run for 4 (IO).   3918
+3918      : Process 16 scheduled to run for 7 (IO).   3925
+3925      : Process 17 scheduled to run for 1 (IO).   3926
+3926      : CPU goes idle.
+3958      : Process 19 joins ready queue.
+3958      : Process 19 scheduled to run for 10  (premepted).  3968
+3968      : Process 19 joins ready queue.
+3968      : Process 19 scheduled to run for 4 (IO).   3972
+3972      : CPU goes idle.
+3976      : Process 15 joins ready queue.
+3976      : Process 15 scheduled to run for 2 (IO).   3978
+3978      : CPU goes idle.
+4027      : Process 18 joins ready queue.
+4027      : Process 18 scheduled to run for 8 (IO).   4035
+4031      : Process 15 joins ready queue.
+4035      : Process 15 scheduled to run for 1 (IO).   4036
+4036      : CPU goes idle.
+4072      : Process 16 joins ready queue.
+4072      : Process 16 scheduled to run for 10  (premepted).  4082
+4082      : Process 16 joins ready queue.
+4082      : Process 16 scheduled to run for 1 (IO).   4083
+4083      : CPU goes idle.
+4103      : Process 14 joins ready queue.
+4103      : Process 14 scheduled to run for 10  (premepted).  4113
+4110      : Process 18 joins ready queue.
+4112      : Process 17 joins ready queue.
+4113      : Process 14 joins ready queue.
+4113      : Process 18 scheduled to run for 8 (IO).   4121
+4121      : Process 17 scheduled to run for 9 (IO).   4130
+4128      : Process 15 joins ready queue.
+4130      : Process 14 scheduled to run for 2 (IO).   4132
+4132       : Process     14 exits. Turnaround time =  1134 (104%), Wait time = 48
+4132      : Process 15 scheduled to run for 10  (premepted).  4142
+4142      : Process 15 joins ready queue.
+4142      : Process 15 scheduled to run for 4 (IO).   4146
+4146       : Process     15 exits. Turnaround time =   924 (102%), Wait time = 22
+4146      : CPU goes idle.
+4158      : Process 19 joins ready queue.
+4158      : Process 19 scheduled to run for 4 (IO).   4162
+4162      : CPU goes idle.
+4183      : Process 17 joins ready queue.
+4183      : Process 17 scheduled to run for 10  (premepted).  4193
+4193      : Process 17 joins ready queue.
+4193      : Process 17 scheduled to run for 5 (IO).   4198
+4198      : CPU goes idle.
+4210      : Process 16 joins ready queue.
+4210      : Process 16 scheduled to run for 3 (IO).   4213
+4213      : CPU goes idle.
+4257      : Process 18 joins ready queue.
+4257      : Process 18 scheduled to run for 1 (IO).   4258
+4258      : CPU goes idle.
+4290      : Process 16 joins ready queue.
+4290      : Process 16 scheduled to run for 10  (premepted).  4300
+4300      : Process 16 joins ready queue.
+4300      : Process 16 scheduled to run for 1 (IO).   4301
+4301      : CPU goes idle.
+4307      : Process 19 joins ready queue.
+4307      : Process 19 scheduled to run for 10  (premepted).  4317
+4317      : Process 19 joins ready queue.
+4317      : Process 19 scheduled to run for 4 (IO).   4321
+4321      : CPU goes idle.
+4335      : Process 20 joins ready queue.
+4335      : Process 20 scheduled to run for 10  (premepted).  4345
+4345      : Process 20 joins ready queue.
+4345      : Process 20 scheduled to run for 10  (premepted).  4355
+4347      : Process 17 joins ready queue.
+4355      : Process 20 joins ready queue.
+4355      : Process 17 scheduled to run for 3 (IO).   4358
+4358       : Process     17 exits. Turnaround time =   634 (107%), Wait time = 41
+4358      : Process 20 scheduled to run for 10  (premepted).  4368
+4368      : Process 20 joins ready queue.
+4368      : Process 20 scheduled to run for 10  (premepted).  4378
+4378      : Process 20 joins ready queue.
+4378      : Process 20 scheduled to run for 10  (premepted).  4388
+4388      : Process 20 joins ready queue.
+4388      : Process 20 scheduled to run for 10  (premepted).  4398
+4398      : Process 20 joins ready queue.
+4398      : Process 20 scheduled to run for 10  (premepted).  4408
+4403      : Process 16 joins ready queue.
+4408      : Process 20 joins ready queue.
+4408      : Process 16 scheduled to run for 10  (premepted).  4418
+4413      : Process 19 joins ready queue.
+4418      : Process 16 joins ready queue.
+4418      : Process 20 scheduled to run for 10  (premepted).  4428
+4428      : Process 20 joins ready queue.
+4428      : Process 19 scheduled to run for 9 (IO).   4437
+4431      : Process 18 joins ready queue.
+4437      : Process 16 scheduled to run for 4 (IO).   4441
+4441       : Process     16 exits. Turnaround time =   854 (105%), Wait time = 39
+4441      : Process 20 scheduled to run for 10  (premepted).  4451
+4451      : Process 20 joins ready queue.
+4451      : Process 18 scheduled to run for 5 (IO).   4456
+4456      : Process 20 scheduled to run for 10  (premepted).  4466
+4466      : Process 20 joins ready queue.
+4466      : Process 20 scheduled to run for 10  (premepted).  4476
+4476      : Process 20 joins ready queue.
+4476      : Process 20 scheduled to run for 10  (premepted).  4486
+4486      : Process 20 joins ready queue.
+4486      : Process 20 scheduled to run for 10  (premepted).  4496
+4496      : Process 20 joins ready queue.
+4496      : Process 20 scheduled to run for 10  (premepted).  4506
+4506      : Process 20 joins ready queue.
+4506      : Process 20 scheduled to run for 10  (premepted).  4516
+4516      : Process 20 joins ready queue.
+4516      : Process 20 scheduled to run for 10  (premepted).  4526
+4520      : Process 18 joins ready queue.
+4526      : Process 20 joins ready queue.
+4526      : Process 18 scheduled to run for 10  (premepted).  4536
+4536      : Process 18 joins ready queue.
+4536      : Process 20 scheduled to run for 10  (premepted).  4546
+4546      : Process 20 joins ready queue.
+4546      : Process 18 scheduled to run for 3 (IO).   4549
+4549      : Process 20 scheduled to run for 10  (premepted).  4559
+4559      : Process 20 joins ready queue.
+4559      : Process 20 scheduled to run for 10  (premepted).  4569
+4569      : Process 20 joins ready queue.
+4569      : Process 20 scheduled to run for 10  (premepted).  4579
+4579      : Process 20 joins ready queue.
+4579      : Process 20 scheduled to run for 10  (premepted).  4589
+4589      : Process 20 joins ready queue.
+4589      : Process 20 scheduled to run for 10  (premepted).  4599
+4599      : Process 20 joins ready queue.
+4599      : Process 20 scheduled to run for 10  (premepted).  4609
+4609      : Process 20 joins ready queue.
+4609      : Process 20 scheduled to run for 10  (premepted).  4619
+4619      : Process 20 joins ready queue.
+4619      : Process 20 scheduled to run for 10  (premepted).  4629
+4629      : Process 20 joins ready queue.
+4629      : Process 20 scheduled to run for 10  (premepted).  4639
+4632      : Process 19 joins ready queue.
+4639      : Process 20 joins ready queue.
+4639      : Process 19 scheduled to run for 9 (IO).   4648
+4648      : Process 20 scheduled to run for 10  (premepted).  4658
+4658      : Process 20 joins ready queue.
+4658      : Process 20 scheduled to run for 10 (IO).   4668
+4668      : CPU goes idle.
+4729      : Process 19 joins ready queue.
+4729      : Process 19 scheduled to run for 10 (IO).   4739
+4737      : Process 18 joins ready queue.
+4739      : Process 18 scheduled to run for 8 (IO).   4747
+4747      : CPU goes idle.
+4784      : Process 20 joins ready queue.
+4784      : Process 20 scheduled to run for 10  (premepted).  4794
+4794      : Process 20 joins ready queue.
+4794      : Process 20 scheduled to run for 10  (premepted).  4804
+4804      : Process 20 joins ready queue.
+4804      : Process 20 scheduled to run for 10  (premepted).  4814
+4814      : Process 20 joins ready queue.
+4814      : Process 20 scheduled to run for 10  (premepted).  4824
+4824      : Process 20 joins ready queue.
+4824      : Process 20 scheduled to run for 10  (premepted).  4834
+4834      : Process 20 joins ready queue.
+4834      : Process 20 scheduled to run for 10  (premepted).  4844
+4844      : Process 20 joins ready queue.
+4844      : Process 20 scheduled to run for 10  (premepted).  4854
+4854      : Process 18 joins ready queue.
+4854      : Process 20 joins ready queue.
+4854      : Process 18 scheduled to run for 10  (premepted).  4864
+4864      : Process 18 joins ready queue.
+4864      : Process 20 scheduled to run for 10  (premepted).  4874
+4874      : Process 20 joins ready queue.
+4874      : Process 18 scheduled to run for 5 (IO).   4879
+4879       : Process     18 exits. Turnaround time =  1118 (106%), Wait time = 64
+4879      : Process 20 scheduled to run for 10  (premepted).  4889
+4889      : Process 20 joins ready queue.
+4889      : Process 20 scheduled to run for 10  (premepted).  4899
+4893      : Process 19 joins ready queue.
+4899      : Process 20 joins ready queue.
+4899      : Process 19 scheduled to run for 7 (IO).   4906
+4906       : Process     19 exits. Turnaround time =   948 (103%), Wait time = 28
+4906      : Process 20 scheduled to run for 10  (premepted).  4916
+4916      : Process 20 joins ready queue.
+4916      : Process 20 scheduled to run for 10  (premepted).  4926
+4926      : Process 20 joins ready queue.
+4926      : Process 20 scheduled to run for 10  (premepted).  4936
+4936      : Process 20 joins ready queue.
+4936      : Process 20 scheduled to run for 10  (premepted).  4946
+4946      : Process 20 joins ready queue.
+4946      : Process 20 scheduled to run for 10  (premepted).  4956
+4956      : Process 20 joins ready queue.
+4956      : Process 20 scheduled to run for 10  (premepted).  4966
+4966      : Process 20 joins ready queue.
+4966      : Process 20 scheduled to run for 10  (premepted).  4976
+4976      : Process 20 joins ready queue.
+4976      : Process 20 scheduled to run for 10  (premepted).  4986
+4986      : Process 20 joins ready queue.
+4986      : Process 20 scheduled to run for 10  (premepted).  4996
+4996      : Process 20 joins ready queue.
+4996      : Process 20 scheduled to run for 10  (premepted).  5006
+5006      : Process 20 joins ready queue.
+5006      : Process 20 scheduled to run for 10  (premepted).  5016
+5016      : Process 20 joins ready queue.
+5016      : Process 20 scheduled to run for 10  (premepted).  5026
+5026      : Process 20 joins ready queue.
+5026      : Process 20 scheduled to run for 1 (IO).   5027
+5027      : CPU goes idle.
+5169      : Process 20 joins ready queue.
+5169      : Process 20 scheduled to run for 10  (premepted).  5179
+5179      : Process 20 joins ready queue.
+5179      : Process 20 scheduled to run for 10  (premepted).  5189
+5189      : Process 20 joins ready queue.
+5189      : Process 20 scheduled to run for 10  (premepted).  5199
+5199      : Process 20 joins ready queue.
+5199      : Process 20 scheduled to run for 10  (premepted).  5209
+5209      : Process 20 joins ready queue.
+5209      : Process 20 scheduled to run for 10  (premepted).  5219
+5219      : Process 20 joins ready queue.
+5219      : Process 20 scheduled to run for 10  (premepted).  5229
+5229      : Process 20 joins ready queue.
+5229      : Process 20 scheduled to run for 10  (premepted).  5239
+5239      : Process 20 joins ready queue.
+5239      : Process 20 scheduled to run for 10  (premepted).  5249
+5249      : Process 20 joins ready queue.
+5249      : Process 20 scheduled to run for 10  (premepted).  5259
+5259      : Process 20 joins ready queue.
+5259      : Process 20 scheduled to run for 10  (premepted).  5269
+5269      : Process 20 joins ready queue.
+5269      : Process 20 scheduled to run for 10  (premepted).  5279
+5279      : Process 20 joins ready queue.
+5279      : Process 20 scheduled to run for 10  (premepted).  5289
+5289      : Process 20 joins ready queue.
+5289      : Process 20 scheduled to run for 10  (premepted).  5299
+5299      : Process 20 joins ready queue.
+5299      : Process 20 scheduled to run for 10  (premepted).  5309
+5309      : Process 20 joins ready queue.
+5309      : Process 20 scheduled to run for 7 (IO).   5316
+5316      : CPU goes idle.
+5386      : Process 20 joins ready queue.
+5386      : Process 20 scheduled to run for 10  (premepted).  5396
+5396      : Process 20 joins ready queue.
+5396      : Process 20 scheduled to run for 10  (premepted).  5406
+5406      : Process 20 joins ready queue.
+5406      : Process 20 scheduled to run for 10  (premepted).  5416
+5416      : Process 20 joins ready queue.
+5416      : Process 20 scheduled to run for 10  (premepted).  5426
+5426      : Process 20 joins ready queue.
+5426      : Process 20 scheduled to run for 10  (premepted).  5436
+5436      : Process 20 joins ready queue.
+5436      : Process 20 scheduled to run for 10  (premepted).  5446
+5446      : Process 20 joins ready queue.
+5446      : Process 20 scheduled to run for 10  (premepted).  5456
+5456      : Process 20 joins ready queue.
+5456      : Process 20 scheduled to run for 10  (premepted).  5466
+5466      : Process 20 joins ready queue.
+5466      : Process 20 scheduled to run for 10  (premepted).  5476
+5476      : Process 20 joins ready queue.
+5476      : Process 20 scheduled to run for 10  (premepted).  5486
+5486      : Process 20 joins ready queue.
+5486      : Process 20 scheduled to run for 10  (premepted).  5496
+5496      : Process 20 joins ready queue.
+5496      : Process 20 scheduled to run for 10  (premepted).  5506
+5506      : Process 20 joins ready queue.
+5506      : Process 20 scheduled to run for 10  (premepted).  5516
+5516      : Process 20 joins ready queue.
+5516      : Process 20 scheduled to run for 10  (premepted).  5526
+5526      : Process 20 joins ready queue.
+5526      : Process 20 scheduled to run for 10  (premepted).  5536
+5536      : Process 20 joins ready queue.
+5536      : Process 20 scheduled to run for 10  (premepted).  5546
+5546      : Process 20 joins ready queue.
+5546      : Process 20 scheduled to run for 10  (premepted).  5556
+5556      : Process 20 joins ready queue.
+5556      : Process 20 scheduled to run for 5 (IO).   5561
+5561      : CPU goes idle.
+5642      : Process 20 joins ready queue.
+5642      : Process 20 scheduled to run for 10  (premepted).  5652
+5652      : Process 20 joins ready queue.
+5652      : Process 20 scheduled to run for 10  (premepted).  5662
+5662      : Process 20 joins ready queue.
+5662      : Process 20 scheduled to run for 10  (premepted).  5672
+5672      : Process 20 joins ready queue.
+5672      : Process 20 scheduled to run for 10  (premepted).  5682
+5682      : Process 20 joins ready queue.
+5682      : Process 20 scheduled to run for 10  (premepted).  5692
+5692      : Process 20 joins ready queue.
+5692      : Process 20 scheduled to run for 10  (premepted).  5702
+5702      : Process 20 joins ready queue.
+5702      : Process 20 scheduled to run for 10  (premepted).  5712
+5712      : Process 20 joins ready queue.
+5712      : Process 20 scheduled to run for 10  (premepted).  5722
+5722      : Process 20 joins ready queue.
+5722      : Process 20 scheduled to run for 10  (premepted).  5732
+5732      : Process 20 joins ready queue.
+5732      : Process 20 scheduled to run for 10  (premepted).  5742
+5742      : Process 20 joins ready queue.
+5742      : Process 20 scheduled to run for 10  (premepted).  5752
+5752      : Process 20 joins ready queue.
+5752      : Process 20 scheduled to run for 10  (premepted).  5762
+5762      : Process 20 joins ready queue.
+5762      : Process 20 scheduled to run for 10  (premepted).  5772
+5772      : Process 20 joins ready queue.
+5772      : Process 20 scheduled to run for 4 (IO).   5776
+5776      : CPU goes idle.
+5845      : Process 20 joins ready queue.
+5845      : Process 20 scheduled to run for 10  (premepted).  5855
+5855      : Process 20 joins ready queue.
+5855      : Process 20 scheduled to run for 10  (premepted).  5865
+5865      : Process 20 joins ready queue.
+5865      : Process 20 scheduled to run for 10  (premepted).  5875
+5875      : Process 20 joins ready queue.
+5875      : Process 20 scheduled to run for 10  (premepted).  5885
+5885      : Process 20 joins ready queue.
+5885      : Process 20 scheduled to run for 10  (premepted).  5895
+5895      : Process 20 joins ready queue.
+5895      : Process 20 scheduled to run for 10  (premepted).  5905
+5905      : Process 20 joins ready queue.
+5905      : Process 20 scheduled to run for 10  (premepted).  5915
+5915      : Process 20 joins ready queue.
+5915      : Process 20 scheduled to run for 10  (premepted).  5925
+5925      : Process 20 joins ready queue.
+5925      : Process 20 scheduled to run for 10  (premepted).  5935
+5935      : Process 20 joins ready queue.
+5935      : Process 20 scheduled to run for 10  (premepted).  5945
+5945      : Process 20 joins ready queue.
+5945      : Process 20 scheduled to run for 10  (premepted).  5955
+5955      : Process 20 joins ready queue.
+5955      : Process 20 scheduled to run for 10  (premepted).  5965
+5965      : Process 20 joins ready queue.
+5965      : Process 20 scheduled to run for 10  (premepted).  5975
+5975      : Process 20 joins ready queue.
+5975      : Process 20 scheduled to run for 10  (premepted).  5985
+5985      : Process 20 joins ready queue.
+5985      : Process 20 scheduled to run for 10  (premepted).  5995
+5995      : Process 20 joins ready queue.
+5995      : Process 20 scheduled to run for 10  (premepted).  6005
+6005      : Process 20 joins ready queue.
+6005      : Process 20 scheduled to run for 10  (premepted).  6015
+6015      : Process 20 joins ready queue.
+6015      : Process 20 scheduled to run for 10  (premepted).  6025
+6025      : Process 20 joins ready queue.
+6025      : Process 20 scheduled to run for 10 (IO).   6035
+6035      : CPU goes idle.
+6146      : Process 20 joins ready queue.
+6146      : Process 20 scheduled to run for 10  (premepted).  6156
+6156      : Process 20 joins ready queue.
+6156      : Process 20 scheduled to run for 10  (premepted).  6166
+6166      : Process 20 joins ready queue.
+6166      : Process 20 scheduled to run for 10  (premepted).  6176
+6176      : Process 20 joins ready queue.
+6176      : Process 20 scheduled to run for 10  (premepted).  6186
+6186      : Process 20 joins ready queue.
+6186      : Process 20 scheduled to run for 10  (premepted).  6196
+6196      : Process 20 joins ready queue.
+6196      : Process 20 scheduled to run for 10  (premepted).  6206
+6206      : Process 20 joins ready queue.
+6206      : Process 20 scheduled to run for 10  (premepted).  6216
+6216      : Process 20 joins ready queue.
+6216      : Process 20 scheduled to run for 10  (premepted).  6226
+6226      : Process 20 joins ready queue.
+6226      : Process 20 scheduled to run for 10  (premepted).  6236
+6236      : Process 20 joins ready queue.
+6236      : Process 20 scheduled to run for 10  (premepted).  6246
+6246      : Process 20 joins ready queue.
+6246      : Process 20 scheduled to run for 10  (premepted).  6256
+6256      : Process 20 joins ready queue.
+6256      : Process 20 scheduled to run for 10  (premepted).  6266
+6266      : Process 20 joins ready queue.
+6266      : Process 20 scheduled to run for 10  (premepted).  6276
+6276      : Process 20 joins ready queue.
+6276      : Process 20 scheduled to run for 10  (premepted).  6286
+6286      : Process 20 joins ready queue.
+6286      : Process 20 scheduled to run for 10  (premepted).  6296
+6296      : Process 20 joins ready queue.
+6296      : Process 20 scheduled to run for 10  (premepted).  6306
+6306      : Process 20 joins ready queue.
+6306      : Process 20 scheduled to run for 10  (premepted).  6316
+6316      : Process 20 joins ready queue.
+6316      : Process 20 scheduled to run for 10  (premepted).  6326
+6326      : Process 20 joins ready queue.
+6326      : Process 20 scheduled to run for 10  (premepted).  6336
+6336      : Process 20 joins ready queue.
+6336      : Process 20 scheduled to run for 10  (premepted).  6346
+6346      : Process 20 joins ready queue.
+6346      : Process 20 scheduled to run for 10  (premepted).  6356
+6356      : Process 20 joins ready queue.
+6356      : Process 20 scheduled to run for 10  (premepted).  6366
+6366      : Process 20 joins ready queue.
+6366      : Process 20 scheduled to run for 10  (premepted).  6376
+6376      : Process 20 joins ready queue.
+6376      : Process 20 scheduled to run for 7 (IO).   6383
+6383       : Process     20 exits. Turnaround time =  2048 (104%), Wait time = 75
+6383      : CPU goes idle.
+
+Average wait time: 56.80
+Total turnaround time: 6383
+CPU idle time: 2827
+CPU utilization: 55.71%
+
+
+**** RR scheduling with q = 5 ****
+0         : Starting.
+0         : Process 1 joins ready queue.
+0         : Process 1 scheduled to run for 5  (premepted).  5
+5         : Process 1 joins ready queue.
+5         : Process 1 scheduled to run for 5  (premepted).  10
+10        : Process 1 joins ready queue.
+10        : Process 1 scheduled to run for 1 (IO).   11
+11        : CPU goes idle.
+91        : Process 2 joins ready queue.
+91        : Process 2 scheduled to run for 5  (premepted).  96
+96        : Process 2 joins ready queue.
+96        : Process 2 scheduled to run for 5  (premepted).  101
+101       : Process 2 joins ready queue.
+101       : Process 2 scheduled to run for 4 (IO).   105
+105       : CPU goes idle.
+126       : Process 1 joins ready queue.
+126       : Process 1 scheduled to run for 5  (premepted).  131
+131       : Process 1 joins ready queue.
+131       : Process 1 scheduled to run for 3 (IO).   134
+134       : CPU goes idle.
+234       : Process 2 joins ready queue.
+234       : Process 2 scheduled to run for 5  (premepted).  239
+239       : Process 2 joins ready queue.
+239       : Process 2 scheduled to run for 3 (IO).   242
+242       : CPU goes idle.
+278       : Process 1 joins ready queue.
+278       : Process 1 scheduled to run for 5  (premepted).  283
+283       : Process 1 joins ready queue.
+283       : Process 1 scheduled to run for 5 (IO).   288
+288       : CPU goes idle.
+326       : Process 2 joins ready queue.
+326       : Process 2 scheduled to run for 2 (IO).   328
+328       : CPU goes idle.
+399       : Process 1 joins ready queue.
+399       : Process 1 scheduled to run for 3 (IO).   402
+402       : CPU goes idle.
+459       : Process 2 joins ready queue.
+459       : Process 2 scheduled to run for 5  (premepted).  464
+464       : Process 2 joins ready queue.
+464       : Process 2 scheduled to run for 3 (IO).   467
+467       : CPU goes idle.
+493       : Process 3 joins ready queue.
+493       : Process 3 scheduled to run for 5  (premepted).  498
+498       : Process 3 joins ready queue.
+498       : Process 3 scheduled to run for 5  (premepted).  503
+503       : Process 3 joins ready queue.
+503       : Process 3 scheduled to run for 3 (IO).   506
+506       : CPU goes idle.
+511       : Process 1 joins ready queue.
+511       : Process 1 scheduled to run for 5  (premepted).  516
+516       : Process 1 joins ready queue.
+516       : Process 1 scheduled to run for 5  (premepted).  521
+521       : Process 1 joins ready queue.
+521       : Process 1 scheduled to run for 2 (IO).   523
+523       : CPU goes idle.
+599       : Process 1 joins ready queue.
+599       : Process 1 scheduled to run for 5 (IO).   604
+604       : CPU goes idle.
+644       : Process 3 joins ready queue.
+644       : Process 3 scheduled to run for 1 (IO).   645
+645       : CPU goes idle.
+653       : Process 2 joins ready queue.
+653       : Process 2 scheduled to run for 5  (premepted).  658
+658       : Process 2 joins ready queue.
+658       : Process 2 scheduled to run for 5  (premepted).  663
+663       : Process 2 joins ready queue.
+663       : Process 2 scheduled to run for 5 (IO).   668
+668       : CPU goes idle.
+705       : Process 3 joins ready queue.
+705       : Process 3 scheduled to run for 1 (IO).   706
+706       : CPU goes idle.
+735       : Process 2 joins ready queue.
+735       : Process 2 scheduled to run for 4 (IO).   739
+739        : Process      2 exits. Turnaround time =   648 (100%), Wait time = 0
+739       : CPU goes idle.
+774       : Process 1 joins ready queue.
+774       : Process 1 scheduled to run for 5  (premepted).  779
+779       : Process 1 joins ready queue.
+779       : Process 1 scheduled to run for 4 (IO).   783
+783        : Process      1 exits. Turnaround time =   783 (100%), Wait time = 0
+783       : CPU goes idle.
+796       : Process 4 joins ready queue.
+796       : Process 4 scheduled to run for 4 (IO).   800
+800       : CPU goes idle.
+840       : Process 3 joins ready queue.
+840       : Process 3 scheduled to run for 5  (premepted).  845
+845       : Process 3 joins ready queue.
+845       : Process 3 scheduled to run for 4 (IO).   849
+849       : CPU goes idle.
+891       : Process 4 joins ready queue.
+891       : Process 4 scheduled to run for 5  (premepted).  896
+896       : Process 4 joins ready queue.
+896       : Process 4 scheduled to run for 5  (premepted).  901
+901       : Process 4 joins ready queue.
+901       : Process 4 scheduled to run for 2 (IO).   903
+903       : CPU goes idle.
+913       : Process 3 joins ready queue.
+913       : Process 3 scheduled to run for 5  (premepted).  918
+918       : Process 3 joins ready queue.
+918       : Process 3 scheduled to run for 4 (IO).   922
+922       : CPU goes idle.
+978       : Process 5 joins ready queue.
+978       : Process 5 scheduled to run for 5  (premepted).  983
+983       : Process 5 joins ready queue.
+983       : Process 5 scheduled to run for 5  (premepted).  988
+988       : Process 5 joins ready queue.
+988       : Process 5 scheduled to run for 5  (premepted).  993
+993       : Process 5 joins ready queue.
+993       : Process 5 scheduled to run for 5  (premepted).  998
+998       : Process 5 joins ready queue.
+998       : Process 5 scheduled to run for 5  (premepted).  1003
+1003      : Process 5 joins ready queue.
+1003      : Process 5 scheduled to run for 5  (premepted).  1008
+1008      : Process 5 joins ready queue.
+1008      : Process 5 scheduled to run for 5  (premepted).  1013
+1013      : Process 5 joins ready queue.
+1013      : Process 5 scheduled to run for 5  (premepted).  1018
+1018      : Process 5 joins ready queue.
+1018      : Process 5 scheduled to run for 5  (premepted).  1023
+1023      : Process 5 joins ready queue.
+1023      : Process 5 scheduled to run for 5  (premepted).  1028
+1028      : Process 5 joins ready queue.
+1028      : Process 5 scheduled to run for 5  (premepted).  1033
+1033      : Process 5 joins ready queue.
+1033      : Process 5 scheduled to run for 5  (premepted).  1038
+1037      : Process 4 joins ready queue.
+1038      : Process 5 joins ready queue.
+1038      : Process 4 scheduled to run for 5  (premepted).  1043
+1043      : Process 4 joins ready queue.
+1043      : Process 5 scheduled to run for 5  (premepted).  1048
+1048      : Process 5 joins ready queue.
+1048      : Process 4 scheduled to run for 5  (premepted).  1053
+1053      : Process 4 joins ready queue.
+1053      : Process 5 scheduled to run for 5  (premepted).  1058
+1058      : Process 5 joins ready queue.
+1058      : Process 4 scheduled to run for 3 (IO).   1061
+1061      : Process 5 scheduled to run for 5  (premepted).  1066
+1066      : Process 5 joins ready queue.
+1066      : Process 5 scheduled to run for 5  (premepted).  1071
+1071      : Process 5 joins ready queue.
+1071      : Process 5 scheduled to run for 5  (premepted).  1076
+1076      : Process 5 joins ready queue.
+1076      : Process 5 scheduled to run for 5  (premepted).  1081
+1081      : Process 5 joins ready queue.
+1081      : Process 5 scheduled to run for 5  (premepted).  1086
+1086      : Process 5 joins ready queue.
+1086      : Process 5 scheduled to run for 5  (premepted).  1091
+1091      : Process 5 joins ready queue.
+1091      : Process 5 scheduled to run for 5  (premepted).  1096
+1096      : Process 5 joins ready queue.
+1096      : Process 5 scheduled to run for 5  (premepted).  1101
+1098      : Process 3 joins ready queue.
+1101      : Process 5 joins ready queue.
+1101      : Process 3 scheduled to run for 5 (IO).   1106
+1106      : Process 5 scheduled to run for 5  (premepted).  1111
+1111      : Process 5 joins ready queue.
+1111      : Process 5 scheduled to run for 5  (premepted).  1116
+1112      : Process 4 joins ready queue.
+1116      : Process 6 joins ready queue.
+1116      : Process 5 joins ready queue.
+1116      : Process 4 scheduled to run for 5  (premepted).  1121
+1121      : Process 4 joins ready queue.
+1121      : Process 6 scheduled to run for 5  (premepted).  1126
+1126      : Process 6 joins ready queue.
+1126      : Process 5 scheduled to run for 5  (premepted).  1131
+1131      : Process 5 joins ready queue.
+1131      : Process 4 scheduled to run for 2 (IO).   1133
+1133      : Process 6 scheduled to run for 5  (premepted).  1138
+1138      : Process 6 joins ready queue.
+1138      : Process 5 scheduled to run for 5  (premepted).  1143
+1143      : Process 5 joins ready queue.
+1143      : Process 6 scheduled to run for 4 (IO).   1147
+1147      : Process 5 scheduled to run for 5  (premepted).  1152
+1152      : Process 5 joins ready queue.
+1152      : Process 5 scheduled to run for 5  (premepted).  1157
+1156      : Process 3 joins ready queue.
+1157      : Process 5 joins ready queue.
+1157      : Process 3 scheduled to run for 5  (premepted).  1162
+1162      : Process 3 joins ready queue.
+1162      : Process 5 scheduled to run for 5  (premepted).  1167
+1167      : Process 5 joins ready queue.
+1167      : Process 3 scheduled to run for 1 (IO).   1168
+1168      : Process 5 scheduled to run for 5  (premepted).  1173
+1173      : Process 5 joins ready queue.
+1173      : Process 5 scheduled to run for 5  (premepted).  1178
+1178      : Process 5 joins ready queue.
+1178      : Process 5 scheduled to run for 5  (premepted).  1183
+1183      : Process 5 joins ready queue.
+1183      : Process 5 scheduled to run for 5  (premepted).  1188
+1188      : Process 5 joins ready queue.
+1188      : Process 5 scheduled to run for 5 (IO).   1193
+1193      : CPU goes idle.
+1200      : Process 6 joins ready queue.
+1200      : Process 6 scheduled to run for 4 (IO).   1204
+1204      : CPU goes idle.
+1251      : Process 4 joins ready queue.
+1251      : Process 4 scheduled to run for 3 (IO).   1254
+1254      : CPU goes idle.
+1269      : Process 6 joins ready queue.
+1269      : Process 6 scheduled to run for 5  (premepted).  1274
+1274      : Process 6 joins ready queue.
+1274      : Process 6 scheduled to run for 2 (IO).   1276
+1276      : CPU goes idle.
+1283      : Process 5 joins ready queue.
+1283      : Process 5 scheduled to run for 5  (premepted).  1288
+1288      : Process 5 joins ready queue.
+1288      : Process 5 scheduled to run for 5  (premepted).  1293
+1293      : Process 5 joins ready queue.
+1293      : Process 5 scheduled to run for 5  (premepted).  1298
+1298      : Process 5 joins ready queue.
+1298      : Process 5 scheduled to run for 5  (premepted).  1303
+1303      : Process 5 joins ready queue.
+1303      : Process 5 scheduled to run for 5  (premepted).  1308
+1308      : Process 5 joins ready queue.
+1308      : Process 5 scheduled to run for 5  (premepted).  1313
+1312      : Process 3 joins ready queue.
+1313      : Process 5 joins ready queue.
+1313      : Process 3 scheduled to run for 5 (IO).   1318
+1318      : Process 5 scheduled to run for 5  (premepted).  1323
+1323      : Process 5 joins ready queue.
+1323      : Process 5 scheduled to run for 5  (premepted).  1328
+1326      : Process 4 joins ready queue.
+1328      : Process 5 joins ready queue.
+1328      : Process 4 scheduled to run for 5  (premepted).  1333
+1333      : Process 4 joins ready queue.
+1333      : Process 5 scheduled to run for 5  (premepted).  1338
+1338      : Process 5 joins ready queue.
+1338      : Process 4 scheduled to run for 5  (premepted).  1343
+1343      : Process 4 joins ready queue.
+1343      : Process 5 scheduled to run for 5  (premepted).  1348
+1347      : Process 7 joins ready queue.
+1348      : Process 5 joins ready queue.
+1348      : Process 4 scheduled to run for 1 (IO).   1349
+1349      : Process 7 scheduled to run for 5  (premepted).  1354
+1354      : Process 7 joins ready queue.
+1354      : Process 5 scheduled to run for 5  (premepted).  1359
+1356      : Process 6 joins ready queue.
+1359      : Process 5 joins ready queue.
+1359      : Process 7 scheduled to run for 5  (premepted).  1364
+1364      : Process 7 joins ready queue.
+1364      : Process 6 scheduled to run for 5  (premepted).  1369
+1369      : Process 6 joins ready queue.
+1369      : Process 5 scheduled to run for 5  (premepted).  1374
+1374      : Process 5 joins ready queue.
+1374      : Process 7 scheduled to run for 5 (IO).   1379
+1379      : Process 6 scheduled to run for 3 (IO).   1382
+1382      : Process 5 scheduled to run for 5  (premepted).  1387
+1387      : Process 5 joins ready queue.
+1387      : Process 5 scheduled to run for 5  (premepted).  1392
+1392      : Process 5 joins ready queue.
+1392      : Process 5 scheduled to run for 5  (premepted).  1397
+1397      : Process 5 joins ready queue.
+1397      : Process 5 scheduled to run for 5  (premepted).  1402
+1402      : Process 5 joins ready queue.
+1402      : Process 5 scheduled to run for 5  (premepted).  1407
+1407      : Process 5 joins ready queue.
+1407      : Process 5 scheduled to run for 5  (premepted).  1412
+1412      : Process 5 joins ready queue.
+1412      : Process 5 scheduled to run for 5  (premepted).  1417
+1417      : Process 5 joins ready queue.
+1417      : Process 5 scheduled to run for 5  (premepted).  1422
+1422      : Process 5 joins ready queue.
+1422      : Process 5 scheduled to run for 5  (premepted).  1427
+1427      : Process 5 joins ready queue.
+1427      : Process 5 scheduled to run for 5  (premepted).  1432
+1429      : Process 4 joins ready queue.
+1432      : Process 5 joins ready queue.
+1432      : Process 4 scheduled to run for 5 (IO).   1437
+1437      : Process 5 scheduled to run for 5  (premepted).  1442
+1442      : Process 5 joins ready queue.
+1442      : Process 5 scheduled to run for 5  (premepted).  1447
+1447      : Process 5 joins ready queue.
+1447      : Process 5 scheduled to run for 5  (premepted).  1452
+1448      : Process 7 joins ready queue.
+1452      : Process 5 joins ready queue.
+1452      : Process 7 scheduled to run for 5 (IO).   1457
+1457      : Process 5 scheduled to run for 5  (premepted).  1462
+1462      : Process 5 joins ready queue.
+1462      : Process 5 scheduled to run for 5  (premepted).  1467
+1467      : Process 5 joins ready queue.
+1467      : Process 5 scheduled to run for 5  (premepted).  1472
+1472      : Process 5 joins ready queue.
+1472      : Process 5 scheduled to run for 5  (premepted).  1477
+1477      : Process 5 joins ready queue.
+1477      : Process 5 scheduled to run for 5  (premepted).  1482
+1482      : Process 5 joins ready queue.
+1482      : Process 5 scheduled to run for 5  (premepted).  1487
+1487      : Process 5 joins ready queue.
+1487      : Process 5 scheduled to run for 5  (premepted).  1492
+1490      : Process 6 joins ready queue.
+1492      : Process 5 joins ready queue.
+1492      : Process 6 scheduled to run for 5  (premepted).  1497
+1497      : Process 6 joins ready queue.
+1497      : Process 5 scheduled to run for 5  (premepted).  1502
+1502      : Process 5 joins ready queue.
+1502      : Process 6 scheduled to run for 5  (premepted).  1507
+1507      : Process 6 joins ready queue.
+1507      : Process 5 scheduled to run for 5  (premepted).  1512
+1512      : Process 5 joins ready queue.
+1512      : Process 6 scheduled to run for 2 (IO).   1514
+1514      : Process 5 scheduled to run for 5  (premepted).  1519
+1516      : Process 3 joins ready queue.
+1519      : Process 5 joins ready queue.
+1519      : Process 3 scheduled to run for 5  (premepted).  1524
+1524      : Process 3 joins ready queue.
+1524      : Process 5 scheduled to run for 5  (premepted).  1529
+1529      : Process 5 joins ready queue.
+1529      : Process 3 scheduled to run for 5  (premepted).  1534
+1534      : Process 3 joins ready queue.
+1534      : Process 5 scheduled to run for 5  (premepted).  1539
+1539      : Process 5 joins ready queue.
+1539      : Process 3 scheduled to run for 4 (IO).   1543
+1543      : Process 7 joins ready queue.
+1543       : Process      3 exits. Turnaround time =  1050 (102%), Wait time = 23
+1543      : Process 5 scheduled to run for 5  (premepted).  1548
+1548      : Process 5 joins ready queue.
+1548      : Process 7 scheduled to run for 5  (premepted).  1553
+1553      : Process 7 joins ready queue.
+1553      : Process 5 scheduled to run for 5  (premepted).  1558
+1558      : Process 5 joins ready queue.
+1558      : Process 7 scheduled to run for 1 (IO).   1559
+1559      : Process 5 scheduled to run for 5  (premepted).  1564
+1564      : Process 5 joins ready queue.
+1564      : Process 5 scheduled to run for 5  (premepted).  1569
+1569      : Process 5 joins ready queue.
+1569      : Process 5 scheduled to run for 5  (premepted).  1574
+1574      : Process 5 joins ready queue.
+1574      : Process 5 scheduled to run for 5  (premepted).  1579
+1579      : Process 5 joins ready queue.
+1579      : Process 5 scheduled to run for 5  (premepted).  1584
+1584      : Process 5 joins ready queue.
+1584      : Process 5 scheduled to run for 5  (premepted).  1589
+1589      : Process 5 joins ready queue.
+1589      : Process 5 scheduled to run for 2 (IO).   1591
+1591      : CPU goes idle.
+1611      : Process 4 joins ready queue.
+1611      : Process 4 scheduled to run for 3 (IO).   1614
+1614      : CPU goes idle.
+1663      : Process 5 joins ready queue.
+1663      : Process 5 scheduled to run for 5  (premepted).  1668
+1668      : Process 5 joins ready queue.
+1668      : Process 5 scheduled to run for 5  (premepted).  1673
+1673      : Process 5 joins ready queue.
+1673      : Process 5 scheduled to run for 5  (premepted).  1678
+1678      : Process 5 joins ready queue.
+1678      : Process 5 scheduled to run for 5  (premepted).  1683
+1683      : Process 8 joins ready queue.
+1683      : Process 5 joins ready queue.
+1683      : Process 8 scheduled to run for 5  (premepted).  1688
+1688      : Process 8 joins ready queue.
+1688      : Process 5 scheduled to run for 5  (premepted).  1693
+1693      : Process 5 joins ready queue.
+1693      : Process 8 scheduled to run for 5  (premepted).  1698
+1698      : Process 8 joins ready queue.
+1698      : Process 5 scheduled to run for 5  (premepted).  1703
+1703      : Process 5 joins ready queue.
+1703      : Process 8 scheduled to run for 2 (IO).   1705
+1705      : Process 5 scheduled to run for 5  (premepted).  1710
+1710      : Process 6 joins ready queue.
+1710      : Process 5 joins ready queue.
+1710      : Process 6 scheduled to run for 5  (premepted).  1715
+1715      : Process 6 joins ready queue.
+1715      : Process 5 scheduled to run for 5  (premepted).  1720
+1719      : Process 7 joins ready queue.
+1720      : Process 5 joins ready queue.
+1720      : Process 6 scheduled to run for 5  (premepted).  1725
+1725      : Process 6 joins ready queue.
+1725      : Process 7 scheduled to run for 4 (IO).   1729
+1729      : Process 5 scheduled to run for 5  (premepted).  1734
+1734      : Process 5 joins ready queue.
+1734      : Process 6 scheduled to run for 2 (IO).   1736
+1736      : Process 5 scheduled to run for 5  (premepted).  1741
+1741      : Process 5 joins ready queue.
+1741      : Process 5 scheduled to run for 5  (premepted).  1746
+1746      : Process 5 joins ready queue.
+1746      : Process 5 scheduled to run for 5  (premepted).  1751
+1751      : Process 5 joins ready queue.
+1751      : Process 5 scheduled to run for 5  (premepted).  1756
+1756      : Process 5 joins ready queue.
+1756      : Process 5 scheduled to run for 5  (premepted).  1761
+1761      : Process 5 joins ready queue.
+1761      : Process 5 scheduled to run for 5  (premepted).  1766
+1766      : Process 5 joins ready queue.
+1766      : Process 5 scheduled to run for 5  (premepted).  1771
+1771      : Process 5 joins ready queue.
+1771      : Process 5 scheduled to run for 5  (premepted).  1776
+1774      : Process 9 joins ready queue.
+1776      : Process 5 joins ready queue.
+1776      : Process 9 scheduled to run for 5  (premepted).  1781
+1781      : Process 9 joins ready queue.
+1781      : Process 5 scheduled to run for 5  (premepted).  1786
+1786      : Process 5 joins ready queue.
+1786      : Process 9 scheduled to run for 5  (premepted).  1791
+1791      : Process 9 joins ready queue.
+1791      : Process 5 scheduled to run for 5  (premepted).  1796
+1796      : Process 5 joins ready queue.
+1796      : Process 9 scheduled to run for 4 (IO).   1800
+1800      : Process 5 scheduled to run for 5  (premepted).  1805
+1804      : Process 4 joins ready queue.
+1805      : Process 5 joins ready queue.
+1805      : Process 4 scheduled to run for 5  (premepted).  1810
+1810      : Process 4 joins ready queue.
+1810      : Process 5 scheduled to run for 5  (premepted).  1815
+1815      : Process 5 joins ready queue.
+1815      : Process 4 scheduled to run for 5  (premepted).  1820
+1820      : Process 4 joins ready queue.
+1820      : Process 5 scheduled to run for 5  (premepted).  1825
+1825      : Process 5 joins ready queue.
+1825      : Process 4 scheduled to run for 3 (IO).   1828
+1828       : Process      4 exits. Turnaround time =  1032 (105%), Wait time = 51
+1828      : Process 5 scheduled to run for 5  (premepted).  1833
+1833      : Process 5 joins ready queue.
+1833      : Process 5 scheduled to run for 5  (premepted).  1838
+1838      : Process 5 joins ready queue.
+1838      : Process 5 scheduled to run for 5  (premepted).  1843
+1843      : Process 5 joins ready queue.
+1843      : Process 5 scheduled to run for 5  (premepted).  1848
+1848      : Process 5 joins ready queue.
+1848      : Process 5 scheduled to run for 5  (premepted).  1853
+1853      : Process 5 joins ready queue.
+1853      : Process 5 scheduled to run for 5  (premepted).  1858
+1858      : Process 5 joins ready queue.
+1858      : Process 5 scheduled to run for 5  (premepted).  1863
+1863      : Process 5 joins ready queue.
+1863      : Process 5 scheduled to run for 5  (premepted).  1868
+1868      : Process 7 joins ready queue.
+1868      : Process 5 joins ready queue.
+1868      : Process 7 scheduled to run for 5  (premepted).  1873
+1873      : Process 7 joins ready queue.
+1873      : Process 5 scheduled to run for 5  (premepted).  1878
+1878      : Process 5 joins ready queue.
+1878      : Process 7 scheduled to run for 5  (premepted).  1883
+1881      : Process 6 joins ready queue.
+1883      : Process 7 joins ready queue.
+1883      : Process 5 scheduled to run for 5  (premepted).  1888
+1888      : Process 5 joins ready queue.
+1888      : Process 6 scheduled to run for 2 (IO).   1890
+1890      : Process 8 joins ready queue.
+1890      : Process 7 scheduled to run for 1 (IO).   1891
+1891      : Process 5 scheduled to run for 5 (IO).   1896
+1896      : Process 8 scheduled to run for 5 (IO).   1901
+1901      : CPU goes idle.
+1966      : Process 9 joins ready queue.
+1966      : Process 9 scheduled to run for 5  (premepted).  1971
+1971      : Process 9 joins ready queue.
+1971      : Process 9 scheduled to run for 3 (IO).   1974
+1974      : CPU goes idle.
+2001      : Process 8 joins ready queue.
+2001      : Process 8 scheduled to run for 5  (premepted).  2006
+2006      : Process 8 joins ready queue.
+2006      : Process 8 scheduled to run for 5 (IO).   2011
+2011      : CPU goes idle.
+2025      : Process 7 joins ready queue.
+2025      : Process 7 scheduled to run for 5  (premepted).  2030
+2026      : Process 6 joins ready queue.
+2030      : Process 7 joins ready queue.
+2030      : Process 6 scheduled to run for 2 (IO).   2032
+2032      : Process 7 scheduled to run for 5 (IO).   2037
+2037       : Process      7 exits. Turnaround time =   690 (108%), Wait time = 51
+2037      : CPU goes idle.
+2049      : Process 9 joins ready queue.
+2049      : Process 9 scheduled to run for 5  (premepted).  2054
+2054      : Process 9 joins ready queue.
+2054      : Process 9 scheduled to run for 5  (premepted).  2059
+2059      : Process 9 joins ready queue.
+2059      : Process 9 scheduled to run for 1 (IO).   2060
+2060      : CPU goes idle.
+2075      : Process 5 joins ready queue.
+2075      : Process 5 scheduled to run for 5  (premepted).  2080
+2080      : Process 5 joins ready queue.
+2080      : Process 5 scheduled to run for 5  (premepted).  2085
+2085      : Process 5 joins ready queue.
+2085      : Process 5 scheduled to run for 5  (premepted).  2090
+2090      : Process 5 joins ready queue.
+2090      : Process 5 scheduled to run for 5  (premepted).  2095
+2095      : Process 5 joins ready queue.
+2095      : Process 5 scheduled to run for 5  (premepted).  2100
+2100      : Process 5 joins ready queue.
+2100      : Process 5 scheduled to run for 5  (premepted).  2105
+2105      : Process 5 joins ready queue.
+2105      : Process 5 scheduled to run for 5  (premepted).  2110
+2110      : Process 5 joins ready queue.
+2110      : Process 5 scheduled to run for 5  (premepted).  2115
+2115      : Process 5 joins ready queue.
+2115      : Process 5 scheduled to run for 5  (premepted).  2120
+2120      : Process 5 joins ready queue.
+2120      : Process 5 scheduled to run for 5  (premepted).  2125
+2125      : Process 5 joins ready queue.
+2125      : Process 5 scheduled to run for 5  (premepted).  2130
+2130      : Process 5 joins ready queue.
+2130      : Process 5 scheduled to run for 5  (premepted).  2135
+2135      : Process 9 joins ready queue.
+2135      : Process 5 joins ready queue.
+2135      : Process 9 scheduled to run for 5  (premepted).  2140
+2140      : Process 9 joins ready queue.
+2140      : Process 5 scheduled to run for 5  (premepted).  2145
+2145      : Process 5 joins ready queue.
+2145      : Process 9 scheduled to run for 3 (IO).   2148
+2148      : Process 5 scheduled to run for 5  (premepted).  2153
+2153      : Process 5 joins ready queue.
+2153      : Process 5 scheduled to run for 5  (premepted).  2158
+2158      : Process 8 joins ready queue.
+2158      : Process 5 joins ready queue.
+2158      : Process 8 scheduled to run for 5  (premepted).  2163
+2163      : Process 8 joins ready queue.
+2163      : Process 5 scheduled to run for 5  (premepted).  2168
+2168      : Process 5 joins ready queue.
+2168      : Process 8 scheduled to run for 1 (IO).   2169
+2169      : Process 5 scheduled to run for 5  (premepted).  2174
+2172      : Process 10 joins ready queue.
+2174      : Process 5 joins ready queue.
+2174      : Process 10 scheduled to run for 5  (premepted).  2179
+2179      : Process 10 joins ready queue.
+2179      : Process 5 scheduled to run for 5  (premepted).  2184
+2184      : Process 5 joins ready queue.
+2184      : Process 10 scheduled to run for 5  (premepted).  2189
+2189      : Process 10 joins ready queue.
+2189      : Process 5 scheduled to run for 5  (premepted).  2194
+2194      : Process 5 joins ready queue.
+2194      : Process 10 scheduled to run for 1 (IO).   2195
+2195      : Process 5 scheduled to run for 5  (premepted).  2200
+2200      : Process 5 joins ready queue.
+2200      : Process 5 scheduled to run for 5  (premepted).  2205
+2205      : Process 5 joins ready queue.
+2205      : Process 5 scheduled to run for 5  (premepted).  2210
+2210      : Process 5 joins ready queue.
+2210      : Process 5 scheduled to run for 5  (premepted).  2215
+2215      : Process 5 joins ready queue.
+2215      : Process 5 scheduled to run for 5  (premepted).  2220
+2217      : Process 6 joins ready queue.
+2217      : Process 9 joins ready queue.
+2220      : Process 5 joins ready queue.
+2220      : Process 6 scheduled to run for 5  (premepted).  2225
+2225      : Process 6 joins ready queue.
+2225      : Process 9 scheduled to run for 5  (premepted).  2230
+2230      : Process 9 joins ready queue.
+2230      : Process 5 scheduled to run for 5  (premepted).  2235
+2235      : Process 5 joins ready queue.
+2235      : Process 6 scheduled to run for 2 (IO).   2237
+2237      : Process 9 scheduled to run for 5  (premepted).  2242
+2242      : Process 9 joins ready queue.
+2242      : Process 5 scheduled to run for 5  (premepted).  2247
+2247      : Process 5 joins ready queue.
+2247      : Process 9 scheduled to run for 5 (IO).   2252
+2249      : Process 11 joins ready queue.
+2252      : Process 5 scheduled to run for 5  (premepted).  2257
+2257      : Process 5 joins ready queue.
+2257      : Process 11 scheduled to run for 5  (premepted).  2262
+2262      : Process 11 joins ready queue.
+2262      : Process 5 scheduled to run for 5  (premepted).  2267
+2267      : Process 5 joins ready queue.
+2267      : Process 11 scheduled to run for 5  (premepted).  2272
+2272      : Process 11 joins ready queue.
+2272      : Process 5 scheduled to run for 5  (premepted).  2277
+2277      : Process 5 joins ready queue.
+2277      : Process 11 scheduled to run for 2 (IO).   2279
+2279      : Process 5 scheduled to run for 5  (premepted).  2284
+2284      : Process 5 joins ready queue.
+2284      : Process 5 scheduled to run for 5  (premepted).  2289
+2289      : Process 5 joins ready queue.
+2289      : Process 5 scheduled to run for 5  (premepted).  2294
+2294      : Process 5 joins ready queue.
+2294      : Process 5 scheduled to run for 5  (premepted).  2299
+2299      : Process 5 joins ready queue.
+2299      : Process 5 scheduled to run for 5  (premepted).  2304
+2304      : Process 9 joins ready queue.
+2304      : Process 5 joins ready queue.
+2304      : Process 9 scheduled to run for 2 (IO).   2306
+2306      : Process 5 scheduled to run for 5  (premepted).  2311
+2311      : Process 5 joins ready queue.
+2311      : Process 5 scheduled to run for 5  (premepted).  2316
+2316      : Process 5 joins ready queue.
+2316      : Process 5 scheduled to run for 5  (premepted).  2321
+2321      : Process 5 joins ready queue.
+2321      : Process 5 scheduled to run for 5  (premepted).  2326
+2326      : Process 5 joins ready queue.
+2326      : Process 5 scheduled to run for 5  (premepted).  2331
+2331      : Process 8 joins ready queue.
+2331      : Process 5 joins ready queue.
+2331      : Process 8 scheduled to run for 3 (IO).   2334
+2334       : Process      8 exits. Turnaround time =   651 (103%), Wait time = 21
+2334      : Process 5 scheduled to run for 5  (premepted).  2339
+2339      : Process 5 joins ready queue.
+2339      : Process 5 scheduled to run for 5  (premepted).  2344
+2344      : Process 5 joins ready queue.
+2344      : Process 5 scheduled to run for 2 (IO).   2346
+2346      : CPU goes idle.
+2352      : Process 10 joins ready queue.
+2352      : Process 10 scheduled to run for 5  (premepted).  2357
+2357      : Process 10 joins ready queue.
+2357      : Process 10 scheduled to run for 5  (premepted).  2362
+2362      : Process 10 joins ready queue.
+2362      : Process 10 scheduled to run for 3 (IO).   2365
+2365      : CPU goes idle.
+2418      : Process 6 joins ready queue.
+2418      : Process 6 scheduled to run for 1 (IO).   2419
+2419       : Process      6 exits. Turnaround time =  1303 (107%), Wait time = 85
+2419      : CPU goes idle.
+2434      : Process 9 joins ready queue.
+2434      : Process 9 scheduled to run for 5  (premepted).  2439
+2439      : Process 9 joins ready queue.
+2439      : Process 9 scheduled to run for 5 (IO).   2444
+2443      : Process 11 joins ready queue.
+2444      : Process 5 joins ready queue.
+2444       : Process      9 exits. Turnaround time =   670 (106%), Wait time = 37
+2444      : Process 11 scheduled to run for 3 (IO).   2447
+2447      : Process 5 scheduled to run for 5  (premepted).  2452
+2452      : Process 5 joins ready queue.
+2452      : Process 5 scheduled to run for 5  (premepted).  2457
+2457      : Process 10 joins ready queue.
+2457      : Process 5 joins ready queue.
+2457      : Process 10 scheduled to run for 5  (premepted).  2462
+2462      : Process 10 joins ready queue.
+2462      : Process 5 scheduled to run for 5  (premepted).  2467
+2467      : Process 5 joins ready queue.
+2467      : Process 10 scheduled to run for 5  (premepted).  2472
+2472      : Process 10 joins ready queue.
+2472      : Process 5 scheduled to run for 5  (premepted).  2477
+2477      : Process 5 joins ready queue.
+2477      : Process 10 scheduled to run for 4 (IO).   2481
+2481      : Process 5 scheduled to run for 5  (premepted).  2486
+2486      : Process 5 joins ready queue.
+2486      : Process 5 scheduled to run for 5  (premepted).  2491
+2491      : Process 5 joins ready queue.
+2491      : Process 5 scheduled to run for 5  (premepted).  2496
+2496      : Process 5 joins ready queue.
+2496      : Process 5 scheduled to run for 5  (premepted).  2501
+2501      : Process 5 joins ready queue.
+2501      : Process 5 scheduled to run for 5  (premepted).  2506
+2506      : Process 5 joins ready queue.
+2506      : Process 5 scheduled to run for 5  (premepted).  2511
+2511      : Process 5 joins ready queue.
+2511      : Process 5 scheduled to run for 5  (premepted).  2516
+2516      : Process 5 joins ready queue.
+2516      : Process 5 scheduled to run for 5  (premepted).  2521
+2521      : Process 5 joins ready queue.
+2521      : Process 5 scheduled to run for 5  (premepted).  2526
+2526      : Process 5 joins ready queue.
+2526      : Process 5 scheduled to run for 5  (premepted).  2531
+2531      : Process 5 joins ready queue.
+2531      : Process 5 scheduled to run for 5  (premepted).  2536
+2536      : Process 5 joins ready queue.
+2536      : Process 5 scheduled to run for 5  (premepted).  2541
+2541      : Process 5 joins ready queue.
+2541      : Process 5 scheduled to run for 5  (premepted).  2546
+2546      : Process 5 joins ready queue.
+2546      : Process 5 scheduled to run for 5  (premepted).  2551
+2551      : Process 5 joins ready queue.
+2551      : Process 5 scheduled to run for 5  (premepted).  2556
+2552      : Process 11 joins ready queue.
+2556      : Process 5 joins ready queue.
+2556      : Process 11 scheduled to run for 5  (premepted).  2561
+2561      : Process 11 joins ready queue.
+2561      : Process 5 scheduled to run for 5  (premepted).  2566
+2566      : Process 5 joins ready queue.
+2566      : Process 11 scheduled to run for 5  (premepted).  2571
+2571      : Process 11 joins ready queue.
+2571      : Process 5 scheduled to run for 5  (premepted).  2576
+2576      : Process 5 joins ready queue.
+2576      : Process 11 scheduled to run for 5 (IO).   2581
+2581      : Process 5 scheduled to run for 5  (premepted).  2586
+2586      : Process 5 joins ready queue.
+2586      : Process 5 scheduled to run for 3 (IO).   2589
+2589      : CPU goes idle.
+2636      : Process 10 joins ready queue.
+2636      : Process 10 scheduled to run for 5  (premepted).  2641
+2641      : Process 10 joins ready queue.
+2641      : Process 10 scheduled to run for 5  (premepted).  2646
+2646      : Process 10 joins ready queue.
+2646      : Process 10 scheduled to run for 4 (IO).   2650
+2650      : CPU goes idle.
+2674      : Process 12 joins ready queue.
+2674      : Process 12 scheduled to run for 5 (IO).   2679
+2679      : CPU goes idle.
+2700      : Process 11 joins ready queue.
+2700      : Process 11 scheduled to run for 5  (premepted).  2705
+2705      : Process 11 joins ready queue.
+2705      : Process 11 scheduled to run for 5  (premepted).  2710
+2710      : Process 11 joins ready queue.
+2710      : Process 11 scheduled to run for 5 (IO).   2715
+2715      : CPU goes idle.
+2730      : Process 5 joins ready queue.
+2730      : Process 5 scheduled to run for 5  (premepted).  2735
+2735      : Process 5 joins ready queue.
+2735      : Process 5 scheduled to run for 5  (premepted).  2740
+2740      : Process 5 joins ready queue.
+2740      : Process 5 scheduled to run for 5  (premepted).  2745
+2745      : Process 5 joins ready queue.
+2745      : Process 5 scheduled to run for 5  (premepted).  2750
+2750      : Process 5 joins ready queue.
+2750      : Process 5 scheduled to run for 5  (premepted).  2755
+2751      : Process 12 joins ready queue.
+2755      : Process 5 joins ready queue.
+2755      : Process 12 scheduled to run for 5  (premepted).  2760
+2760      : Process 12 joins ready queue.
+2760      : Process 5 scheduled to run for 5  (premepted).  2765
+2765      : Process 5 joins ready queue.
+2765      : Process 12 scheduled to run for 3 (IO).   2768
+2768      : Process 10 joins ready queue.
+2768      : Process 5 scheduled to run for 5  (premepted).  2773
+2773      : Process 5 joins ready queue.
+2773      : Process 10 scheduled to run for 5  (premepted).  2778
+2778      : Process 10 joins ready queue.
+2778      : Process 5 scheduled to run for 5  (premepted).  2783
+2783      : Process 5 joins ready queue.
+2783      : Process 10 scheduled to run for 4 (IO).   2787
+2787      : Process 5 scheduled to run for 5  (premepted).  2792
+2792      : Process 5 joins ready queue.
+2792      : Process 5 scheduled to run for 5  (premepted).  2797
+2797      : Process 5 joins ready queue.
+2797      : Process 5 scheduled to run for 5  (premepted).  2802
+2802      : Process 5 joins ready queue.
+2802      : Process 5 scheduled to run for 5  (premepted).  2807
+2807      : Process 5 joins ready queue.
+2807      : Process 5 scheduled to run for 5  (premepted).  2812
+2812      : Process 5 joins ready queue.
+2812      : Process 5 scheduled to run for 5  (premepted).  2817
+2813      : Process 11 joins ready queue.
+2817      : Process 5 joins ready queue.
+2817      : Process 11 scheduled to run for 5  (premepted).  2822
+2822      : Process 11 joins ready queue.
+2822      : Process 5 scheduled to run for 5  (premepted).  2827
+2827      : Process 5 joins ready queue.
+2827      : Process 11 scheduled to run for 5  (premepted).  2832
+2832      : Process 11 joins ready queue.
+2832      : Process 5 scheduled to run for 5  (premepted).  2837
+2837      : Process 5 joins ready queue.
+2837      : Process 11 scheduled to run for 4 (IO).   2841
+2841      : Process 5 scheduled to run for 5  (premepted).  2846
+2846      : Process 5 joins ready queue.
+2846      : Process 5 scheduled to run for 5  (premepted).  2851
+2851      : Process 5 joins ready queue.
+2851      : Process 5 scheduled to run for 5  (premepted).  2856
+2856      : Process 5 joins ready queue.
+2856      : Process 5 scheduled to run for 5  (premepted).  2861
+2861      : Process 5 joins ready queue.
+2861      : Process 5 scheduled to run for 5  (premepted).  2866
+2866      : Process 5 joins ready queue.
+2866      : Process 5 scheduled to run for 5  (premepted).  2871
+2871      : Process 5 joins ready queue.
+2871      : Process 5 scheduled to run for 5  (premepted).  2876
+2876      : Process 5 joins ready queue.
+2876      : Process 5 scheduled to run for 5  (premepted).  2881
+2881      : Process 5 joins ready queue.
+2881      : Process 5 scheduled to run for 5  (premepted).  2886
+2884      : Process 13 joins ready queue.
+2886      : Process 5 joins ready queue.
+2886      : Process 13 scheduled to run for 5 (IO).   2891
+2891      : Process 5 scheduled to run for 5  (premepted).  2896
+2892      : Process 12 joins ready queue.
+2896      : Process 5 joins ready queue.
+2896      : Process 12 scheduled to run for 5  (premepted).  2901
+2901      : Process 12 joins ready queue.
+2901      : Process 5 scheduled to run for 5  (premepted).  2906
+2906      : Process 5 joins ready queue.
+2906      : Process 12 scheduled to run for 5  (premepted).  2911
+2911      : Process 12 joins ready queue.
+2911      : Process 5 scheduled to run for 5 (IO).   2916
+2916       : Process      5 exits. Turnaround time =  1938 (121%), Wait time = 336
+2916      : Process 12 scheduled to run for 5 (IO).   2921
+2921      : CPU goes idle.
+2923      : Process 10 joins ready queue.
+2923      : Process 10 scheduled to run for 5  (premepted).  2928
+2928      : Process 10 joins ready queue.
+2928      : Process 10 scheduled to run for 5 (IO).   2933
+2933      : CPU goes idle.
+2943      : Process 11 joins ready queue.
+2943      : Process 11 scheduled to run for 5  (premepted).  2948
+2948      : Process 11 joins ready queue.
+2948      : Process 11 scheduled to run for 2 (IO).   2950
+2950      : CPU goes idle.
+2997      : Process 13 joins ready queue.
+2997      : Process 13 scheduled to run for 2 (IO).   2999
+2998      : Process 14 joins ready queue.
+2999      : Process 14 scheduled to run for 5 (IO).   3004
+3004      : CPU goes idle.
+3007      : Process 11 joins ready queue.
+3007      : Process 11 scheduled to run for 5  (premepted).  3012
+3012      : Process 11 joins ready queue.
+3012      : Process 11 scheduled to run for 5  (premepted).  3017
+3017      : Process 11 joins ready queue.
+3017      : Process 11 scheduled to run for 2 (IO).   3019
+3019      : CPU goes idle.
+3063      : Process 10 joins ready queue.
+3063      : Process 10 scheduled to run for 2 (IO).   3065
+3065       : Process     10 exits. Turnaround time =   893 (104%), Wait time = 32
+3065      : CPU goes idle.
+3096      : Process 12 joins ready queue.
+3096      : Process 12 scheduled to run for 5  (premepted).  3101
+3096      : Process 13 joins ready queue.
+3101      : Process 12 joins ready queue.
+3101      : Process 13 scheduled to run for 5  (premepted).  3106
+3106      : Process 13 joins ready queue.
+3106      : Process 12 scheduled to run for 2 (IO).   3108
+3108      : Process 13 scheduled to run for 5 (IO).   3113
+3113      : CPU goes idle.
+3134      : Process 14 joins ready queue.
+3134      : Process 14 scheduled to run for 1 (IO).   3135
+3135      : CPU goes idle.
+3203      : Process 11 joins ready queue.
+3203      : Process 11 scheduled to run for 5  (premepted).  3208
+3208      : Process 11 joins ready queue.
+3208      : Process 11 scheduled to run for 5  (premepted).  3213
+3213      : Process 11 joins ready queue.
+3213      : Process 11 scheduled to run for 5 (IO).   3218
+3218      : CPU goes idle.
+3222      : Process 15 joins ready queue.
+3222      : Process 15 scheduled to run for 5  (premepted).  3227
+3227      : Process 15 joins ready queue.
+3227      : Process 15 scheduled to run for 5  (premepted).  3232
+3232      : Process 15 joins ready queue.
+3232      : Process 15 scheduled to run for 5 (IO).   3237
+3237      : CPU goes idle.
+3243      : Process 12 joins ready queue.
+3243      : Process 12 scheduled to run for 5  (premepted).  3248
+3248      : Process 12 joins ready queue.
+3248      : Process 12 scheduled to run for 5  (premepted).  3253
+3253      : Process 12 joins ready queue.
+3253      : Process 12 scheduled to run for 1 (IO).   3254
+3254      : CPU goes idle.
+3285      : Process 14 joins ready queue.
+3285      : Process 14 scheduled to run for 3 (IO).   3288
+3288      : CPU goes idle.
+3299      : Process 13 joins ready queue.
+3299      : Process 13 scheduled to run for 5  (premepted).  3304
+3304      : Process 13 joins ready queue.
+3304      : Process 13 scheduled to run for 3 (IO).   3307
+3307      : Process 11 joins ready queue.
+3307       : Process     13 exits. Turnaround time =   423 (102%), Wait time = 9
+3307      : Process 11 scheduled to run for 5  (premepted).  3312
+3312      : Process 11 joins ready queue.
+3312      : Process 11 scheduled to run for 2 (IO).   3314
+3314       : Process     11 exits. Turnaround time =  1065 (105%), Wait time = 47
+3314      : CPU goes idle.
+3337      : Process 15 joins ready queue.
+3337      : Process 15 scheduled to run for 5  (premepted).  3342
+3342      : Process 15 joins ready queue.
+3342      : Process 15 scheduled to run for 5  (premepted).  3347
+3347      : Process 15 joins ready queue.
+3347      : Process 15 scheduled to run for 1 (IO).   3348
+3348      : CPU goes idle.
+3391      : Process 12 joins ready queue.
+3391      : Process 12 scheduled to run for 3 (IO).   3394
+3394      : CPU goes idle.
+3433      : Process 15 joins ready queue.
+3433      : Process 15 scheduled to run for 5  (premepted).  3438
+3438      : Process 15 joins ready queue.
+3438      : Process 15 scheduled to run for 1 (IO).   3439
+3439      : CPU goes idle.
+3475      : Process 12 joins ready queue.
+3475      : Process 12 scheduled to run for 5  (premepted).  3480
+3478      : Process 14 joins ready queue.
+3480      : Process 12 joins ready queue.
+3480      : Process 14 scheduled to run for 5 (IO).   3485
+3485      : Process 12 scheduled to run for 2 (IO).   3487
+3487      : CPU goes idle.
+3531      : Process 15 joins ready queue.
+3531      : Process 15 scheduled to run for 5  (premepted).  3536
+3536      : Process 14 joins ready queue.
+3536      : Process 15 joins ready queue.
+3536      : Process 14 scheduled to run for 1 (IO).   3537
+3537      : Process 15 scheduled to run for 5  (premepted).  3542
+3542      : Process 15 joins ready queue.
+3542      : Process 15 scheduled to run for 5 (IO).   3547
+3547      : CPU goes idle.
+3587      : Process 16 joins ready queue.
+3587      : Process 16 scheduled to run for 3 (IO).   3590
+3590      : CPU goes idle.
+3605      : Process 14 joins ready queue.
+3605      : Process 14 scheduled to run for 5  (premepted).  3610
+3610      : Process 14 joins ready queue.
+3610      : Process 14 scheduled to run for 5  (premepted).  3615
+3615      : Process 14 joins ready queue.
+3615      : Process 14 scheduled to run for 5 (IO).   3620
+3620      : CPU goes idle.
+3626      : Process 15 joins ready queue.
+3626      : Process 15 scheduled to run for 2 (IO).   3628
+3628      : CPU goes idle.
+3648      : Process 12 joins ready queue.
+3648      : Process 12 scheduled to run for 5  (premepted).  3653
+3653      : Process 12 joins ready queue.
+3653      : Process 12 scheduled to run for 5  (premepted).  3658
+3658      : Process 12 joins ready queue.
+3658      : Process 12 scheduled to run for 4 (IO).   3662
+3662      : CPU goes idle.
+3676      : Process 14 joins ready queue.
+3676      : Process 14 scheduled to run for 5  (premepted).  3681
+3681      : Process 14 joins ready queue.
+3681      : Process 14 scheduled to run for 5  (premepted).  3686
+3686      : Process 14 joins ready queue.
+3686      : Process 14 scheduled to run for 4 (IO).   3690
+3690      : CPU goes idle.
+3724      : Process 17 joins ready queue.
+3724      : Process 17 scheduled to run for 5  (premepted).  3729
+3729      : Process 17 joins ready queue.
+3729      : Process 17 scheduled to run for 1 (IO).   3730
+3730      : CPU goes idle.
+3746      : Process 16 joins ready queue.
+3746      : Process 16 scheduled to run for 5  (premepted).  3751
+3748      : Process 12 joins ready queue.
+3751      : Process 16 joins ready queue.
+3751      : Process 12 scheduled to run for 5  (premepted).  3756
+3752      : Process 15 joins ready queue.
+3756      : Process 12 joins ready queue.
+3756      : Process 16 scheduled to run for 2 (IO).   3758
+3758      : Process 15 scheduled to run for 5  (premepted).  3763
+3761      : Process 18 joins ready queue.
+3763      : Process 15 joins ready queue.
+3763      : Process 12 scheduled to run for 5  (premepted).  3768
+3768      : Process 12 joins ready queue.
+3768      : Process 18 scheduled to run for 5  (premepted).  3773
+3773      : Process 18 joins ready queue.
+3773      : Process 15 scheduled to run for 4 (IO).   3777
+3777      : Process 12 scheduled to run for 3 (IO).   3780
+3780       : Process     12 exits. Turnaround time =  1106 (105%), Wait time = 52
+3780      : Process 18 scheduled to run for 5  (premepted).  3785
+3785      : Process 18 joins ready queue.
+3785      : Process 18 scheduled to run for 4 (IO).   3789
+3789      : CPU goes idle.
+3847      : Process 15 joins ready queue.
+3847      : Process 15 scheduled to run for 5  (premepted).  3852
+3852      : Process 15 joins ready queue.
+3852      : Process 15 scheduled to run for 3 (IO).   3855
+3855      : CPU goes idle.
+3876      : Process 14 joins ready queue.
+3876      : Process 14 scheduled to run for 5  (premepted).  3881
+3881      : Process 14 joins ready queue.
+3881      : Process 14 scheduled to run for 5  (premepted).  3886
+3885      : Process 18 joins ready queue.
+3886      : Process 14 joins ready queue.
+3886      : Process 18 scheduled to run for 5  (premepted).  3891
+3891      : Process 17 joins ready queue.
+3891      : Process 18 joins ready queue.
+3891      : Process 14 scheduled to run for 4 (IO).   3895
+3895      : Process 17 scheduled to run for 5  (premepted).  3900
+3900      : Process 17 joins ready queue.
+3900      : Process 18 scheduled to run for 5 (IO).   3905
+3905      : Process 17 scheduled to run for 5  (premepted).  3910
+3908      : Process 16 joins ready queue.
+3910      : Process 17 joins ready queue.
+3910      : Process 16 scheduled to run for 5  (premepted).  3915
+3915      : Process 16 joins ready queue.
+3915      : Process 17 scheduled to run for 1 (IO).   3916
+3916      : Process 16 scheduled to run for 2 (IO).   3918
+3918      : CPU goes idle.
+3958      : Process 19 joins ready queue.
+3958      : Process 19 scheduled to run for 5  (premepted).  3963
+3963      : Process 19 joins ready queue.
+3963      : Process 19 scheduled to run for 5  (premepted).  3968
+3968      : Process 19 joins ready queue.
+3968      : Process 19 scheduled to run for 4 (IO).   3972
+3972      : CPU goes idle.
+3979      : Process 15 joins ready queue.
+3979      : Process 15 scheduled to run for 2 (IO).   3981
+3981      : CPU goes idle.
+4034      : Process 15 joins ready queue.
+4034      : Process 15 scheduled to run for 1 (IO).   4035
+4035      : CPU goes idle.
+4038      : Process 18 joins ready queue.
+4038      : Process 18 scheduled to run for 5  (premepted).  4043
+4043      : Process 18 joins ready queue.
+4043      : Process 18 scheduled to run for 3 (IO).   4046
+4046      : CPU goes idle.
+4065      : Process 16 joins ready queue.
+4065      : Process 16 scheduled to run for 5  (premepted).  4070
+4070      : Process 16 joins ready queue.
+4070      : Process 16 scheduled to run for 5  (premepted).  4075
+4075      : Process 16 joins ready queue.
+4075      : Process 16 scheduled to run for 1 (IO).   4076
+4076      : CPU goes idle.
+4080      : Process 14 joins ready queue.
+4080      : Process 14 scheduled to run for 5  (premepted).  4085
+4085      : Process 14 joins ready queue.
+4085      : Process 14 scheduled to run for 5  (premepted).  4090
+4090      : Process 14 joins ready queue.
+4090      : Process 14 scheduled to run for 2 (IO).   4092
+4092       : Process     14 exits. Turnaround time =  1094 (101%), Wait time = 8
+4092      : CPU goes idle.
+4102      : Process 17 joins ready queue.
+4102      : Process 17 scheduled to run for 5  (premepted).  4107
+4107      : Process 17 joins ready queue.
+4107      : Process 17 scheduled to run for 4 (IO).   4111
+4111      : CPU goes idle.
+4121      : Process 18 joins ready queue.
+4121      : Process 18 scheduled to run for 5  (premepted).  4126
+4126      : Process 18 joins ready queue.
+4126      : Process 18 scheduled to run for 3 (IO).   4129
+4127      : Process 15 joins ready queue.
+4129      : Process 15 scheduled to run for 5  (premepted).  4134
+4134      : Process 15 joins ready queue.
+4134      : Process 15 scheduled to run for 5  (premepted).  4139
+4139      : Process 15 joins ready queue.
+4139      : Process 15 scheduled to run for 4 (IO).   4143
+4143       : Process     15 exits. Turnaround time =   921 (102%), Wait time = 19
+4143      : CPU goes idle.
+4158      : Process 19 joins ready queue.
+4158      : Process 19 scheduled to run for 4 (IO).   4162
+4162      : CPU goes idle.
+4164      : Process 17 joins ready queue.
+4164      : Process 17 scheduled to run for 5  (premepted).  4169
+4169      : Process 17 joins ready queue.
+4169      : Process 17 scheduled to run for 5  (premepted).  4174
+4174      : Process 17 joins ready queue.
+4174      : Process 17 scheduled to run for 5 (IO).   4179
+4179      : CPU goes idle.
+4203      : Process 16 joins ready queue.
+4203      : Process 16 scheduled to run for 3 (IO).   4206
+4206      : CPU goes idle.
+4265      : Process 18 joins ready queue.
+4265      : Process 18 scheduled to run for 1 (IO).   4266
+4266      : CPU goes idle.
+4283      : Process 16 joins ready queue.
+4283      : Process 16 scheduled to run for 5  (premepted).  4288
+4288      : Process 16 joins ready queue.
+4288      : Process 16 scheduled to run for 5  (premepted).  4293
+4293      : Process 16 joins ready queue.
+4293      : Process 16 scheduled to run for 1 (IO).   4294
+4294      : CPU goes idle.
+4307      : Process 19 joins ready queue.
+4307      : Process 19 scheduled to run for 5  (premepted).  4312
+4312      : Process 19 joins ready queue.
+4312      : Process 19 scheduled to run for 5  (premepted).  4317
+4317      : Process 19 joins ready queue.
+4317      : Process 19 scheduled to run for 4 (IO).   4321
+4321      : CPU goes idle.
+4328      : Process 17 joins ready queue.
+4328      : Process 17 scheduled to run for 3 (IO).   4331
+4331       : Process     17 exits. Turnaround time =   607 (102%), Wait time = 14
+4331      : CPU goes idle.
+4335      : Process 20 joins ready queue.
+4335      : Process 20 scheduled to run for 5  (premepted).  4340
+4340      : Process 20 joins ready queue.
+4340      : Process 20 scheduled to run for 5  (premepted).  4345
+4345      : Process 20 joins ready queue.
+4345      : Process 20 scheduled to run for 5  (premepted).  4350
+4350      : Process 20 joins ready queue.
+4350      : Process 20 scheduled to run for 5  (premepted).  4355
+4355      : Process 20 joins ready queue.
+4355      : Process 20 scheduled to run for 5  (premepted).  4360
+4360      : Process 20 joins ready queue.
+4360      : Process 20 scheduled to run for 5  (premepted).  4365
+4365      : Process 20 joins ready queue.
+4365      : Process 20 scheduled to run for 5  (premepted).  4370
+4370      : Process 20 joins ready queue.
+4370      : Process 20 scheduled to run for 5  (premepted).  4375
+4375      : Process 20 joins ready queue.
+4375      : Process 20 scheduled to run for 5  (premepted).  4380
+4380      : Process 20 joins ready queue.
+4380      : Process 20 scheduled to run for 5  (premepted).  4385
+4385      : Process 20 joins ready queue.
+4385      : Process 20 scheduled to run for 5  (premepted).  4390
+4390      : Process 20 joins ready queue.
+4390      : Process 20 scheduled to run for 5  (premepted).  4395
+4395      : Process 20 joins ready queue.
+4395      : Process 20 scheduled to run for 5  (premepted).  4400
+4396      : Process 16 joins ready queue.
+4400      : Process 20 joins ready queue.
+4400      : Process 16 scheduled to run for 5  (premepted).  4405
+4405      : Process 16 joins ready queue.
+4405      : Process 20 scheduled to run for 5  (premepted).  4410
+4410      : Process 20 joins ready queue.
+4410      : Process 16 scheduled to run for 5  (premepted).  4415
+4413      : Process 19 joins ready queue.
+4415      : Process 16 joins ready queue.
+4415      : Process 20 scheduled to run for 5  (premepted).  4420
+4420      : Process 20 joins ready queue.
+4420      : Process 19 scheduled to run for 5  (premepted).  4425
+4425      : Process 19 joins ready queue.
+4425      : Process 16 scheduled to run for 4 (IO).   4429
+4429       : Process     16 exits. Turnaround time =   842 (103%), Wait time = 27
+4429      : Process 20 scheduled to run for 5  (premepted).  4434
+4434      : Process 20 joins ready queue.
+4434      : Process 19 scheduled to run for 4 (IO).   4438
+4438      : Process 20 scheduled to run for 5  (premepted).  4443
+4439      : Process 18 joins ready queue.
+4443      : Process 20 joins ready queue.
+4443      : Process 18 scheduled to run for 5 (IO).   4448
+4448      : Process 20 scheduled to run for 5  (premepted).  4453
+4453      : Process 20 joins ready queue.
+4453      : Process 20 scheduled to run for 5  (premepted).  4458
+4458      : Process 20 joins ready queue.
+4458      : Process 20 scheduled to run for 5  (premepted).  4463
+4463      : Process 20 joins ready queue.
+4463      : Process 20 scheduled to run for 5  (premepted).  4468
+4468      : Process 20 joins ready queue.
+4468      : Process 20 scheduled to run for 5  (premepted).  4473
+4473      : Process 20 joins ready queue.
+4473      : Process 20 scheduled to run for 5  (premepted).  4478
+4478      : Process 20 joins ready queue.
+4478      : Process 20 scheduled to run for 5  (premepted).  4483
+4483      : Process 20 joins ready queue.
+4483      : Process 20 scheduled to run for 5  (premepted).  4488
+4488      : Process 20 joins ready queue.
+4488      : Process 20 scheduled to run for 5  (premepted).  4493
+4493      : Process 20 joins ready queue.
+4493      : Process 20 scheduled to run for 5  (premepted).  4498
+4498      : Process 20 joins ready queue.
+4498      : Process 20 scheduled to run for 5  (premepted).  4503
+4503      : Process 20 joins ready queue.
+4503      : Process 20 scheduled to run for 5  (premepted).  4508
+4508      : Process 20 joins ready queue.
+4508      : Process 20 scheduled to run for 5  (premepted).  4513
+4512      : Process 18 joins ready queue.
+4513      : Process 20 joins ready queue.
+4513      : Process 18 scheduled to run for 5  (premepted).  4518
+4518      : Process 18 joins ready queue.
+4518      : Process 20 scheduled to run for 5  (premepted).  4523
+4523      : Process 20 joins ready queue.
+4523      : Process 18 scheduled to run for 5  (premepted).  4528
+4528      : Process 18 joins ready queue.
+4528      : Process 20 scheduled to run for 5  (premepted).  4533
+4533      : Process 20 joins ready queue.
+4533      : Process 18 scheduled to run for 3 (IO).   4536
+4536      : Process 20 scheduled to run for 5  (premepted).  4541
+4541      : Process 20 joins ready queue.
+4541      : Process 20 scheduled to run for 5  (premepted).  4546
+4546      : Process 20 joins ready queue.
+4546      : Process 20 scheduled to run for 5  (premepted).  4551
+4551      : Process 20 joins ready queue.
+4551      : Process 20 scheduled to run for 5  (premepted).  4556
+4556      : Process 20 joins ready queue.
+4556      : Process 20 scheduled to run for 5  (premepted).  4561
+4561      : Process 20 joins ready queue.
+4561      : Process 20 scheduled to run for 5  (premepted).  4566
+4566      : Process 20 joins ready queue.
+4566      : Process 20 scheduled to run for 5  (premepted).  4571
+4571      : Process 20 joins ready queue.
+4571      : Process 20 scheduled to run for 5  (premepted).  4576
+4576      : Process 20 joins ready queue.
+4576      : Process 20 scheduled to run for 5  (premepted).  4581
+4581      : Process 20 joins ready queue.
+4581      : Process 20 scheduled to run for 5  (premepted).  4586
+4586      : Process 20 joins ready queue.
+4586      : Process 20 scheduled to run for 5  (premepted).  4591
+4591      : Process 20 joins ready queue.
+4591      : Process 20 scheduled to run for 5  (premepted).  4596
+4596      : Process 20 joins ready queue.
+4596      : Process 20 scheduled to run for 5  (premepted).  4601
+4601      : Process 20 joins ready queue.
+4601      : Process 20 scheduled to run for 5  (premepted).  4606
+4606      : Process 20 joins ready queue.
+4606      : Process 20 scheduled to run for 5  (premepted).  4611
+4611      : Process 20 joins ready queue.
+4611      : Process 20 scheduled to run for 5  (premepted).  4616
+4616      : Process 20 joins ready queue.
+4616      : Process 20 scheduled to run for 5  (premepted).  4621
+4621      : Process 20 joins ready queue.
+4621      : Process 20 scheduled to run for 5  (premepted).  4626
+4626      : Process 20 joins ready queue.
+4626      : Process 20 scheduled to run for 5  (premepted).  4631
+4631      : Process 20 joins ready queue.
+4631      : Process 20 scheduled to run for 5  (premepted).  4636
+4633      : Process 19 joins ready queue.
+4636      : Process 20 joins ready queue.
+4636      : Process 19 scheduled to run for 5  (premepted).  4641
+4641      : Process 19 joins ready queue.
+4641      : Process 20 scheduled to run for 5  (premepted).  4646
+4646      : Process 20 joins ready queue.
+4646      : Process 19 scheduled to run for 4 (IO).   4650
+4650      : Process 20 scheduled to run for 5  (premepted).  4655
+4655      : Process 20 joins ready queue.
+4655      : Process 20 scheduled to run for 5  (premepted).  4660
+4660      : Process 20 joins ready queue.
+4660      : Process 20 scheduled to run for 5 (IO).   4665
+4665      : CPU goes idle.
+4724      : Process 18 joins ready queue.
+4724      : Process 18 scheduled to run for 5  (premepted).  4729
+4729      : Process 18 joins ready queue.
+4729      : Process 18 scheduled to run for 3 (IO).   4732
+4731      : Process 19 joins ready queue.
+4732      : Process 19 scheduled to run for 5  (premepted).  4737
+4737      : Process 19 joins ready queue.
+4737      : Process 19 scheduled to run for 5 (IO).   4742
+4742      : CPU goes idle.
+4781      : Process 20 joins ready queue.
+4781      : Process 20 scheduled to run for 5  (premepted).  4786
+4786      : Process 20 joins ready queue.
+4786      : Process 20 scheduled to run for 5  (premepted).  4791
+4791      : Process 20 joins ready queue.
+4791      : Process 20 scheduled to run for 5  (premepted).  4796
+4796      : Process 20 joins ready queue.
+4796      : Process 20 scheduled to run for 5  (premepted).  4801
+4801      : Process 20 joins ready queue.
+4801      : Process 20 scheduled to run for 5  (premepted).  4806
+4806      : Process 20 joins ready queue.
+4806      : Process 20 scheduled to run for 5  (premepted).  4811
+4811      : Process 20 joins ready queue.
+4811      : Process 20 scheduled to run for 5  (premepted).  4816
+4816      : Process 20 joins ready queue.
+4816      : Process 20 scheduled to run for 5  (premepted).  4821
+4821      : Process 20 joins ready queue.
+4821      : Process 20 scheduled to run for 5  (premepted).  4826
+4826      : Process 20 joins ready queue.
+4826      : Process 20 scheduled to run for 5  (premepted).  4831
+4831      : Process 20 joins ready queue.
+4831      : Process 20 scheduled to run for 5  (premepted).  4836
+4836      : Process 20 joins ready queue.
+4836      : Process 20 scheduled to run for 5  (premepted).  4841
+4839      : Process 18 joins ready queue.
+4841      : Process 20 joins ready queue.
+4841      : Process 18 scheduled to run for 5  (premepted).  4846
+4846      : Process 18 joins ready queue.
+4846      : Process 20 scheduled to run for 5  (premepted).  4851
+4851      : Process 20 joins ready queue.
+4851      : Process 18 scheduled to run for 5  (premepted).  4856
+4856      : Process 18 joins ready queue.
+4856      : Process 20 scheduled to run for 5  (premepted).  4861
+4861      : Process 20 joins ready queue.
+4861      : Process 18 scheduled to run for 5 (IO).   4866
+4866       : Process     18 exits. Turnaround time =  1105 (105%), Wait time = 51
+4866      : Process 20 scheduled to run for 5  (premepted).  4871
+4871      : Process 20 joins ready queue.
+4871      : Process 20 scheduled to run for 5  (premepted).  4876
+4876      : Process 20 joins ready queue.
+4876      : Process 20 scheduled to run for 5  (premepted).  4881
+4881      : Process 20 joins ready queue.
+4881      : Process 20 scheduled to run for 5  (premepted).  4886
+4886      : Process 20 joins ready queue.
+4886      : Process 20 scheduled to run for 5  (premepted).  4891
+4891      : Process 20 joins ready queue.
+4891      : Process 20 scheduled to run for 5  (premepted).  4896
+4896      : Process 19 joins ready queue.
+4896      : Process 20 joins ready queue.
+4896      : Process 19 scheduled to run for 5  (premepted).  4901
+4901      : Process 19 joins ready queue.
+4901      : Process 20 scheduled to run for 5  (premepted).  4906
+4906      : Process 20 joins ready queue.
+4906      : Process 19 scheduled to run for 2 (IO).   4908
+4908       : Process     19 exits. Turnaround time =   950 (103%), Wait time = 30
+4908      : Process 20 scheduled to run for 5  (premepted).  4913
+4913      : Process 20 joins ready queue.
+4913      : Process 20 scheduled to run for 5  (premepted).  4918
+4918      : Process 20 joins ready queue.
+4918      : Process 20 scheduled to run for 5  (premepted).  4923
+4923      : Process 20 joins ready queue.
+4923      : Process 20 scheduled to run for 5  (premepted).  4928
+4928      : Process 20 joins ready queue.
+4928      : Process 20 scheduled to run for 5  (premepted).  4933
+4933      : Process 20 joins ready queue.
+4933      : Process 20 scheduled to run for 5  (premepted).  4938
+4938      : Process 20 joins ready queue.
+4938      : Process 20 scheduled to run for 5  (premepted).  4943
+4943      : Process 20 joins ready queue.
+4943      : Process 20 scheduled to run for 5  (premepted).  4948
+4948      : Process 20 joins ready queue.
+4948      : Process 20 scheduled to run for 5  (premepted).  4953
+4953      : Process 20 joins ready queue.
+4953      : Process 20 scheduled to run for 5  (premepted).  4958
+4958      : Process 20 joins ready queue.
+4958      : Process 20 scheduled to run for 5  (premepted).  4963
+4963      : Process 20 joins ready queue.
+4963      : Process 20 scheduled to run for 5  (premepted).  4968
+4968      : Process 20 joins ready queue.
+4968      : Process 20 scheduled to run for 5  (premepted).  4973
+4973      : Process 20 joins ready queue.
+4973      : Process 20 scheduled to run for 5  (premepted).  4978
+4978      : Process 20 joins ready queue.
+4978      : Process 20 scheduled to run for 5  (premepted).  4983
+4983      : Process 20 joins ready queue.
+4983      : Process 20 scheduled to run for 5  (premepted).  4988
+4988      : Process 20 joins ready queue.
+4988      : Process 20 scheduled to run for 5  (premepted).  4993
+4993      : Process 20 joins ready queue.
+4993      : Process 20 scheduled to run for 5  (premepted).  4998
+4998      : Process 20 joins ready queue.
+4998      : Process 20 scheduled to run for 5  (premepted).  5003
+5003      : Process 20 joins ready queue.
+5003      : Process 20 scheduled to run for 5  (premepted).  5008
+5008      : Process 20 joins ready queue.
+5008      : Process 20 scheduled to run for 5  (premepted).  5013
+5013      : Process 20 joins ready queue.
+5013      : Process 20 scheduled to run for 5  (premepted).  5018
+5018      : Process 20 joins ready queue.
+5018      : Process 20 scheduled to run for 5  (premepted).  5023
+5023      : Process 20 joins ready queue.
+5023      : Process 20 scheduled to run for 1 (IO).   5024
+5024      : CPU goes idle.
+5166      : Process 20 joins ready queue.
+5166      : Process 20 scheduled to run for 5  (premepted).  5171
+5171      : Process 20 joins ready queue.
+5171      : Process 20 scheduled to run for 5  (premepted).  5176
+5176      : Process 20 joins ready queue.
+5176      : Process 20 scheduled to run for 5  (premepted).  5181
+5181      : Process 20 joins ready queue.
+5181      : Process 20 scheduled to run for 5  (premepted).  5186
+5186      : Process 20 joins ready queue.
+5186      : Process 20 scheduled to run for 5  (premepted).  5191
+5191      : Process 20 joins ready queue.
+5191      : Process 20 scheduled to run for 5  (premepted).  5196
+5196      : Process 20 joins ready queue.
+5196      : Process 20 scheduled to run for 5  (premepted).  5201
+5201      : Process 20 joins ready queue.
+5201      : Process 20 scheduled to run for 5  (premepted).  5206
+5206      : Process 20 joins ready queue.
+5206      : Process 20 scheduled to run for 5  (premepted).  5211
+5211      : Process 20 joins ready queue.
+5211      : Process 20 scheduled to run for 5  (premepted).  5216
+5216      : Process 20 joins ready queue.
+5216      : Process 20 scheduled to run for 5  (premepted).  5221
+5221      : Process 20 joins ready queue.
+5221      : Process 20 scheduled to run for 5  (premepted).  5226
+5226      : Process 20 joins ready queue.
+5226      : Process 20 scheduled to run for 5  (premepted).  5231
+5231      : Process 20 joins ready queue.
+5231      : Process 20 scheduled to run for 5  (premepted).  5236
+5236      : Process 20 joins ready queue.
+5236      : Process 20 scheduled to run for 5  (premepted).  5241
+5241      : Process 20 joins ready queue.
+5241      : Process 20 scheduled to run for 5  (premepted).  5246
+5246      : Process 20 joins ready queue.
+5246      : Process 20 scheduled to run for 5  (premepted).  5251
+5251      : Process 20 joins ready queue.
+5251      : Process 20 scheduled to run for 5  (premepted).  5256
+5256      : Process 20 joins ready queue.
+5256      : Process 20 scheduled to run for 5  (premepted).  5261
+5261      : Process 20 joins ready queue.
+5261      : Process 20 scheduled to run for 5  (premepted).  5266
+5266      : Process 20 joins ready queue.
+5266      : Process 20 scheduled to run for 5  (premepted).  5271
+5271      : Process 20 joins ready queue.
+5271      : Process 20 scheduled to run for 5  (premepted).  5276
+5276      : Process 20 joins ready queue.
+5276      : Process 20 scheduled to run for 5  (premepted).  5281
+5281      : Process 20 joins ready queue.
+5281      : Process 20 scheduled to run for 5  (premepted).  5286
+5286      : Process 20 joins ready queue.
+5286      : Process 20 scheduled to run for 5  (premepted).  5291
+5291      : Process 20 joins ready queue.
+5291      : Process 20 scheduled to run for 5  (premepted).  5296
+5296      : Process 20 joins ready queue.
+5296      : Process 20 scheduled to run for 5  (premepted).  5301
+5301      : Process 20 joins ready queue.
+5301      : Process 20 scheduled to run for 5  (premepted).  5306
+5306      : Process 20 joins ready queue.
+5306      : Process 20 scheduled to run for 5  (premepted).  5311
+5311      : Process 20 joins ready queue.
+5311      : Process 20 scheduled to run for 2 (IO).   5313
+5313      : CPU goes idle.
+5383      : Process 20 joins ready queue.
+5383      : Process 20 scheduled to run for 5  (premepted).  5388
+5388      : Process 20 joins ready queue.
+5388      : Process 20 scheduled to run for 5  (premepted).  5393
+5393      : Process 20 joins ready queue.
+5393      : Process 20 scheduled to run for 5  (premepted).  5398
+5398      : Process 20 joins ready queue.
+5398      : Process 20 scheduled to run for 5  (premepted).  5403
+5403      : Process 20 joins ready queue.
+5403      : Process 20 scheduled to run for 5  (premepted).  5408
+5408      : Process 20 joins ready queue.
+5408      : Process 20 scheduled to run for 5  (premepted).  5413
+5413      : Process 20 joins ready queue.
+5413      : Process 20 scheduled to run for 5  (premepted).  5418
+5418      : Process 20 joins ready queue.
+5418      : Process 20 scheduled to run for 5  (premepted).  5423
+5423      : Process 20 joins ready queue.
+5423      : Process 20 scheduled to run for 5  (premepted).  5428
+5428      : Process 20 joins ready queue.
+5428      : Process 20 scheduled to run for 5  (premepted).  5433
+5433      : Process 20 joins ready queue.
+5433      : Process 20 scheduled to run for 5  (premepted).  5438
+5438      : Process 20 joins ready queue.
+5438      : Process 20 scheduled to run for 5  (premepted).  5443
+5443      : Process 20 joins ready queue.
+5443      : Process 20 scheduled to run for 5  (premepted).  5448
+5448      : Process 20 joins ready queue.
+5448      : Process 20 scheduled to run for 5  (premepted).  5453
+5453      : Process 20 joins ready queue.
+5453      : Process 20 scheduled to run for 5  (premepted).  5458
+5458      : Process 20 joins ready queue.
+5458      : Process 20 scheduled to run for 5  (premepted).  5463
+5463      : Process 20 joins ready queue.
+5463      : Process 20 scheduled to run for 5  (premepted).  5468
+5468      : Process 20 joins ready queue.
+5468      : Process 20 scheduled to run for 5  (premepted).  5473
+5473      : Process 20 joins ready queue.
+5473      : Process 20 scheduled to run for 5  (premepted).  5478
+5478      : Process 20 joins ready queue.
+5478      : Process 20 scheduled to run for 5  (premepted).  5483
+5483      : Process 20 joins ready queue.
+5483      : Process 20 scheduled to run for 5  (premepted).  5488
+5488      : Process 20 joins ready queue.
+5488      : Process 20 scheduled to run for 5  (premepted).  5493
+5493      : Process 20 joins ready queue.
+5493      : Process 20 scheduled to run for 5  (premepted).  5498
+5498      : Process 20 joins ready queue.
+5498      : Process 20 scheduled to run for 5  (premepted).  5503
+5503      : Process 20 joins ready queue.
+5503      : Process 20 scheduled to run for 5  (premepted).  5508
+5508      : Process 20 joins ready queue.
+5508      : Process 20 scheduled to run for 5  (premepted).  5513
+5513      : Process 20 joins ready queue.
+5513      : Process 20 scheduled to run for 5  (premepted).  5518
+5518      : Process 20 joins ready queue.
+5518      : Process 20 scheduled to run for 5  (premepted).  5523
+5523      : Process 20 joins ready queue.
+5523      : Process 20 scheduled to run for 5  (premepted).  5528
+5528      : Process 20 joins ready queue.
+5528      : Process 20 scheduled to run for 5  (premepted).  5533
+5533      : Process 20 joins ready queue.
+5533      : Process 20 scheduled to run for 5  (premepted).  5538
+5538      : Process 20 joins ready queue.
+5538      : Process 20 scheduled to run for 5  (premepted).  5543
+5543      : Process 20 joins ready queue.
+5543      : Process 20 scheduled to run for 5  (premepted).  5548
+5548      : Process 20 joins ready queue.
+5548      : Process 20 scheduled to run for 5  (premepted).  5553
+5553      : Process 20 joins ready queue.
+5553      : Process 20 scheduled to run for 5 (IO).   5558
+5558      : CPU goes idle.
+5639      : Process 20 joins ready queue.
+5639      : Process 20 scheduled to run for 5  (premepted).  5644
+5644      : Process 20 joins ready queue.
+5644      : Process 20 scheduled to run for 5  (premepted).  5649
+5649      : Process 20 joins ready queue.
+5649      : Process 20 scheduled to run for 5  (premepted).  5654
+5654      : Process 20 joins ready queue.
+5654      : Process 20 scheduled to run for 5  (premepted).  5659
+5659      : Process 20 joins ready queue.
+5659      : Process 20 scheduled to run for 5  (premepted).  5664
+5664      : Process 20 joins ready queue.
+5664      : Process 20 scheduled to run for 5  (premepted).  5669
+5669      : Process 20 joins ready queue.
+5669      : Process 20 scheduled to run for 5  (premepted).  5674
+5674      : Process 20 joins ready queue.
+5674      : Process 20 scheduled to run for 5  (premepted).  5679
+5679      : Process 20 joins ready queue.
+5679      : Process 20 scheduled to run for 5  (premepted).  5684
+5684      : Process 20 joins ready queue.
+5684      : Process 20 scheduled to run for 5  (premepted).  5689
+5689      : Process 20 joins ready queue.
+5689      : Process 20 scheduled to run for 5  (premepted).  5694
+5694      : Process 20 joins ready queue.
+5694      : Process 20 scheduled to run for 5  (premepted).  5699
+5699      : Process 20 joins ready queue.
+5699      : Process 20 scheduled to run for 5  (premepted).  5704
+5704      : Process 20 joins ready queue.
+5704      : Process 20 scheduled to run for 5  (premepted).  5709
+5709      : Process 20 joins ready queue.
+5709      : Process 20 scheduled to run for 5  (premepted).  5714
+5714      : Process 20 joins ready queue.
+5714      : Process 20 scheduled to run for 5  (premepted).  5719
+5719      : Process 20 joins ready queue.
+5719      : Process 20 scheduled to run for 5  (premepted).  5724
+5724      : Process 20 joins ready queue.
+5724      : Process 20 scheduled to run for 5  (premepted).  5729
+5729      : Process 20 joins ready queue.
+5729      : Process 20 scheduled to run for 5  (premepted).  5734
+5734      : Process 20 joins ready queue.
+5734      : Process 20 scheduled to run for 5  (premepted).  5739
+5739      : Process 20 joins ready queue.
+5739      : Process 20 scheduled to run for 5  (premepted).  5744
+5744      : Process 20 joins ready queue.
+5744      : Process 20 scheduled to run for 5  (premepted).  5749
+5749      : Process 20 joins ready queue.
+5749      : Process 20 scheduled to run for 5  (premepted).  5754
+5754      : Process 20 joins ready queue.
+5754      : Process 20 scheduled to run for 5  (premepted).  5759
+5759      : Process 20 joins ready queue.
+5759      : Process 20 scheduled to run for 5  (premepted).  5764
+5764      : Process 20 joins ready queue.
+5764      : Process 20 scheduled to run for 5  (premepted).  5769
+5769      : Process 20 joins ready queue.
+5769      : Process 20 scheduled to run for 4 (IO).   5773
+5773      : CPU goes idle.
+5842      : Process 20 joins ready queue.
+5842      : Process 20 scheduled to run for 5  (premepted).  5847
+5847      : Process 20 joins ready queue.
+5847      : Process 20 scheduled to run for 5  (premepted).  5852
+5852      : Process 20 joins ready queue.
+5852      : Process 20 scheduled to run for 5  (premepted).  5857
+5857      : Process 20 joins ready queue.
+5857      : Process 20 scheduled to run for 5  (premepted).  5862
+5862      : Process 20 joins ready queue.
+5862      : Process 20 scheduled to run for 5  (premepted).  5867
+5867      : Process 20 joins ready queue.
+5867      : Process 20 scheduled to run for 5  (premepted).  5872
+5872      : Process 20 joins ready queue.
+5872      : Process 20 scheduled to run for 5  (premepted).  5877
+5877      : Process 20 joins ready queue.
+5877      : Process 20 scheduled to run for 5  (premepted).  5882
+5882      : Process 20 joins ready queue.
+5882      : Process 20 scheduled to run for 5  (premepted).  5887
+5887      : Process 20 joins ready queue.
+5887      : Process 20 scheduled to run for 5  (premepted).  5892
+5892      : Process 20 joins ready queue.
+5892      : Process 20 scheduled to run for 5  (premepted).  5897
+5897      : Process 20 joins ready queue.
+5897      : Process 20 scheduled to run for 5  (premepted).  5902
+5902      : Process 20 joins ready queue.
+5902      : Process 20 scheduled to run for 5  (premepted).  5907
+5907      : Process 20 joins ready queue.
+5907      : Process 20 scheduled to run for 5  (premepted).  5912
+5912      : Process 20 joins ready queue.
+5912      : Process 20 scheduled to run for 5  (premepted).  5917
+5917      : Process 20 joins ready queue.
+5917      : Process 20 scheduled to run for 5  (premepted).  5922
+5922      : Process 20 joins ready queue.
+5922      : Process 20 scheduled to run for 5  (premepted).  5927
+5927      : Process 20 joins ready queue.
+5927      : Process 20 scheduled to run for 5  (premepted).  5932
+5932      : Process 20 joins ready queue.
+5932      : Process 20 scheduled to run for 5  (premepted).  5937
+5937      : Process 20 joins ready queue.
+5937      : Process 20 scheduled to run for 5  (premepted).  5942
+5942      : Process 20 joins ready queue.
+5942      : Process 20 scheduled to run for 5  (premepted).  5947
+5947      : Process 20 joins ready queue.
+5947      : Process 20 scheduled to run for 5  (premepted).  5952
+5952      : Process 20 joins ready queue.
+5952      : Process 20 scheduled to run for 5  (premepted).  5957
+5957      : Process 20 joins ready queue.
+5957      : Process 20 scheduled to run for 5  (premepted).  5962
+5962      : Process 20 joins ready queue.
+5962      : Process 20 scheduled to run for 5  (premepted).  5967
+5967      : Process 20 joins ready queue.
+5967      : Process 20 scheduled to run for 5  (premepted).  5972
+5972      : Process 20 joins ready queue.
+5972      : Process 20 scheduled to run for 5  (premepted).  5977
+5977      : Process 20 joins ready queue.
+5977      : Process 20 scheduled to run for 5  (premepted).  5982
+5982      : Process 20 joins ready queue.
+5982      : Process 20 scheduled to run for 5  (premepted).  5987
+5987      : Process 20 joins ready queue.
+5987      : Process 20 scheduled to run for 5  (premepted).  5992
+5992      : Process 20 joins ready queue.
+5992      : Process 20 scheduled to run for 5  (premepted).  5997
+5997      : Process 20 joins ready queue.
+5997      : Process 20 scheduled to run for 5  (premepted).  6002
+6002      : Process 20 joins ready queue.
+6002      : Process 20 scheduled to run for 5  (premepted).  6007
+6007      : Process 20 joins ready queue.
+6007      : Process 20 scheduled to run for 5  (premepted).  6012
+6012      : Process 20 joins ready queue.
+6012      : Process 20 scheduled to run for 5  (premepted).  6017
+6017      : Process 20 joins ready queue.
+6017      : Process 20 scheduled to run for 5  (premepted).  6022
+6022      : Process 20 joins ready queue.
+6022      : Process 20 scheduled to run for 5  (premepted).  6027
+6027      : Process 20 joins ready queue.
+6027      : Process 20 scheduled to run for 5 (IO).   6032
+6032      : CPU goes idle.
+6143      : Process 20 joins ready queue.
+6143      : Process 20 scheduled to run for 5  (premepted).  6148
+6148      : Process 20 joins ready queue.
+6148      : Process 20 scheduled to run for 5  (premepted).  6153
+6153      : Process 20 joins ready queue.
+6153      : Process 20 scheduled to run for 5  (premepted).  6158
+6158      : Process 20 joins ready queue.
+6158      : Process 20 scheduled to run for 5  (premepted).  6163
+6163      : Process 20 joins ready queue.
+6163      : Process 20 scheduled to run for 5  (premepted).  6168
+6168      : Process 20 joins ready queue.
+6168      : Process 20 scheduled to run for 5  (premepted).  6173
+6173      : Process 20 joins ready queue.
+6173      : Process 20 scheduled to run for 5  (premepted).  6178
+6178      : Process 20 joins ready queue.
+6178      : Process 20 scheduled to run for 5  (premepted).  6183
+6183      : Process 20 joins ready queue.
+6183      : Process 20 scheduled to run for 5  (premepted).  6188
+6188      : Process 20 joins ready queue.
+6188      : Process 20 scheduled to run for 5  (premepted).  6193
+6193      : Process 20 joins ready queue.
+6193      : Process 20 scheduled to run for 5  (premepted).  6198
+6198      : Process 20 joins ready queue.
+6198      : Process 20 scheduled to run for 5  (premepted).  6203
+6203      : Process 20 joins ready queue.
+6203      : Process 20 scheduled to run for 5  (premepted).  6208
+6208      : Process 20 joins ready queue.
+6208      : Process 20 scheduled to run for 5  (premepted).  6213
+6213      : Process 20 joins ready queue.
+6213      : Process 20 scheduled to run for 5  (premepted).  6218
+6218      : Process 20 joins ready queue.
+6218      : Process 20 scheduled to run for 5  (premepted).  6223
+6223      : Process 20 joins ready queue.
+6223      : Process 20 scheduled to run for 5  (premepted).  6228
+6228      : Process 20 joins ready queue.
+6228      : Process 20 scheduled to run for 5  (premepted).  6233
+6233      : Process 20 joins ready queue.
+6233      : Process 20 scheduled to run for 5  (premepted).  6238
+6238      : Process 20 joins ready queue.
+6238      : Process 20 scheduled to run for 5  (premepted).  6243
+6243      : Process 20 joins ready queue.
+6243      : Process 20 scheduled to run for 5  (premepted).  6248
+6248      : Process 20 joins ready queue.
+6248      : Process 20 scheduled to run for 5  (premepted).  6253
+6253      : Process 20 joins ready queue.
+6253      : Process 20 scheduled to run for 5  (premepted).  6258
+6258      : Process 20 joins ready queue.
+6258      : Process 20 scheduled to run for 5  (premepted).  6263
+6263      : Process 20 joins ready queue.
+6263      : Process 20 scheduled to run for 5  (premepted).  6268
+6268      : Process 20 joins ready queue.
+6268      : Process 20 scheduled to run for 5  (premepted).  6273
+6273      : Process 20 joins ready queue.
+6273      : Process 20 scheduled to run for 5  (premepted).  6278
+6278      : Process 20 joins ready queue.
+6278      : Process 20 scheduled to run for 5  (premepted).  6283
+6283      : Process 20 joins ready queue.
+6283      : Process 20 scheduled to run for 5  (premepted).  6288
+6288      : Process 20 joins ready queue.
+6288      : Process 20 scheduled to run for 5  (premepted).  6293
+6293      : Process 20 joins ready queue.
+6293      : Process 20 scheduled to run for 5  (premepted).  6298
+6298      : Process 20 joins ready queue.
+6298      : Process 20 scheduled to run for 5  (premepted).  6303
+6303      : Process 20 joins ready queue.
+6303      : Process 20 scheduled to run for 5  (premepted).  6308
+6308      : Process 20 joins ready queue.
+6308      : Process 20 scheduled to run for 5  (premepted).  6313
+6313      : Process 20 joins ready queue.
+6313      : Process 20 scheduled to run for 5  (premepted).  6318
+6318      : Process 20 joins ready queue.
+6318      : Process 20 scheduled to run for 5  (premepted).  6323
+6323      : Process 20 joins ready queue.
+6323      : Process 20 scheduled to run for 5  (premepted).  6328
+6328      : Process 20 joins ready queue.
+6328      : Process 20 scheduled to run for 5  (premepted).  6333
+6333      : Process 20 joins ready queue.
+6333      : Process 20 scheduled to run for 5  (premepted).  6338
+6338      : Process 20 joins ready queue.
+6338      : Process 20 scheduled to run for 5  (premepted).  6343
+6343      : Process 20 joins ready queue.
+6343      : Process 20 scheduled to run for 5  (premepted).  6348
+6348      : Process 20 joins ready queue.
+6348      : Process 20 scheduled to run for 5  (premepted).  6353
+6353      : Process 20 joins ready queue.
+6353      : Process 20 scheduled to run for 5  (premepted).  6358
+6358      : Process 20 joins ready queue.
+6358      : Process 20 scheduled to run for 5  (premepted).  6363
+6363      : Process 20 joins ready queue.
+6363      : Process 20 scheduled to run for 5  (premepted).  6368
+6368      : Process 20 joins ready queue.
+6368      : Process 20 scheduled to run for 5  (premepted).  6373
+6373      : Process 20 joins ready queue.
+6373      : Process 20 scheduled to run for 5  (premepted).  6378
+6378      : Process 20 joins ready queue.
+6378      : Process 20 scheduled to run for 2 (IO).   6380
+6380       : Process     20 exits. Turnaround time =  2045 (104%), Wait time = 72
+6380      : CPU goes idle.
+
+Average wait time: 48.25
+Total turnaround time: 6380
+CPU idle time: 2824
+CPU utilization: 55.74%
