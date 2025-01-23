@@ -1,0 +1,447 @@
+**** FCFS scheduling ****
+         0: Starting.
+         0: Process 1 joins ready queue.
+         0: Process 1 scheduled to run for 11 (IO).
+        11: CPU goes idle.
+        91: Process 2 joins ready queue.
+        91: Process 2 scheduled to run for 14 (IO).
+       105: CPU goes idle.
+       126: Process 1 joins ready queue.
+       126: Process 1 scheduled to run for 8 (IO).
+       134: CPU goes idle.
+       234: Process 2 joins ready queue.
+       234: Process 2 scheduled to run for 8 (IO).
+       242: CPU goes idle.
+       278: Process 1 joins ready queue.
+       278: Process 1 scheduled to run for 10 (IO).
+       288: CPU goes idle.
+       326: Process 2 joins ready queue.
+       326: Process 2 scheduled to run for 2 (IO).
+       328: CPU goes idle.
+       399: Process 1 joins ready queue.
+       399: Process 1 scheduled to run for 3 (IO).
+       402: CPU goes idle.
+       459: Process 2 joins ready queue.
+       459: Process 2 scheduled to run for 8 (IO).
+       467: CPU goes idle.
+       493: Process 3 joins ready queue.
+       493: Process 3 scheduled to run for 13 (IO).
+       506: CPU goes idle.
+       511: Process 1 joins ready queue.
+       511: Process 1 scheduled to run for 12 (IO).
+       523: CPU goes idle.
+       599: Process 1 joins ready queue.
+       599: Process 1 scheduled to run for 5 (IO).
+       604: CPU goes idle.
+       644: Process 3 joins ready queue.
+       644: Process 3 scheduled to run for 1 (IO).
+       645: CPU goes idle.
+       653: Process 2 joins ready queue.
+       653: Process 2 scheduled to run for 15 (IO).
+       668: CPU goes idle.
+       705: Process 3 joins ready queue.
+       705: Process 3 scheduled to run for 1 (IO).
+       706: CPU goes idle.
+       735: Process 2 joins ready queue.
+       735: Process 2 scheduled to run for 4 (IO).
+       739 :Process          2 exits. Turnaround time =        648 ( 100%), Wait time =          0
+       739: CPU goes idle.
+       774: Process 1 joins ready queue.
+       774: Process 1 scheduled to run for 9 (IO).
+       783 :Process          1 exits. Turnaround time =        783 ( 100%), Wait time =          0
+       783: CPU goes idle.
+       796: Process 4 joins ready queue.
+       796: Process 4 scheduled to run for 4 (IO).
+       800: CPU goes idle.
+       840: Process 3 joins ready queue.
+       840: Process 3 scheduled to run for 9 (IO).
+       849: CPU goes idle.
+       891: Process 4 joins ready queue.
+       891: Process 4 scheduled to run for 12 (IO).
+       903: CPU goes idle.
+       913: Process 3 joins ready queue.
+       913: Process 3 scheduled to run for 9 (IO).
+       922: CPU goes idle.
+       978: Process 5 joins ready queue.
+       978: Process 5 scheduled to run for 170 (IO).
+      1037: Process 4 joins ready queue.
+      1037: CPU goes idle.
+      1098: CPU goes idle.
+      1116: CPU goes idle.
+      1148: Process 4 scheduled to run for 13 (IO).
+      1050: Process 3 scheduled to run for 5 (IO).
+      1101: CPU goes idle.
+      1103: Process 6 scheduled to run for 14 (IO).
+      1130: Process 4 scheduled to run for 7 (IO).
+      1108: CPU goes idle.
+      1153: Process 3 joins ready queue.
+      1153: Process 3 scheduled to run for 6 (IO).
+      1159: CPU goes idle.
+      1183: Process 6 joins ready queue.
+      1183: Process 6 scheduled to run for 4 (IO).
+      1187: CPU goes idle.
+      1226: Process 4 joins ready queue.
+      1226: Process 4 scheduled to run for 3 (IO).
+      1229: CPU goes idle.
+      1238: Process 5 joins ready queue.
+      1238: Process 5 scheduled to run for 227 (IO).
+      1252: Process 6 joins ready queue.
+      1252: CPU goes idle.
+      1301: CPU goes idle.
+      1303: CPU goes idle.
+      1347: CPU goes idle.
+      1465: Process 6 scheduled to run for 7 (IO).
+      1259: Process 4 scheduled to run for 11 (IO).
+      1312: Process 3 scheduled to run for 5 (IO).
+      1308: Process 7 scheduled to run for 15 (IO).
+      1339: Process 6 joins ready queue.
+      1339: CPU goes idle.
+      1362: Process 6 scheduled to run for 8 (IO).
+      1347: CPU goes idle.
+      1392: Process 4 joins ready queue.
+      1392: Process 4 scheduled to run for 5 (IO).
+      1397: CPU goes idle.
+      1431: Process 7 joins ready queue.
+      1431: Process 7 scheduled to run for 5 (IO).
+      1436: CPU goes idle.
+      1455: Process 6 joins ready queue.
+      1455: Process 6 scheduled to run for 12 (IO).
+      1467: CPU goes idle.
+      1506: Process 3 joins ready queue.
+      1506: Process 3 scheduled to run for 14 (IO).
+      1520 :Process          3 exits. Turnaround time =       1027 ( 100%), Wait time =          0
+      1520: CPU goes idle.
+      1522: Process 7 joins ready queue.
+      1522: Process 7 scheduled to run for 6 (IO).
+      1528: CPU goes idle.
+      1537: Process 5 joins ready queue.
+      1537: Process 5 scheduled to run for 165 (IO).
+      1571: Process 4 joins ready queue.
+      1571: CPU goes idle.
+      1663: CPU goes idle.
+      1683: CPU goes idle.
+      1688: CPU goes idle.
+      1702: Process 4 scheduled to run for 3 (IO).
+      1574: Process 6 scheduled to run for 12 (IO).
+      1675: Process 8 scheduled to run for 12 (IO).
+      1695: Process 7 scheduled to run for 4 (IO).
+      1692: CPU goes idle.
+      1764: Process 4 joins ready queue.
+      1764: Process 4 scheduled to run for 13 (IO).
+      1774: Process 9 joins ready queue.
+      1774: CPU goes idle.
+      1777 :Process          4 exits. Turnaround time =        981 ( 100%), Wait time =          0
+      1777: Process 9 scheduled to run for 14 (IO).
+      1788: CPU goes idle.
+      1820: Process 6 joins ready queue.
+      1820: Process 6 scheduled to run for 2 (IO).
+      1822: CPU goes idle.
+      1831: Process 7 joins ready queue.
+      1831: Process 7 scheduled to run for 11 (IO).
+      1842: CPU goes idle.
+      1880: Process 8 joins ready queue.
+      1880: Process 8 scheduled to run for 5 (IO).
+      1881: Process 5 joins ready queue.
+      1881: CPU goes idle.
+      1885: Process 5 scheduled to run for 207 (IO).
+      1954: Process 9 joins ready queue.
+      1954: CPU goes idle.
+      1958: CPU goes idle.
+      1976: CPU goes idle.
+      1985: CPU goes idle.
+      2088: Process 9 scheduled to run for 8 (IO).
+      1962: Process 6 scheduled to run for 2 (IO).
+      1960: Process 7 scheduled to run for 10 (IO).
+      1986 :Process          7 exits. Turnaround time =        639 ( 100%), Wait time =          0
+      1986: Process 8 scheduled to run for 10 (IO).
+      1995: CPU goes idle.
+      2037: Process 9 joins ready queue.
+      2037: Process 9 scheduled to run for 11 (IO).
+      2048: CPU goes idle.
+      2123: Process 9 joins ready queue.
+      2123: Process 9 scheduled to run for 8 (IO).
+      2131: CPU goes idle.
+      2142: Process 8 joins ready queue.
+      2142: Process 8 scheduled to run for 6 (IO).
+      2145: Process 6 joins ready queue.
+      2145: CPU goes idle.
+      2148: Process 6 scheduled to run for 7 (IO).
+      2152: CPU goes idle.
+      2172: Process 10 joins ready queue.
+      2172: Process 10 scheduled to run for 11 (IO).
+      2183: CPU goes idle.
+      2186: Process 5 joins ready queue.
+      2186: Process 5 scheduled to run for 113 (IO).
+      2200: Process 9 joins ready queue.
+      2200: CPU goes idle.
+      2249: CPU goes idle.
+      2299: Process 9 scheduled to run for 15 (IO).
+      2215: Process 11 scheduled to run for 12 (IO).
+      2261: CPU goes idle.
+      2267: Process 9 joins ready queue.
+      2267: Process 9 scheduled to run for 2 (IO).
+      2269: CPU goes idle.
+      2310: Process 8 joins ready queue.
+      2310: Process 8 scheduled to run for 3 (IO).
+      2313 :Process          8 exits. Turnaround time =        630 ( 100%), Wait time =          0
+      2313: CPU goes idle.
+      2333: Process 6 joins ready queue.
+      2333: Process 6 scheduled to run for 1 (IO).
+      2334 :Process          6 exits. Turnaround time =       1218 ( 100%), Wait time =          0
+      2334: CPU goes idle.
+      2340: Process 10 joins ready queue.
+      2340: Process 10 scheduled to run for 13 (IO).
+      2353: CPU goes idle.
+      2397: Process 9 joins ready queue.
+      2397: Process 9 scheduled to run for 10 (IO).
+      2407 :Process          9 exits. Turnaround time =        633 ( 100%), Wait time =          0
+      2407: CPU goes idle.
+      2425: Process 11 joins ready queue.
+      2425: Process 11 scheduled to run for 3 (IO).
+      2428: CPU goes idle.
+      2440: Process 5 joins ready queue.
+      2440: Process 5 scheduled to run for 140 (IO).
+      2445: Process 10 joins ready queue.
+      2445: CPU goes idle.
+      2533: CPU goes idle.
+      2580 :Process          5 exits. Turnaround time =       1602 ( 100%), Wait time =          0
+      2580: Process 10 scheduled to run for 14 (IO).
+      2459: Process 11 scheduled to run for 15 (IO).
+      2548: CPU goes idle.
+      2614: Process 10 joins ready queue.
+      2614: Process 10 scheduled to run for 14 (IO).
+      2628: CPU goes idle.
+      2667: Process 11 joins ready queue.
+      2667: Process 11 scheduled to run for 15 (IO).
+      2674: Process 12 joins ready queue.
+      2674: CPU goes idle.
+      2682: Process 12 scheduled to run for 5 (IO).
+      2679: CPU goes idle.
+      2746: Process 10 joins ready queue.
+      2746: Process 10 scheduled to run for 9 (IO).
+      2751: Process 12 joins ready queue.
+      2751: CPU goes idle.
+      2755: Process 12 scheduled to run for 8 (IO).
+      2759: CPU goes idle.
+      2780: Process 11 joins ready queue.
+      2780: Process 11 scheduled to run for 14 (IO).
+      2794: CPU goes idle.
+      2883: Process 12 joins ready queue.
+      2883: Process 12 scheduled to run for 15 (IO).
+      2884: Process 13 joins ready queue.
+      2884: CPU goes idle.
+      2891: CPU goes idle.
+      2896: CPU goes idle.
+      2898: Process 13 scheduled to run for 5 (IO).
+      2889: Process 10 scheduled to run for 10 (IO).
+      2901: Process 11 scheduled to run for 7 (IO).
+      2903: CPU goes idle.
+      2960: Process 11 joins ready queue.
+      2960: Process 11 scheduled to run for 12 (IO).
+      2972: CPU goes idle.
+      2995: Process 13 joins ready queue.
+      2995: Process 13 scheduled to run for 2 (IO).
+      2997: CPU goes idle.
+      2998: Process 14 joins ready queue.
+      2998: Process 14 scheduled to run for 5 (IO).
+      3003: CPU goes idle.
+      3031: Process 10 joins ready queue.
+      3031: Process 10 scheduled to run for 2 (IO).
+      3033 :Process         10 exits. Turnaround time =        861 ( 100%), Wait time =          0
+      3033: CPU goes idle.
+      3073: Process 12 joins ready queue.
+      3073: Process 12 scheduled to run for 7 (IO).
+      3080: CPU goes idle.
+      3094: Process 13 joins ready queue.
+      3094: Process 13 scheduled to run for 10 (IO).
+      3104: CPU goes idle.
+      3133: Process 14 joins ready queue.
+      3133: Process 14 scheduled to run for 1 (IO).
+      3134: CPU goes idle.
+      3156: Process 11 joins ready queue.
+      3156: Process 11 scheduled to run for 15 (IO).
+      3171: CPU goes idle.
+      3215: Process 12 joins ready queue.
+      3215: Process 12 scheduled to run for 11 (IO).
+      3222: Process 15 joins ready queue.
+      3222: CPU goes idle.
+      3226: Process 15 scheduled to run for 15 (IO).
+      3237: CPU goes idle.
+      3260: Process 11 joins ready queue.
+      3260: Process 11 scheduled to run for 7 (IO).
+      3267 :Process         11 exits. Turnaround time =       1018 ( 100%), Wait time =          0
+      3267: CPU goes idle.
+      3284: Process 14 joins ready queue.
+      3284: Process 14 scheduled to run for 3 (IO).
+      3287: CPU goes idle.
+      3290: Process 13 joins ready queue.
+      3290: Process 13 scheduled to run for 8 (IO).
+      3298 :Process         13 exits. Turnaround time =        414 ( 100%), Wait time =          0
+      3298: CPU goes idle.
+      3337: Process 15 joins ready queue.
+      3337: Process 15 scheduled to run for 11 (IO).
+      3348: CPU goes idle.
+      3363: Process 12 joins ready queue.
+      3363: Process 12 scheduled to run for 3 (IO).
+      3366: CPU goes idle.
+      3433: Process 15 joins ready queue.
+      3433: Process 15 scheduled to run for 6 (IO).
+      3439: CPU goes idle.
+      3447: Process 12 joins ready queue.
+      3447: Process 12 scheduled to run for 7 (IO).
+      3454: CPU goes idle.
+      3477: Process 14 joins ready queue.
+      3477: Process 14 scheduled to run for 5 (IO).
+      3482: CPU goes idle.
+      3531: Process 15 joins ready queue.
+      3531: Process 15 scheduled to run for 15 (IO).
+      3533: Process 14 joins ready queue.
+      3533: CPU goes idle.
+      3546: Process 14 scheduled to run for 1 (IO).
+      3534: CPU goes idle.
+      3587: Process 16 joins ready queue.
+      3587: Process 16 scheduled to run for 3 (IO).
+      3590: CPU goes idle.
+      3602: Process 14 joins ready queue.
+      3602: Process 14 scheduled to run for 15 (IO).
+      3615: Process 12 joins ready queue.
+      3615: CPU goes idle.
+      3617: Process 12 scheduled to run for 14 (IO).
+      3625: Process 15 joins ready queue.
+      3625: CPU goes idle.
+      3629: Process 15 scheduled to run for 2 (IO).
+      3627: CPU goes idle.
+      3673: Process 14 joins ready queue.
+      3673: Process 14 scheduled to run for 14 (IO).
+      3687: CPU goes idle.
+      3715: Process 12 joins ready queue.
+      3715: Process 12 scheduled to run for 13 (IO).
+      3724: Process 17 joins ready queue.
+      3724: CPU goes idle.
+      3728 :Process         12 exits. Turnaround time =       1054 ( 100%), Wait time =          0
+      3728: Process 17 scheduled to run for 6 (IO).
+      3730: CPU goes idle.
+      3746: Process 16 joins ready queue.
+      3746: Process 16 scheduled to run for 7 (IO).
+      3751: Process 15 joins ready queue.
+      3751: CPU goes idle.
+      3753: Process 15 scheduled to run for 9 (IO).
+      3760: CPU goes idle.
+      3761: Process 18 joins ready queue.
+      3761: Process 18 scheduled to run for 14 (IO).
+      3775: CPU goes idle.
+      3830: Process 15 joins ready queue.
+      3830: Process 15 scheduled to run for 8 (IO).
+      3838: CPU goes idle.
+      3871: Process 18 joins ready queue.
+      3871: Process 18 scheduled to run for 10 (IO).
+      3873: Process 14 joins ready queue.
+      3873: CPU goes idle.
+      3881: Process 14 scheduled to run for 14 (IO).
+      3887: CPU goes idle.
+      3891: Process 17 joins ready queue.
+      3891: Process 17 scheduled to run for 11 (IO).
+      3902: CPU goes idle.
+      3903: Process 16 joins ready queue.
+      3903: Process 16 scheduled to run for 7 (IO).
+      3910: CPU goes idle.
+      3958: Process 19 joins ready queue.
+      3958: Process 19 scheduled to run for 14 (IO).
+      3962: Process 15 joins ready queue.
+      3962: CPU goes idle.
+      3972: Process 15 scheduled to run for 2 (IO).
+      3964: CPU goes idle.
+      4014: Process 18 joins ready queue.
+      4014: Process 18 scheduled to run for 8 (IO).
+      4017: Process 15 joins ready queue.
+      4017: CPU goes idle.
+      4022: Process 15 scheduled to run for 1 (IO).
+      4018: CPU goes idle.
+      4057: Process 16 joins ready queue.
+      4057: Process 16 scheduled to run for 11 (IO).
+      4068: CPU goes idle.
+      4072: Process 14 joins ready queue.
+      4072: Process 14 scheduled to run for 12 (IO).
+      4084 :Process         14 exits. Turnaround time =       1086 ( 100%), Wait time =          0
+      4084: CPU goes idle.
+      4088: Process 17 joins ready queue.
+      4088: Process 17 scheduled to run for 9 (IO).
+      4097: CPU goes idle.
+      4097: Process 18 joins ready queue.
+      4097: Process 18 scheduled to run for 8 (IO).
+      4105: CPU goes idle.
+      4110: Process 15 joins ready queue.
+      4110: Process 15 scheduled to run for 14 (IO).
+      4124 :Process         15 exits. Turnaround time =        902 ( 100%), Wait time =          0
+      4124: CPU goes idle.
+      4150: Process 17 joins ready queue.
+      4150: Process 17 scheduled to run for 15 (IO).
+      4158: Process 19 joins ready queue.
+      4158: CPU goes idle.
+      4165: Process 19 scheduled to run for 4 (IO).
+      4162: CPU goes idle.
+      4195: Process 16 joins ready queue.
+      4195: Process 16 scheduled to run for 3 (IO).
+      4198: CPU goes idle.
+      4241: Process 18 joins ready queue.
+      4241: Process 18 scheduled to run for 1 (IO).
+      4242: CPU goes idle.
+      4275: Process 16 joins ready queue.
+      4275: Process 16 scheduled to run for 11 (IO).
+      4286: CPU goes idle.
+      4307: Process 19 joins ready queue.
+      4307: Process 19 scheduled to run for 14 (IO).
+      4314: Process 17 joins ready queue.
+      4314: CPU goes idle.
+      4321: Process 17 scheduled to run for 3 (IO).
+      4317 :Process         17 exits. Turnaround time =        593 ( 100%), Wait time =          0
+      4317: CPU goes idle.
+      4335: Process 20 joins ready queue.
+      4335: Process 20 scheduled to run for 280 (IO).
+      4388: Process 16 joins ready queue.
+      4388: CPU goes idle.
+      4413: CPU goes idle.
+      4415: CPU goes idle.
+      4615: Process 16 scheduled to run for 14 (IO).
+      4402 :Process         16 exits. Turnaround time =        815 ( 100%), Wait time =          0
+      4402: Process 19 scheduled to run for 9 (IO).
+      4422: Process 18 scheduled to run for 5 (IO).
+      4420: CPU goes idle.
+      4484: Process 18 joins ready queue.
+      4484: Process 18 scheduled to run for 13 (IO).
+      4497: CPU goes idle.
+      4617: Process 19 joins ready queue.
+      4617: Process 19 scheduled to run for 9 (IO).
+      4626: CPU goes idle.
+      4685: Process 18 joins ready queue.
+      4685: Process 18 scheduled to run for 8 (IO).
+      4693: CPU goes idle.
+      4707: Process 19 joins ready queue.
+      4707: Process 19 scheduled to run for 10 (IO).
+      4717: CPU goes idle.
+      4731: Process 20 joins ready queue.
+      4731: Process 20 scheduled to run for 221 (IO).
+      4800: Process 18 joins ready queue.
+      4800: CPU goes idle.
+      4871: CPU goes idle.
+      4952: Process 18 scheduled to run for 15 (IO).
+      4815 :Process         18 exits. Turnaround time =       1054 ( 100%), Wait time =          0
+      4815: Process 19 scheduled to run for 7 (IO).
+      4878 :Process         19 exits. Turnaround time =        920 ( 100%), Wait time =          0
+      4878: CPU goes idle.
+      5094: Process 20 joins ready queue.
+      5094: Process 20 scheduled to run for 147 (IO).
+      5241: CPU goes idle.
+      5311: Process 20 joins ready queue.
+      5311: Process 20 scheduled to run for 175 (IO).
+      5486: CPU goes idle.
+      5567: Process 20 joins ready queue.
+      5567: Process 20 scheduled to run for 134 (IO).
+      5701: CPU goes idle.
+      5770: Process 20 joins ready queue.
+      5770: Process 20 scheduled to run for 190 (IO).
+      5960: CPU goes idle.
+      6071: Process 20 joins ready queue.
+      6071: Process 20 scheduled to run for 237 (IO).
+      6308 :Process         20 exits. Turnaround time =       1973 ( 100%), Wait time =          0
+      6308: CPU goes idle.
