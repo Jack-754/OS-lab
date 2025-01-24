@@ -356,7 +356,8 @@ void scheduler(int q, PCB proc[], int n){
     fprintf(file, "Total turnaround time = %d\n", time);
     fprintf(file, "CPU idle time = %d\n", total_idle);
     fprintf(file, "CPU utilization = %.2f%%\n", (((float)(time-total_idle))/time)*100);
-
+    free(ready);
+    free(event);
 }
 
 void create_copy(PCB proc[], PCB copy[], int n){
