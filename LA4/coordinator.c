@@ -9,13 +9,6 @@
 int A[9][9], S[9][9];
 int proc[9];
 
-void childSigHandler ( int sig ){
-    for(int i=0; i<9; i++){
-        kill(proc[i], SIGINT);
-    }
-    exit(0);
-}
-
 void send_game(int arr[][2], int flag){
     int saved_stdout = dup(STDOUT_FILENO);
 
@@ -24,11 +17,12 @@ void send_game(int arr[][2], int flag){
 
         //code to set stdout to a[i][1]
         dup2(arr[i][1], STDOUT_FILENO);
-
+        printf("n ");
         for(int j=0; j<3; j++){
+            y=(i%3)*3;
             for(int k=0; k<3; k++){
-                if(flag) printf("%d", S[x][y]);
-                else printf("%d", A[x][y]);
+                if(flag) printf("%d ", S[x][y]);
+                else printf("%d ", A[x][y]);
                 y++;
             }
             x++;
@@ -44,7 +38,7 @@ void send_game(int arr[][2], int flag){
 void put(int fd, int c, int d){
     int saved_stdout = dup(STDOUT_FILENO);
     dup2(fd, STDOUT_FILENO);
-    printf("%d %d", c, d);
+    printf("p %d %d ", c, d);
     fflush(stdout);
     dup2(saved_stdout, STDOUT_FILENO);
     close(saved_stdout);
@@ -55,7 +49,7 @@ void quit(int arr[][2]){
 
     for(int i=0; i<9; i++){
         dup2(arr[i][1], STDOUT_FILENO);
-        printf("q");
+        printf("q ");
         fflush(stdout);
     }
     
@@ -64,7 +58,6 @@ void quit(int arr[][2]){
 }
 
 int main(){
-    //signal(SIGINT, childSigHandler);
 
     int arr[9][2];
     for(int i=0; i<9; i++){
@@ -89,15 +82,15 @@ int main(){
             }
             sprintf(rn1fdout, "%d", arr[nrows[0]][1]);
             sprintf(rn2fdout, "%d", arr[nrows[1]][1]);
-            sprintf(position, "20x8+%d+%d", (i%3)*250+1100, (i/3)*250+200);
-            execlp("xterm", "xterm", "-T", blockname, "-fa", "Monospace", "-fs", "15", "-geometry", position, "-bg", "#331100",
+            sprintf(position, "24x10+%d+%d", (i%3)*275+1100, (i/3)*275+200);
+            execlp("xterm", "xterm", "-T", blockname, "-fa", "Monospace", "-fs", "13", "-geometry", position, "-bg", "#331100",
             "-e", "./block", blockno, bfdin, bfdout, rn1fdout, rn2fdout, cn1fdout, cn2fdout, NULL);
         }
         else{
             proc[i]=p;
         }
     }
-
+    //int debug=0;
     char menu[10];
     printf("Comnmands supported\n");
     printf("\tn      \tStart new game\n");
@@ -127,7 +120,6 @@ int main(){
     while(1){
         printf("foodoku> ");
         scanf("%s", menu);
-        printf("1%s", menu);
         if(!strcmp(menu, "h")){
             printf("Comnmands supported\n");
             printf("\tn      \tStart new game\n");
@@ -179,7 +171,7 @@ int main(){
         }
         else if(!strcmp(menu, "q")){
             quit(arr);
-            sleep(3);
+            sleep(4);
             for(int i=0; i<9; i++){
                 close(arr[i][0]);
                 close(arr[i][1]);

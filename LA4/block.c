@@ -16,7 +16,7 @@ int request_check(int fd, int i, int d, char type, int reply) {
         close(saved);
         return -1;
     }
-    printf("%c %d %d %d\n", type, i, d, reply);
+    printf("%c %d %d %d ", type, i, d, reply);
     fflush(stdout);  // Ensure output is written immediately
     if (dup2(saved, STDOUT_FILENO) == -1) {  // Restore original stdout
         perror("dup2 request_check 2");
@@ -60,7 +60,7 @@ void reply_check(char type, int i, int d, int fd, int B[][3]){
             }
         }
     }
-    printf("%d", flag);
+    printf("%d ", flag);
     fflush(stdout);  // Ensure output is written immediately
     if (dup2(saved, STDOUT_FILENO) == -1) {  // Restore original stdout
         perror("dup2 reply_check 2");
@@ -70,9 +70,10 @@ void reply_check(char type, int i, int d, int fd, int B[][3]){
     close(saved);  // Close the saved file descriptor
 }
 
-int already_used(int B[][3], int d){
+int already_used(int B[][3], int c, int d){
     for(int i=0; i<3; i++){
         for(int j=0; j<3; j++){
+            if(c/3==i && c%3==j)continue;
             if(B[i][j]==d)return 1;
         }
     }
@@ -121,7 +122,6 @@ int main(int argc, char *argv[]){
 
     while(1){
         scanf("%s", menu);
-        printf("%s", menu);
         if(!strcmp(menu, "n")){
             for(int i=0; i<3; i++){
                 for(int j=0; j<3; j++){
@@ -129,8 +129,7 @@ int main(int argc, char *argv[]){
                     B[i][j]=A[i][j];
                 }
             }
-            print_board(B);
-            printf("%s", menu);     //debug purpose
+            print_board(B);     
         }
         else if(!strcmp(menu, "p")){
             int c, d;
@@ -138,33 +137,40 @@ int main(int argc, char *argv[]){
             print_board(B);
             if(A[c/3][c%3]){
                 printf("Read-only Cell\n");
+                fflush(stdout);
             }
-            else if(already_used(B, d)){
+            else if(already_used(B, c, d)){
                 printf("Block conflict\n");
+                fflush(stdout);
             }
             else{
                 int flag;
                 flag=request_check(rn1fdout, c/3, d, 'r', bfdout);
                 if(flag==1){
                     printf("Row conflict\n");
+                    fflush(stdout);
                     continue;
                 }
                 flag=request_check(rn2fdout, c/3, d, 'r', bfdout);
                 if(flag==1){
                     printf("Row conflict\n");
+                    fflush(stdout);
                     continue;
                 }
                 flag=request_check(cn1fdout, c%3, d, 'c', bfdout);
                 if(flag==1){
                     printf("Column conflict\n");
+                    fflush(stdout);
                     continue;
                 }
                 flag=request_check(cn2fdout, c/3, d, 'c', bfdout);
                 if(flag==1){
                     printf("Column conflict\n");
+                    fflush(stdout);
                     continue;
                 }
                 B[c/3][c%3]=d;
+                print_board(B);
             }
         }
         else if(!strcmp(menu, "r") || !strcmp(menu, "c")){
@@ -175,6 +181,7 @@ int main(int argc, char *argv[]){
         else if(!strcmp(menu, "q")){
             print_board(B);
             printf("Bye\n");
+            fflush(stdout);
             sleep(2);
             exit(0);
         }
