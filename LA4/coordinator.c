@@ -1,9 +1,20 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <time.h>
 #include <stdlib.h>
+#include <signal.h>
+#include <string.h>
 #include "boardgen.c"
 
 int A[9][9], S[9][9];
+int proc[9];
+
+void childSigHandler ( int sig ){
+    for(int i=0; i<9; i++){
+        kill(proc[i], SIGINT);
+    }
+    exit(0);
+}
 
 void send_game(int arr[][2], int flag){
     int saved_stdout = dup(STDOUT_FILENO);
@@ -53,7 +64,8 @@ void quit(int arr[][2]){
 }
 
 int main(){
-    
+    //signal(SIGINT, childSigHandler);
+
     int arr[9][2];
     for(int i=0; i<9; i++){
         pipe(arr[i]);
@@ -81,14 +93,44 @@ int main(){
             execlp("xterm", "xterm", "-T", blockname, "-fa", "Monospace", "-fs", "15", "-geometry", position, "-bg", "#331100",
             "-e", "./block", blockno, bfdin, bfdout, rn1fdout, rn2fdout, cn1fdout, cn2fdout, NULL);
         }
+        else{
+            proc[i]=p;
+        }
     }
 
-    char menu;
+    char menu[10];
+    printf("Comnmands supported\n");
+    printf("\tn      \tStart new game\n");
+    printf("\tp b c d\tPut digit d [1-9] at cell c [0-8] of block b [0-8]\n");
+    printf("\ts      \tShow solution\n");
+    printf("\th      \tPrint this help message\n");
+    printf("\tq      \tQuit\n");
+    printf("Numbering scheme for blocks and cells\n");
+    printf("+---+---+---+\n");
+    for(int i=0; i<3; i++){
+        printf("| %d ", i);
+    }
+    printf("|\n");
+    printf("+---+---+---+\n");
+    for(int i=0; i<3; i++){
+        printf("| %d ", i+3);
+    }
+    printf("|\n");
+    printf("+---+---+---+\n");
+    for(int i=0; i<3; i++){
+        printf("| %d ", i+6);
+    }
+    printf("|\n");
+    printf("+---+---+---+\n");
+    printf("\n");
+
     while(1){
-        scanf("%c", &menu);
-        if(menu=='h'){
+        printf("foodoku> ");
+        scanf("%s", menu);
+        printf("1%s", menu);
+        if(!strcmp(menu, "h")){
             printf("Comnmands supported\n");
-            printf("\tn      \tStart new game");
+            printf("\tn      \tStart new game\n");
             printf("\tp b c d\tPut digit d [1-9] at cell c [0-8] of block b [0-8]\n");
             printf("\ts      \tShow solution\n");
             printf("\th      \tPrint this help message\n");
@@ -111,13 +153,13 @@ int main(){
             printf("|\n");
             printf("+---+---+---+\n");
         }
-        else if(menu=='n'){
+        else if(!strcmp(menu, "n")){
             newboard(A, S);
             send_game(arr, 0);
         }
-        else if(menu=='p'){
+        else if(!strcmp(menu, "p")){
             int b, c, d;
-            scanf("%d %d %d", b, c, d);
+            scanf("%d %d %d", &b, &c, &d);
             if(!(b>=0 && b<=8)){
                 printf("b not in valid range [0-8]\n");
                 continue;
@@ -132,10 +174,10 @@ int main(){
             }
             put(arr[b][1], c, d);
         }
-        else if(menu=='s'){
+        else if(!strcmp(menu, "s")){
             send_game(arr, 1);
         }
-        else if(menu=='q'){
+        else if(!strcmp(menu, "q")){
             quit(arr);
             sleep(3);
             for(int i=0; i<9; i++){

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -101,9 +102,7 @@ void print_board(int B[][3]){
     printf("+---+---+---+\n");
 }
 
-
 int main(int argc, char *argv[]){
-    char ** endptr;
     blockno=atoi(argv[1]);
     bfdin=atoi(argv[2]);  //read end
     bfdout=atoi(argv[3]); //write end
@@ -112,18 +111,18 @@ int main(int argc, char *argv[]){
     cn1fdout=atoi(argv[6]);
     cn2fdout=atoi(argv[7]);
 
-    for(int i=0; i<argc; i++){
-        printf("%s\n", argv[i]);
-    }
-    sleep(10);
 
     close(0);
     dup(bfdin);
     int A[3][3], B[3][3];
-    char menu;
+    char menu[10];
+
+    printf("Block %d ready\n", blockno);
+
     while(1){
-        scanf("%c", &menu);
-        if(menu=='n'){
+        scanf("%s", menu);
+        printf("%s", menu);
+        if(!strcmp(menu, "n")){
             for(int i=0; i<3; i++){
                 for(int j=0; j<3; j++){
                     scanf("%d", &A[i][j]);
@@ -131,8 +130,9 @@ int main(int argc, char *argv[]){
                 }
             }
             print_board(B);
+            printf("%s", menu);     //debug purpose
         }
-        else if(menu=='p'){
+        else if(!strcmp(menu, "p")){
             int c, d;
             scanf("%d %d", &c, &d);
             print_board(B);
@@ -167,12 +167,12 @@ int main(int argc, char *argv[]){
                 B[c/3][c%3]=d;
             }
         }
-        else if(menu=='r' || menu=='c'){
+        else if(!strcmp(menu, "r") || !strcmp(menu, "c")){
             int i, d, fd;
             scanf("%d %d %d", &i, &d, &fd);
-            reply_check(menu, i, d, fd, B);
+            reply_check(menu[0], i, d, fd, B);
         }
-        else if(menu=='q'){
+        else if(!strcmp(menu, "q")){
             print_board(B);
             printf("Bye\n");
             sleep(2);
