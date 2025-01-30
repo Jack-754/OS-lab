@@ -138,35 +138,47 @@ int main(int argc, char *argv[]){
             if(A[c/3][c%3]){
                 printf("Read-only Cell\n");
                 fflush(stdout);
+                sleep(2);
+                print_board(B);
             }
             else if(already_used(B, c, d)){
                 printf("Block conflict\n");
                 fflush(stdout);
+                sleep(2);
+                print_board(B);
             }
             else{
-                int flag;
+                int flag=0;
                 flag=request_check(rn1fdout, c/3, d, 'r', bfdout);
                 if(flag==1){
                     printf("Row conflict\n");
                     fflush(stdout);
+                    sleep(2);
+                    print_board(B);
                     continue;
                 }
                 flag=request_check(rn2fdout, c/3, d, 'r', bfdout);
                 if(flag==1){
                     printf("Row conflict\n");
                     fflush(stdout);
+                    sleep(2);
+                    print_board(B);
                     continue;
                 }
                 flag=request_check(cn1fdout, c%3, d, 'c', bfdout);
                 if(flag==1){
                     printf("Column conflict\n");
                     fflush(stdout);
+                    sleep(2);
+                    print_board(B);
                     continue;
                 }
-                flag=request_check(cn2fdout, c/3, d, 'c', bfdout);
+                flag=request_check(cn2fdout, c%3, d, 'c', bfdout);
                 if(flag==1){
                     printf("Column conflict\n");
                     fflush(stdout);
+                    sleep(2);
+                    print_board(B);
                     continue;
                 }
                 B[c/3][c%3]=d;

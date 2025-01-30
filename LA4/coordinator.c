@@ -127,7 +127,7 @@ int main(){
             printf("\ts      \tShow solution\n");
             printf("\th      \tPrint this help message\n");
             printf("\tq      \tQuit\n");
-            printf("Numbering scheme for blocks and cells");
+            printf("Numbering scheme for blocks and cells\n");
             printf("+---+---+---+\n");
             for(int i=0; i<3; i++){
                 printf("| %d ", i);
@@ -161,7 +161,7 @@ int main(){
                 continue;
             }
             else if(!(d>=1 && d<=9)){
-                printf("d not in valid range [0-9]\n");
+                printf("d not in valid range [1-9]\n");
                 continue;
             }
             put(arr[b][1], c, d);
