@@ -1,6 +1,56 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include "boardgen.c"
+
+int A[9][9], S[9][9];
+
+void send_game(int arr[][2], int flag){
+    int saved_stdout = dup(STDOUT_FILENO);
+
+    for(int i=0; i<9; i++){
+        int x=(i/3)*3, y=(i%3)*3;
+
+        //code to set stdout to a[i][1]
+        dup2(arr[i][1], STDOUT_FILENO);
+
+        for(int j=0; j<3; j++){
+            for(int k=0; k<3; k++){
+                if(flag) printf("%d", S[x][y]);
+                else printf("%d", A[x][y]);
+                y++;
+            }
+            x++;
+        }
+        fflush(stdout);
+    }
+
+    // code to restore stdout to stdout
+    dup2(saved_stdout, STDOUT_FILENO);
+    close(saved_stdout);
+}   
+
+void put(int fd, int c, int d){
+    int saved_stdout = dup(STDOUT_FILENO);
+    dup2(fd, STDOUT_FILENO);
+    printf("%d %d", c, d);
+    fflush(stdout);
+    dup2(saved_stdout, STDOUT_FILENO);
+    close(saved_stdout);
+}
+
+void quit(int arr[][2]){
+    int saved_stdout = dup(STDOUT_FILENO);
+
+    for(int i=0; i<9; i++){
+        dup2(arr[i][1], STDOUT_FILENO);
+        printf("q");
+        fflush(stdout);
+    }
+    
+    dup2(saved_stdout, STDOUT_FILENO);
+    close(saved_stdout);
+}
 
 int main(){
     
@@ -33,6 +83,69 @@ int main(){
         }
     }
 
+    char menu;
+    while(1){
+        scanf("%c", &menu);
+        if(menu=='h'){
+            printf("Comnmands supported\n");
+            printf("\tn      \tStart new game");
+            printf("\tp b c d\tPut digit d [1-9] at cell c [0-8] of block b [0-8]\n");
+            printf("\ts      \tShow solution\n");
+            printf("\th      \tPrint this help message\n");
+            printf("\tq      \tQuit\n");
+            printf("Numbering scheme for blocks and cells");
+            printf("+---+---+---+\n");
+            for(int i=0; i<3; i++){
+                printf("| %d ", i);
+            }
+            printf("|\n");
+            printf("+---+---+---+\n");
+            for(int i=0; i<3; i++){
+                printf("| %d ", i+3);
+            }
+            printf("|\n");
+            printf("+---+---+---+\n");
+            for(int i=0; i<3; i++){
+                printf("| %d ", i+6);
+            }
+            printf("|\n");
+            printf("+---+---+---+\n");
+        }
+        else if(menu=='n'){
+            newboard(A, S);
+            send_game(arr, 0);
+        }
+        else if(menu=='p'){
+            int b, c, d;
+            scanf("%d %d %d", b, c, d);
+            if(!(b>=0 && b<=8)){
+                printf("b not in valid range [0-8]\n");
+                continue;
+            }
+            else if(!(c>=0 && c<=8)){
+                printf("c not in valid range [0-8]\n");
+                continue;
+            }
+            else if(!(d>=1 && d<=9)){
+                printf("d not in valid range [0-9]\n");
+                continue;
+            }
+            put(arr[b][1], c, d);
+        }
+        else if(menu=='s'){
+            send_game(arr, 1);
+        }
+        else if(menu=='q'){
+            quit(arr);
+            sleep(3);
+            for(int i=0; i<9; i++){
+                close(arr[i][0]);
+                close(arr[i][1]);
+            }
+            exit(0);
+        }
+
+    }
     
 
 

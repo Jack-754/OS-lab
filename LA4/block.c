@@ -79,22 +79,23 @@ int already_used(int B[][3], int d){
 }
 
 void print_board(int B[][3]){
+    system("clear");
     printf("+---+---+---+\n");
     for(int i=0; i<3; i++){
         if(B[0][i]==0)printf("|   ");
-        else printf("| %d ");
+        else printf("| %d ", B[0][i]);
     }
     printf("|\n");
     printf("+---+---+---+\n");
     for(int i=0; i<3; i++){
         if(B[1][i]==0)printf("|   ");
-        else printf("| %d ");
+        else printf("| %d ", B[1][i]);
     }
     printf("|\n");
     printf("+---+---+---+\n");
     for(int i=0; i<3; i++){
         if(B[2][i]==0)printf("|   ");
-        else printf("| %d ");
+        else printf("| %d ", B[2][i]);
     }
     printf("|\n");
     printf("+---+---+---+\n");
@@ -102,14 +103,14 @@ void print_board(int B[][3]){
 
 
 int main(int argc, char *argv[]){
-    char * endptr;
-    blockno=strtol(argv[1], endptr, 10);
-    bfdin=strtol(argv[2], endptr, 10);  //read end
-    bfdout=strtol(argv[3], endptr, 10); //write end
-    rn1fdout=strtol(argv[4], endptr, 10);
-    rn2fdout=strtol(argv[5], endptr, 10);
-    cn1fdout=strtol(argv[6], endptr, 10);
-    cn2fdout=strtol(argv[7], endptr, 10);
+    char ** endptr;
+    blockno=atoi(argv[1]);
+    bfdin=atoi(argv[2]);  //read end
+    bfdout=atoi(argv[3]); //write end
+    rn1fdout=atoi(argv[4]);
+    rn2fdout=atoi(argv[5]);
+    cn1fdout=atoi(argv[6]);
+    cn2fdout=atoi(argv[7]);
 
     for(int i=0; i<argc; i++){
         printf("%s\n", argv[i]);
@@ -129,12 +130,12 @@ int main(int argc, char *argv[]){
                     B[i][j]=A[i][j];
                 }
             }
-            system("clear");
             print_board(B);
         }
         else if(menu=='p'){
             int c, d;
             scanf("%d %d", &c, &d);
+            print_board(B);
             if(A[c/3][c%3]){
                 printf("Read-only Cell\n");
             }
@@ -164,8 +165,6 @@ int main(int argc, char *argv[]){
                     continue;
                 }
                 B[c/3][c%3]=d;
-                system("clear");
-                print_board(B);
             }
         }
         else if(menu=='r' || menu=='c'){
@@ -174,13 +173,11 @@ int main(int argc, char *argv[]){
             reply_check(menu, i, d, fd, B);
         }
         else if(menu=='q'){
-            system("clear");
             print_board(B);
             printf("Bye\n");
             sleep(2);
             exit(0);
         }
-        sleep(2);
     }
 
 }
