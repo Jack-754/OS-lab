@@ -82,13 +82,14 @@ int main(){
             }
             sprintf(rn1fdout, "%d", arr[nrows[0]][1]);
             sprintf(rn2fdout, "%d", arr[nrows[1]][1]);
-            sprintf(position, "24x10+%d+%d", (i%3)*275+1100, (i/3)*275+200);
+            sprintf(position, "17x9+%d+%d", (i%3)*250+1100, (i/3)*250+200);
             execlp("xterm", "xterm", "-T", blockname, "-fa", "Monospace", "-fs", "13", "-geometry", position, "-bg", "#331100",
             "-e", "./block", blockno, bfdin, bfdout, rn1fdout, rn2fdout, cn1fdout, cn2fdout, NULL);
         }
         else{
             proc[i]=p;
         }
+        close(arr[i][0]);
     }
     //int debug=0;
     char menu[10];
@@ -173,7 +174,6 @@ int main(){
             quit(arr);
             sleep(4);
             for(int i=0; i<9; i++){
-                close(arr[i][0]);
                 close(arr[i][1]);
             }
             exit(0);

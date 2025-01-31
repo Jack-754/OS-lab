@@ -134,7 +134,6 @@ int main(int argc, char *argv[]){
         else if(!strcmp(menu, "p")){
             int c, d;
             scanf("%d %d", &c, &d);
-            print_board(B);
             if(A[c/3][c%3]){
                 printf("Read-only Cell\n");
                 fflush(stdout);
