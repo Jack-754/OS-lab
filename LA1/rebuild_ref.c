@@ -59,11 +59,11 @@ int main(int argc, char *argv[]){
             char *arglist[4];
             char str[10];
             snprintf(str, sizeof(str), "%d", arr[i]);
-            arglist[0] = (char *)malloc(10*sizeof(char)); strcpy(arglist[0], argv[0]);
+            arglist[0] = (char *)malloc(10*sizeof(char)); strcpy(arglist[0],"./a.out");
 	        arglist[1] = str;
 	        arglist[2] = str;
             arglist[3] = NULL;
-            execvp(argv[0], arglist);
+            execvp("./a.out", arglist);
             printf("error\n");
         }
         else{
