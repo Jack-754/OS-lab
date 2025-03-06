@@ -6,6 +6,7 @@
 #include <sys/wait.h>  
 #include <signal.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define F 1100
 #define B 1101
@@ -15,6 +16,19 @@
 struct sembuf pop, vop;
 int semmutex, semcook, semwaiter[5], semcustomers, shmid;
 int *M;
+
+void printtime(int t){
+    int hr=t/60+11;
+    int min=t%60;
+    char ampm[3]="am";
+    if(hr>12){
+        hr-=12;
+        strcpy(ampm, "pm");
+    }
+    if(min>9)printf("[%2d:%d %s] ", hr, min, ampm);
+    else printf("[%2d:0%d %s] ", hr, min, ampm);
+    fflush(stdout);
+}
 
 void Pi(int s, int i){
     pop.sem_num = i;
@@ -30,7 +44,8 @@ void Vi(int s, int i){
 
 int max(int a, int b){
     if(a>b){
-        return a;
+        printf("Time setting failed.\n");
+        exit(0);
     }
     return b;
 }
@@ -52,14 +67,22 @@ void signalhandler(int s){
 void cmain(int idx, int arr, int count){
     P(semmutex);
     M[0]=max(M[0], arr);
-    if(M[0]>=240)exit(0);
+    if(M[0]>240){
+        printtime(M[0]);
+        printf("Customer %d leaves (arrival after closing)\n", idx+1);
+        V(semmutex);
+        exit(0);
+    }
     if(M[1]==0){
-        printf("[%d:%d] Customer %d leaves (no empty table)\n", M[0]/60+11, M[0]%60, idx+1);
+        printtime(M[0]);
+        printf("Customer %d leaves (no empty table)\n", idx+1);
         V(semmutex);
         exit(0);
     }
     M[1]--;
-    printf("[%d:%d] Customer %d arrives (count = %d)\n", M[0]/60+11, M[0]%60, idx+1, count);
+    M[3]++;
+    printtime(M[0]);
+    printf("Customer %d arrives (count = %d)\n", idx+1, count);
     int fr, po, f, b, waiter;
     waiter=M[2];
     fr=M[2]*200+100;
@@ -70,21 +93,28 @@ void cmain(int idx, int arr, int count){
     M[po]++;
     M[M[b]++]=idx;
     M[M[b]++]=count;
+    V(semwaiter[waiter]);
     V(semmutex);
     Pi(semcustomers, idx);
 
     P(semmutex);
-    printf("[%d:%d] Customer %d: Order placed to Waiter %c\n", M[0]/60+11, M[0]%60, idx+1, 'U'+waiter);
+    printtime(M[0]);
+    printf("Customer %d: Order placed to Waiter %c\n", idx+1, 'U'+waiter);
     V(semmutex);
 
     Pi(semcustomers, idx);
     P(semmutex);
-    printf("[%d:%d] Customer %d gets food [Waiting time = 11]\n", M[0]/60+11, M[0]%60, idx+1);
+    printtime(M[0]);
+    printf("Customer %d gets food [Waiting time = %d]\n", idx+1, M[0]-arr);
+    fflush(stdout);
+    int cur_time=M[0];
     V(semmutex);
     usleep(30*100000);
     P(semmutex);
-    M[0]=max(M[0], M[0]+30);
-    printf("[%d:%d] Customer %d finishes eating and leaves\n", M[0]/60+11, M[0]%60, idx+1);
+    M[0]=max(M[0], cur_time+30);
+    printtime(M[0]);
+    printf("Customer %d finishes eating and leaves\n", idx+1);
+    fflush(stdout);
     M[1]++;
     V(semmutex);
     shmdt(M);
@@ -133,10 +163,10 @@ int main(){
         if(idx==-1)break;
         n++;
         fscanf(file, "%d %d", &arr, &count);
-        last=arr;
         usleep((arr-last)*100000);
+        last=arr;
         if(!fork()){
-            cmain(idx, arr, count);
+            cmain(idx-1, arr, count);
         }
     }
 

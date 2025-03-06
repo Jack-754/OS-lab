@@ -6,6 +6,7 @@
 #include <sys/wait.h>  
 #include <signal.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define F 1100
 #define B 1101
@@ -16,33 +17,85 @@ struct sembuf pop, vop;
 int semmutex, semcook, semwaiter[5], semcustomers, shmid;
 int *M;
 
+void printtime(int t){
+    int hr=t/60+11;
+    int min=t%60;
+    char ampm[3]="am";
+    if(hr>12){
+        hr-=12;
+        strcpy(ampm, "pm");
+    }
+    if(min>9)printf("[%2d:%d %s] ", hr, min, ampm);
+    else printf("[%2d:0%d %s] ", hr, min, ampm);
+    fflush(stdout);
+}
+
+void signalhandler(int s){
+    shmdt(M);
+    exit(0);
+}
+
 int max(int a, int b){
     if(a>b){
-        return a;
+        printf("Time setting failed.\n");
+        exit(0);
     }
     return b;
 }
 
 void cmain(char cook){
-    printf("[%d:%d] Cook %c is ready\n", M[0]/60+11, M[0]%60, cook);
+    printtime(M[0]);
+    printf("Cook %c is ready\n", cook);
+    fflush(stdout);
     while(1){
         P(semcook);
         P(semmutex);
-        int waiter, customerID, count;
+        if(M[0]>240 && M[3]==0){
+            printtime(M[0]);
+            printf("Cook %c: Leaving\n", cook);
+            V(semmutex);
+            break;
+        }
+        int waiter, customerIdx, count;
         waiter=M[M[F]++];
-        customerID=M[M[F]++];
+        customerIdx=M[M[F]++];
         count=M[M[F]++];
         int cur_time=M[0];
-        printf("[%d:%d] Cook %c: Preparing order (Waiter %c, Customer %d, Count %d)\n", cur_time/60+11, cur_time%60, cook, 'U'+waiter, customerID+1, count);
+        printtime(M[0]);
+        printf("Cook %c: Preparing order (Waiter %c, Customer %d, Count %d)\n", cook, 'U'+waiter, customerIdx+1, count);
+        fflush(stdout);
+        V(semmutex);
         usleep(count*5*(100000));
-        printf("[%d:%d] Cook %c: Prepared order (Waiter %c, Customer %d, Count %d)\n", cur_time/60+11, cur_time%60, cook, 'U'+waiter, customerID+1, count);
+        P(semmutex);
+        M[3]--;
         M[0]=max(M[0], cur_time+count*5);
+        printtime(M[0]);
+        printf("Cook %c: Prepared order (Waiter %c, Customer %d, Count %d)\n", cook, 'U'+waiter, customerIdx+1, count);
+        fflush(stdout);
         int fr, po, f, b;
         fr=waiter*200+100;
         po=fr+1;
         f=po+1;
         b=f+1;
-        M[fr]=customerID;
+        M[fr]=customerIdx;
+        if(M[0]>240 && M[3]==1 && M[F]==M[B]){
+            printtime(M[0]);
+            printf("Cook %c: Leaving\n", cook);
+            V(semwaiter[waiter]);
+            V(semmutex);
+            break;
+        }
+        else if(M[0]>240 && M[3]==0){
+            printtime(M[0]);
+            printf("Cook %c: Leaving\n", cook);
+            V(semwaiter[waiter]);
+            for(int i=0; i<5; i++){
+                V(semwaiter[i]);
+            }
+            V(semcook);
+            V(semmutex);
+            break;
+        }
         V(semwaiter[waiter]);
         V(semmutex);
     }
@@ -52,6 +105,8 @@ void cmain(char cook){
 
 
 int main(){
+    signal(SIGINT, signalhandler);
+
     pop.sem_num = vop.sem_num = 0;
 	pop.sem_flg = vop.sem_flg = 0;
 	pop.sem_op = -1 ; vop.sem_op = 1;
@@ -77,6 +132,8 @@ int main(){
     semcustomers = semget(keysemcustomers, 200, 0777|IPC_CREAT);
     shmid = shmget(keyshmid, 2000*sizeof(int), 0777|IPC_CREAT);
 
+    printf("semmutex:%d, semcook:%d, semwaiter[0]:%d, semwaiter[1]:%d, semwaiter[2]:%d, semwaiter[3]:%d, semwaiter[4]:%d, semcustomers:%d, shmid:%d\n", semmutex, semcook, semwaiter[0], semwaiter[1], semwaiter[2], semwaiter[3], semwaiter[4], semcustomers, shmid);
+
     semctl(semmutex, 0, SETVAL, 1);
     semctl(semcook, 0, SETVAL, 0);
     semctl(semwaiter[0], 0, SETVAL, 0);
@@ -93,18 +150,23 @@ int main(){
 
     P(semmutex);
     M[1]=10;
+    M[100]=-1;
     M[102]=104;
     M[103]=104;
+    M[300]=-1;
     M[302]=304;
     M[303]=304;
+    M[500]=-1;
     M[502]=504;
     M[503]=504;
+    M[700]=-1;
     M[702]=704;
     M[703]=704;
+    M[900]=-1;
     M[902]=904;
     M[903]=904;
-    M[1100]=1103;
-    M[1101]=1103;
+    M[1100]=1102;
+    M[1101]=1102;
     V(semmutex);
 
 

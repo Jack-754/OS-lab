@@ -6,6 +6,7 @@
 #include <sys/wait.h>  
 #include <signal.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define F 1100
 #define B 1101
@@ -15,6 +16,19 @@
 struct sembuf pop, vop;
 int semmutex, semcook, semwaiter[5], semcustomers, shmid;
 int *M;
+
+void printtime(int t){
+    int hr=t/60+11;
+    int min=t%60;
+    char ampm[3]="am";
+    if(hr>12){
+        hr-=12;
+        strcpy(ampm, "pm");
+    }
+    if(min>9)printf("[%2d:%d %s] ", hr, min, ampm);
+    else printf("[%2d:0%d %s] ", hr, min, ampm);
+    fflush(stdout);
+}
 
 void Pi(int s, int i){
     pop.sem_num = i;
@@ -28,15 +42,23 @@ void Vi(int s, int i){
     vop.sem_num = 0;
 }
 
+void signalhandler(int s){
+    shmdt(M);
+    exit(0);
+}
+
 int max(int a, int b){
     if(a>b){
-        return a;
+        printf("Time setting failed.\n");
+        exit(0);
     }
     return b;
 }
 
 void wmain(int idx){
-    printf("[%d:%d] Waiter %c is ready]\n", M[0]/60+11, M[0]%60, 'U'+idx);
+    printtime(M[0]);
+    printf("Waiter %c is ready\n", 'U'+idx);
+    fflush(stdout);
     int fr, po, f, b;
     fr=idx*200+100;
     po=fr+1;
@@ -46,7 +68,9 @@ void wmain(int idx){
         P(semwaiter[idx]);
         P(semmutex);
         if(M[fr]>=0){
-            printf("[%d:%d] Waiter %c: Serving food to Customer %d\n", M[0]/60+11, M[0]%60, 'U'+idx, M[fr]+1);
+            printtime(M[0]);
+            printf("Waiter %c: Serving food to Customer %d\n", 'U'+idx, M[fr]+1);
+            fflush(stdout);
             Vi(semcustomers, M[fr]);
             M[fr]=-1;
         }
@@ -56,15 +80,26 @@ void wmain(int idx){
             count=M[M[f]++];
             M[po]--;
             int cur_time=M[0];
+            V(semmutex);
             usleep(100000);
+            P(semmutex);
             M[0]=max(M[0], cur_time+1);
             M[M[B]++]=idx;
             M[M[B]++]=customerIdx;
             M[M[B]++]=count;
-            printf("[%d:%d] Waiter %c: Placing order for Customer %d (count = %d)\n", cur_time/60+11, cur_time%60, 'U'+idx, customerIdx+1, count);
+            printtime(M[0]);
+            printf("Waiter %c: Placing order for Customer %d (count = %d)\n", 'U'+idx, customerIdx+1, count);
+            fflush(stdout);
             Vi(semcustomers, customerIdx);
             V(semcook);
         }
+        else if(M[0]>240){
+            printtime(M[0]);
+            printf("Waiter %c: Leaving\n", 'U'+idx);
+            fflush(stdout);
+            V(semmutex);
+            break;
+        }   
         V(semmutex);
     }
     shmdt(M);
@@ -73,6 +108,8 @@ void wmain(int idx){
 
 
 int main(){
+    signal(SIGINT, signalhandler);
+
     pop.sem_num = vop.sem_num = 0;
 	pop.sem_flg = vop.sem_flg = 0;
 	pop.sem_op = -1 ; vop.sem_op = 1;
