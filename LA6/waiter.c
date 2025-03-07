@@ -73,12 +73,19 @@ void wmain(int idx){
             fflush(stdout);
             Vi(semcustomers, M[fr]);
             M[fr]=-1;
+            M[po]--;
+            if(M[0]>240 && M[po]==0){
+                printtime(M[0]);
+                printf("Waiter %c: Leaving (no more customer to serves)\n", 'U'+idx);
+                fflush(stdout);
+                V(semmutex);
+                break;
+            }
         }
-        else if(M[po]>0){
+        else if(M[f]<M[b]){
             int customerIdx, count;
             customerIdx=M[M[f]++];
             count=M[M[f]++];
-            M[po]--;
             int cur_time=M[0];
             V(semmutex);
             usleep(100000);
@@ -95,7 +102,7 @@ void wmain(int idx){
         }
         else if(M[0]>240){
             printtime(M[0]);
-            printf("Waiter %c: Leaving\n", 'U'+idx);
+            printf("Waiter %c: Leaving (no more customer to serves)\n", 'U'+idx);
             fflush(stdout);
             V(semmutex);
             break;
