@@ -13,5 +13,6 @@ run:
 db:
 	gcc -Wall -o gencustomers gencustomers.c
 	./gencustomers > customers.txt
+	
 clean:
 	-rm -f cook waiter customer gencustomers
