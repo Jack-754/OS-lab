@@ -57,9 +57,11 @@ int max(int a, int b){
 }
 
 void wmain(int idx){
+    P(semmutex);
     printtime(M[0]);
     printf("Waiter %c is ready\n", 'U'+idx);
     fflush(stdout);
+    V(semmutex);
     int fr, po, f, b;
     fr=idx*200+100;
     po=fr+1;

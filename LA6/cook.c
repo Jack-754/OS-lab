@@ -45,15 +45,20 @@ int max(int a, int b){
 }
 
 void cmain(char cook){
+    P(semmutex);
     printtime(M[0]);
     printf("Cook %c is ready\n", cook);
     fflush(stdout);
+    V(semmutex);
     while(1){
         P(semcook);
         P(semmutex);
         if(M[0]>240 && M[3]==0){
             printtime(M[0]);
             printf("Cook %c: Leaving\n", cook);
+            for(int i=0; i<5; i++){
+                V(semwaiter[i]);
+            }
             V(semmutex);
             break;
         }
@@ -79,21 +84,22 @@ void cmain(char cook){
         f=po+1;
         b=f+1;
         M[fr]=customerIdx;
-        if(M[0]>240 && M[3]==1 && M[F]==M[B]){
+        if(M[0]>240 && M[4]==2 && M[3]==0){
+            M[4]--;
             printtime(M[0]);
             printf("Cook %c: Leaving\n", cook);
             V(semwaiter[waiter]);
+            V(semcook);
             V(semmutex);
             break;
         }
-        else if(M[0]>240 && M[3]==0){
+        else if(M[0]>240 && M[4]==1){
             printtime(M[0]);
             printf("Cook %c: Leaving\n", cook);
             V(semwaiter[waiter]);
             for(int i=0; i<5; i++){
                 V(semwaiter[i]);
             }
-            V(semcook);
             V(semmutex);
             break;
         }
@@ -133,8 +139,6 @@ int main(){
     semcustomers = semget(keysemcustomers, 200, 0777|IPC_CREAT);
     shmid = shmget(keyshmid, 2000*sizeof(int), 0777|IPC_CREAT);
 
-    printf("semmutex:%d, semcook:%d, semwaiter[0]:%d, semwaiter[1]:%d, semwaiter[2]:%d, semwaiter[3]:%d, semwaiter[4]:%d, semcustomers:%d, shmid:%d\n", semmutex, semcook, semwaiter[0], semwaiter[1], semwaiter[2], semwaiter[3], semwaiter[4], semcustomers, shmid);
-
     semctl(semmutex, 0, SETVAL, 1);
     semctl(semcook, 0, SETVAL, 0);
     semctl(semwaiter[0], 0, SETVAL, 0);
@@ -151,6 +155,7 @@ int main(){
 
     P(semmutex);
     M[1]=10;
+    M[4]=2;         // number of cooks currently
     M[100]=-1;
     M[102]=104;
     M[103]=104;

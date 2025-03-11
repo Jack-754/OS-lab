@@ -161,7 +161,7 @@ int main(){
     int idx, arr, count, n=0, last=0;
     while(1){
         fscanf(file, "%d", &idx);
-        if(idx==-1)break;
+        if(idx<=0)break;
         n++;
         fscanf(file, "%d %d", &arr, &count);
         usleep((arr-last)*100000);
