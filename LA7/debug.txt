@@ -1,0 +1,256 @@
+Boat    2 ready
+Semaphore V() called, value now: 1
+Boat    3 ready
+Semaphore V() called, value now: 2
+Boat    1 ready
+Boat    4 ready
+Boat    5 ready
+Semaphore V() called, value now: 3
+Semaphore V() called, value now: 4
+Visitor    1 sightseeing for  86 minutes
+Semaphore V() called, value now: 5
+Visitor    2 sightseeing for  99 minutes
+Visitor    3 sightseeing for  31 minutes
+Visitor    4 sightseeing for  86 minutes
+Visitor    5 sightseeing for  36 minutes
+Visitor    6 sightseeing for  96 minutes
+Visitor    7 sightseeing for 117 minutes
+Visitor    8 sightseeing for 105 minutes
+Visitor    9 sightseeing for  69 minutes
+Visitor   10 sightseeing for  82 minutes
+Visitor   11 sightseeing for  71 minutes
+Visitor   12 sightseeing for 117 minutes
+Visitor   13 sightseeing for  77 minutes
+Visitor   14 sightseeing for  36 minutes
+Visitor   15 sightseeing for 102 minutes
+Visitor   16 sightseeing for  55 minutes
+Visitor   17 sightseeing for  56 minutes
+Visitor   18 sightseeing for  81 minutes
+Visitor   19 sightseeing for  86 minutes
+Visitor   20 sightseeing for  84 minutes
+Visitor    3 ready to ride a boat (ride time = 20)
+Semaphore P() called, value now: 4
+Visitor    3 acquired boat mutex
+Visitor    3 assigned to boat 1
+Visitor    3 released boat mutex
+Visitor    3 escaped barrier on boat 1
+Boat    1 escaped barrier
+Boat    1 starts ride for visitor    3 (ride time = 20)
+Visitor    5 ready to ride a boat (ride time = 34)
+Semaphore P() called, value now: 3
+Visitor    5 acquired boat mutex
+Visitor    5 assigned to boat 2
+Visitor    5 released boat mutex
+Visitor    5 escaped barrier on boat 2
+Boat    2 escaped barrier
+Boat    2 starts ride for visitor    5 (ride time = 34)
+Visitor   14 ready to ride a boat (ride time = 49)
+Semaphore P() called, value now: 2
+Visitor   14 acquired boat mutex
+Visitor   14 assigned to boat 3
+Visitor   14 released boat mutex
+Visitor   14 escaped barrier on boat 3
+Boat    3 escaped barrier
+Boat    3 starts ride for visitor   14 (ride time = 49)
+Semaphore V() called, value now: 3
+Visitor    3 leaving
+Visitor   16 ready to ride a boat (ride time = 57)
+Semaphore P() called, value now: 2
+Visitor   16 acquired boat mutex
+Visitor   16 assigned to boat 1
+Visitor   16 released boat mutex
+Visitor   16 escaped barrier on boat 1
+Boat    1 escaped barrier
+Boat    1 starts ride for visitor   16 (ride time = 57)
+Visitor   17 ready to ride a boat (ride time = 58)
+Semaphore P() called, value now: 1
+Visitor   17 acquired boat mutex
+Visitor   17 assigned to boat 4
+Visitor   17 released boat mutex
+Visitor   17 escaped barrier on boat 4
+Boat    4 escaped barrier
+Boat    4 starts ride for visitor   17 (ride time = 58)
+Visitor    9 ready to ride a boat (ride time = 30)
+Semaphore P() called, value now: 0
+Visitor    9 acquired boat mutex
+Visitor    9 assigned to boat 5
+Visitor    9 released boat mutex
+Visitor    9 escaped barrier on boat 5
+Boat    5 escaped barrier
+Boat    5 starts ride for visitor    9 (ride time = 30)
+Visitor    5 leaving
+Semaphore V() called, value now: 1
+Visitor   11 ready to ride a boat (ride time = 45)
+Semaphore P() called, value now: 0
+Visitor   11 acquired boat mutex
+Visitor   11 assigned to boat 2
+Visitor   11 released boat mutex
+Visitor   11 escaped barrier on boat 2
+Boat    2 escaped barrier
+Boat    2 starts ride for visitor   11 (ride time = 45)
+Visitor   13 ready to ride a boat (ride time = 22)
+Semaphore P() called, value now: -1
+Thread waiting on semaphore
+Visitor   18 ready to ride a boat (ride time = 22)
+Semaphore P() called, value now: -2
+Thread waiting on semaphore
+Visitor   10 ready to ride a boat (ride time = 25)
+Semaphore P() called, value now: -3
+Thread waiting on semaphore
+Visitor   20 ready to ride a boat (ride time = 45)
+Semaphore P() called, value now: -4
+Thread waiting on semaphore
+Visitor   14 leaving
+Semaphore V() called, value now: -3
+Signaling thread waiting on semaphore
+Visitor   13 acquired boat mutex
+Visitor   13 assigned to boat 3
+Visitor   13 released boat mutex
+Visitor   13 escaped barrier on boat 3
+Boat    3 escaped barrier
+Boat    3 starts ride for visitor   13 (ride time = 22)
+Visitor    1 ready to ride a boat (ride time = 31)
+Semaphore P() called, value now: -4
+Thread waiting on semaphore
+Visitor    4 ready to ride a boat (ride time = 21)
+Semaphore P() called, value now: -5
+Thread waiting on semaphore
+Visitor   19 ready to ride a boat (ride time = 29)
+Semaphore P() called, value now: -6
+Thread waiting on semaphore
+Visitor    6 ready to ride a boat (ride time = 19)
+Semaphore P() called, value now: -7
+Thread waiting on semaphore
+Visitor    2 ready to ride a boat (ride time = 55)
+Semaphore P() called, value now: -8
+Thread waiting on semaphore
+Visitor    9 leaving
+Semaphore V() called, value now: -7
+Signaling thread waiting on semaphore
+Visitor   18 acquired boat mutex
+Visitor   18 assigned to boat 5
+Visitor   18 released boat mutex
+Visitor   18 escaped barrier on boat 5
+Boat    5 escaped barrier
+Boat    5 starts ride for visitor   18 (ride time = 22)
+Visitor   15 ready to ride a boat (ride time = 37)
+Semaphore P() called, value now: -8
+Thread waiting on semaphore
+Visitor    8 ready to ride a boat (ride time = 26)
+Semaphore P() called, value now: -9
+Thread waiting on semaphore
+Visitor   13 leaving
+Semaphore V() called, value now: -8
+Signaling thread waiting on semaphore
+Visitor   10 acquired boat mutex
+Visitor   10 assigned to boat 3
+Visitor   10 released boat mutex
+Visitor   10 escaped barrier on boat 3
+Boat    3 escaped barrier
+Boat    3 starts ride for visitor   10 (ride time = 25)
+Visitor   16 leaving
+Semaphore V() called, value now: -7
+Signaling thread waiting on semaphore
+Visitor   20 acquired boat mutex
+Visitor   20 assigned to boat 1
+Visitor   20 released boat mutex
+Visitor   20 escaped barrier on boat 1
+Boat    1 escaped barrier
+Boat    1 starts ride for visitor   20 (ride time = 45)
+Visitor   17 leaving
+Semaphore V() called, value now: -6
+Signaling thread waiting on semaphore
+Visitor    1 acquired boat mutex
+Visitor    1 assigned to boat 4
+Visitor    1 released boat mutex
+Visitor    1 escaped barrier on boat 4
+Boat    4 escaped barrier
+Boat    4 starts ride for visitor    1 (ride time = 31)
+Visitor   11 leaving
+Semaphore V() called, value now: -5
+Signaling thread waiting on semaphore
+Visitor    4 acquired boat mutex
+Visitor    4 assigned to boat 2
+Visitor    4 released boat mutex
+Visitor    4 escaped barrier on boat 2
+Boat    2 escaped barrier
+Boat    2 starts ride for visitor    4 (ride time = 21)
+Visitor    7 ready to ride a boat (ride time = 47)
+Semaphore P() called, value now: -6
+Thread waiting on semaphore
+Visitor   12 ready to ride a boat (ride time = 27)
+Semaphore P() called, value now: -7
+Thread waiting on semaphore
+Visitor   18 leaving
+Semaphore V() called, value now: -6
+Signaling thread waiting on semaphore
+Visitor   19 acquired boat mutex
+Visitor   19 assigned to boat 5
+Visitor   19 released boat mutex
+Visitor   19 escaped barrier on boat 5
+Boat    5 escaped barrier
+Boat    5 starts ride for visitor   19 (ride time = 29)
+Visitor   10 leaving
+Semaphore V() called, value now: -5
+Signaling thread waiting on semaphore
+Visitor    6 acquired boat mutex
+Visitor    6 assigned to boat 3
+Visitor    6 released boat mutex
+Visitor    6 escaped barrier on boat 3
+Boat    3 escaped barrier
+Boat    3 starts ride for visitor    6 (ride time = 19)
+Visitor    4 leaving
+Semaphore V() called, value now: -4
+Signaling thread waiting on semaphore
+Visitor    2 acquired boat mutex
+Visitor    2 assigned to boat 2
+Visitor    2 released boat mutex
+Visitor    2 escaped barrier on boat 2
+Boat    2 escaped barrier
+Boat    2 starts ride for visitor    2 (ride time = 55)
+Visitor    1 leaving
+Semaphore V() called, value now: -3
+Signaling thread waiting on semaphore
+Visitor   15 acquired boat mutex
+Visitor   15 assigned to boat 4
+Visitor   15 released boat mutex
+Visitor   15 escaped barrier on boat 4
+Boat    4 escaped barrier
+Boat    4 starts ride for visitor   15 (ride time = 37)
+Visitor   19 leaving
+Semaphore V() called, value now: -2
+Signaling thread waiting on semaphore
+Visitor    8 acquired boat mutex
+Visitor    8 assigned to boat 5
+Visitor    8 released boat mutex
+Visitor    8 escaped barrier on boat 5
+Boat    5 escaped barrier
+Boat    5 starts ride for visitor    8 (ride time = 26)
+Visitor    6 leaving
+Semaphore V() called, value now: -1
+Signaling thread waiting on semaphore
+Visitor    7 acquired boat mutex
+Visitor    7 assigned to boat 3
+Visitor    7 released boat mutex
+Visitor    7 escaped barrier on boat 3
+Boat    3 escaped barrier
+Boat    3 starts ride for visitor    7 (ride time = 47)
+Visitor   20 leaving
+Semaphore V() called, value now: 0
+Signaling thread waiting on semaphore
+Visitor   12 acquired boat mutex
+Visitor   12 assigned to boat 1
+Visitor   12 released boat mutex
+Visitor   12 escaped barrier on boat 1
+Boat    1 escaped barrier
+Boat    1 starts ride for visitor   12 (ride time = 27)
+Visitor    8 leaving
+Semaphore V() called, value now: 1
+Visitor   15 leaving
+Semaphore V() called, value now: 2
+Visitor   12 leaving
+Semaphore V() called, value now: 3
+Visitor    2 leaving
+Semaphore V() called, value now: 4
+Visitor    7 leaving
+Semaphore V() called, value now: 5
