@@ -38,12 +38,12 @@ void freeResources(){
     for(int i=0; i<n; i++){
         pthread_mutex_destroy(cmtx+i);
         pthread_cond_destroy(cv+i);
-        pthread_barrier_destroy(ACKB);
+        pthread_barrier_destroy(ACKB+i);
         free(need[i]);
         free(alloc[i]);
     }
-    pthread_barrier_destroy(BOS);
-    pthread_barrier_destroy(REQB);
+    pthread_barrier_destroy(&BOS);
+    pthread_barrier_destroy(&REQB);
     free(cv);
     free(cmtx);
     free(ACKB);
@@ -81,7 +81,7 @@ Queue* createQueue() {
 
 void enqueue(Queue* q, Node *newNode) {
     q->size++;
-    if (q->rear == NULL) {
+    if (q->front == NULL) {
         q->front = q->rear = newNode;
         return;
     }
@@ -92,15 +92,14 @@ void enqueue(Queue* q, Node *newNode) {
 Node* dequeue(Queue* q) {
     if (q->front == NULL) {
         printf("Queue is empty!\n");
-        return -1;
+        return NULL;
     }
     q->size--;
     Node* temp = q->front;
-    q->front = q->front->next;
+    q->front = temp->next;
     if (q->front == NULL) {
         q->rear = NULL;
     }
-    free(temp);
     return temp;
 }
 
@@ -121,7 +120,7 @@ void *tmain(void *targ){
         pthread_exit(NULL);
     }
     for(int i=0; i<m; i++){
-        scanf("%d", need[id]+i);
+        fscanf(fp, "%d", need[id]+i);
         alloc[id][i]=0;
     }
 
@@ -130,7 +129,7 @@ void *tmain(void *targ){
     char action[2];
 
     while(1){
-        scanf("%d %s", delay);
+        fscanf(fp, "%d %s", &delay, action);
 
         minsleep(delay);
 
@@ -164,13 +163,13 @@ void *tmain(void *targ){
         else printf("RELEASE\n");
         pthread_mutex_unlock(&pmtx);
 
-        pthread_barrier_wait(REQB);
+        pthread_barrier_wait(&REQB);
         pthread_barrier_wait(ACKB+id);
         if(reqtype==RELEASE){
             pthread_mutex_unlock(&rmtx);
 
             pthread_mutex_lock(&pmtx);
-            printf("\tThread %d is granted its last resource request", id);
+            printf("\tThread %d is granted its last resource request\n", id);
             pthread_mutex_unlock(&pmtx);
             continue;
         }
@@ -179,7 +178,7 @@ void *tmain(void *targ){
         pthread_mutex_lock(cmtx+id);
         pthread_cond_wait(cv+id, cmtx+id);
         pthread_mutex_unlock(cmtx+id);
-        printf("\t Thread %d is granted its last resource request");
+        printf("\t Thread %d is granted its last resource request\n", id);
     }
 
 
@@ -231,6 +230,10 @@ void create_threads(pthread_t* tid){
 }
 
 int isSafeState() {
+    #ifndef _DLAVOID
+    return 1;
+    #endif
+
     int finish[n];
     for (int i = 0; i < n; i++) finish[i] = 0;
     int work[m];
@@ -243,7 +246,7 @@ int isSafeState() {
             if (!finish[i]) {
                 int canExecute = 1;
                 for (int j = 0; j < m; j++) {
-                    if (need[i][j] > work[j]+alloc[i][j]) {
+                    if (need[i][j] > work[j]) {
                         canExecute = 0;
                         break;
                     }
@@ -261,6 +264,21 @@ int isSafeState() {
     return 1;
 }
 
+int canGrantRequest(int req[]) {
+    for (int j = 0; j < m; j++) {
+        if (req[j] > available[j]) {
+            return 0; // Request exceeds available resources
+        }
+    }
+    return 1;
+}
+
+void printArray(int arr[], int length) {
+    for (int i = 0; i < length; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
 
 int main(){
     FILE * file=fopen("input/system.txt", "r");
@@ -292,18 +310,18 @@ int main(){
 
     pthread_t tid[n];
     create_threads(tid);
-
-    pthread_barrier__wait(BOS);
+    
+    pthread_barrier_wait(&BOS);
 
     signal(SIGINT, signalhandler);
 
     Queue* queue=createQueue();
 
     while(threads_alive){
-        pthread_barrier_wait(REQB);
+        pthread_barrier_wait(&REQB);
         if(reqtype==RELEASE){
             for(int i=0; i<m; i++){
-                alloc[reqfrom][i]=0;
+                alloc[reqfrom][i]+=req[i];
                 available[i]-=req[i];
             }
             pthread_barrier_wait(ACKB+reqfrom);
@@ -312,6 +330,7 @@ int main(){
             for(int i=0; i<m; i++){
                 if(req[i]<0){
                     alloc[reqfrom][i]+=req[i];
+                    need[reqfrom][i]-=req[i];
                     available[i]-=req[i];
                     req[i]=0;
                 }
@@ -332,29 +351,41 @@ int main(){
         for(int i=0; i<queue->size; i++){
             Node *node=dequeue(queue);
             printf("%d ", node->id);
+            enqueue(queue, node);
         }
         printf("\n");
 
         printf("Master thread tries to grant pending requests\n");
-        for(int i=0; i<queue->size; i++){
+        int cur_que_size=queue->size;
+        for(int i=0; i<cur_que_size; i++){
             Node *node=dequeue(queue);
-            for(int i=0; i<m; i++){
+            if(canGrantRequest(node->req)){
+                for(int i=0; i<m; i++){
                 available[i]-=node->req[i];
-                alloc[i]+=node->req[i];
-            }
-            if(isSafeState()){
-                usleep(10000);  // to ensure the thread reached conditional wait
-                pthread_cond_signal(cv+node->id);
-                printf("Master thread grants resource request for thread %d\n", node->id);
-                free(node->req);
-                free(node);
+                alloc[node->id][i]+=node->req[i];
+                need[node->id][i]-=node->req[i];
+                }
+                if(isSafeState()){
+                    usleep(10000);  // to ensure the thread reached conditional wait
+                    pthread_mutex_lock(cmtx+node->id);
+                    pthread_cond_signal(cv+node->id);
+                    pthread_mutex_unlock(cmtx+node->id);
+                    printf("Master thread grants resource request for thread %d\n", node->id);
+                    free(node->req);
+                    free(node);
+                }
+                else{
+                    printf("\t+++ Insufficient resources to grant request of thread %d\n", node->id);
+                    for(int i=0; i<m; i++){
+                        available[i]+=node->req[i];
+                        alloc[node->id][i]-=node->req[i];
+                        need[node->id][i]+=node->req[i];
+                    }
+                    enqueue(queue, node);
+                }
             }
             else{  
                 printf("\t+++ Insufficient resources to grant request of thread %d\n", node->id);
-                for(int i=0; i<m; i++){
-                    available[i]+=node->req[i];
-                    alloc[node->id][i]-=node->req[i];
-                }
                 enqueue(queue, node);
             }
         }
@@ -363,6 +394,7 @@ int main(){
         for(int i=0; i<queue->size; i++){
             Node *node=dequeue(queue);
             printf("%d ", node->id);
+            enqueue(queue, node);
         }
         printf("\n");
 
