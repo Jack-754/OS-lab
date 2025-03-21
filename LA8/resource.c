@@ -8,10 +8,11 @@
 
 #define RELEASE 0
 #define ADDITIONAL 1
+#define FINISH 2
 
 int n, m, threads_alive;
 int ** need, ** alloc, * available;
-int reqtype, reqfrom, *req;
+int reqtype, reqfrom, *req, *granted;
 pthread_mutex_t rmtx, pmtx, *cmtx;
 pthread_cond_t *cv;
 pthread_barrier_t BOS, REQB, *ACKB;
@@ -81,6 +82,7 @@ Queue* createQueue() {
 
 void enqueue(Queue* q, Node *newNode) {
     q->size++;
+    newNode->next=NULL;
     if (q->front == NULL) {
         q->front = q->rear = newNode;
         return;
@@ -111,6 +113,7 @@ void *tmain(void *targ){
     int id = (int)(long)targ;
     pthread_mutex_lock(&pmtx);
     printf("Thread %d born\n", id);
+    fflush(stdout);
     pthread_mutex_unlock(&pmtx);
     char filename[25];
     sprintf(filename, "input/thread%02d.txt", id);
@@ -135,14 +138,15 @@ void *tmain(void *targ){
 
         if(!strcmp(action, "Q")){
             pthread_mutex_lock(&rmtx);
-            reqtype=RELEASE;
+            reqtype=FINISH;
             reqfrom=id;
-            for(int i=0; i<m; i++){
-                req[i]=-alloc[id][i];
-            }
-            threads_alive--;
+            pthread_barrier_wait(&REQB);
             pthread_barrier_wait(ACKB+id);
             pthread_mutex_unlock(&rmtx);
+            pthread_mutex_lock(&pmtx);
+            printf("Thread %d going to quit\n", id);
+            fflush(stdout);
+            pthread_mutex_unlock(&pmtx);
             pthread_exit(NULL);
             break;
         }
@@ -161,22 +165,26 @@ void *tmain(void *targ){
             printf("ADDITIONAL\n");
         }
         else printf("RELEASE\n");
+        fflush(stdout);
         pthread_mutex_unlock(&pmtx);
 
         pthread_barrier_wait(&REQB);
         pthread_barrier_wait(ACKB+id);
+        pthread_mutex_unlock(&rmtx);
         if(reqtype==RELEASE){
-            pthread_mutex_unlock(&rmtx);
 
             pthread_mutex_lock(&pmtx);
             printf("\tThread %d is granted its last resource request\n", id);
+            fflush(stdout);
             pthread_mutex_unlock(&pmtx);
             continue;
         }
-        pthread_mutex_unlock(&rmtx);
 
         pthread_mutex_lock(cmtx+id);
-        pthread_cond_wait(cv+id, cmtx+id);
+        while (!granted[id]) {
+            pthread_cond_wait(cv + id, cmtx + id);
+        }
+        granted[id] = 0; // Reset for next request
         pthread_mutex_unlock(cmtx+id);
         printf("\t Thread %d is granted its last resource request\n", id);
     }
@@ -290,15 +298,19 @@ int main(){
     fscanf(file, "%d %d", &m, &n);
     
     threads_alive=n;
+    int thread_is_alive[n];
+    for(int i=0; i<n; i++)thread_is_alive[i]=1;
 
     available=malloc(m*sizeof(int));
     req=malloc(m*sizeof(int));
     need=malloc(n*sizeof(int*));
     alloc=malloc(n*sizeof(int*));
+    granted=malloc(n*sizeof(int));
 
     for(int i=0; i<n; i++){
         need[i]=malloc(m*sizeof(int));
         alloc[i]=malloc(m*sizeof(int));
+        granted[i]=0;
     }
 
     for(int i=0; i<m; i++){
@@ -319,9 +331,31 @@ int main(){
 
     while(threads_alive){
         pthread_barrier_wait(&REQB);
-        if(reqtype==RELEASE){
+        if(reqtype==FINISH){
+
+            pthread_mutex_lock(&pmtx);
+            printf("Master thread releases resources of thread %d\n", reqfrom);
+            for(int i=0; i<m; i++){
+                available[i]+=alloc[reqfrom][i];
+                alloc[reqfrom][i]=0;
+                need[reqfrom][i]=0;
+            }
+            thread_is_alive[reqfrom]=0;
+            threads_alive--;
+            printf("%d threads left: ", threads_alive);
+            for(int i=0; i<n; i++)if(thread_is_alive[i])printf("%d ", i);
+            printf("\nAvailable resources: ");
+            for(int i=0; i<m; i++)printf("%d ", available[i]);
+            printf("\n");
+            fflush(stdout);
+            pthread_mutex_unlock(&pmtx);
+
+            pthread_barrier_wait(ACKB+reqfrom);
+        }
+        else if(reqtype==RELEASE){
             for(int i=0; i<m; i++){
                 alloc[reqfrom][i]+=req[i];
+                need[reqfrom][i]-=req[i];
                 available[i]-=req[i];
             }
             pthread_barrier_wait(ACKB+reqfrom);
@@ -337,6 +371,7 @@ int main(){
             }
             pthread_mutex_lock(&pmtx);
             printf("Master thread stores resource request of thread %d\n", reqfrom);
+            fflush(stdout);
             pthread_mutex_unlock(&pmtx);
 
             enqueue(queue, createNode(reqfrom, req));
@@ -361,14 +396,14 @@ int main(){
             Node *node=dequeue(queue);
             if(canGrantRequest(node->req)){
                 for(int i=0; i<m; i++){
-                available[i]-=node->req[i];
-                alloc[node->id][i]+=node->req[i];
-                need[node->id][i]-=node->req[i];
+                    available[i]-=node->req[i];
+                    alloc[node->id][i]+=node->req[i];
+                    need[node->id][i]-=node->req[i];
                 }
                 if(isSafeState()){
-                    usleep(10000);  // to ensure the thread reached conditional wait
                     pthread_mutex_lock(cmtx+node->id);
-                    pthread_cond_signal(cv+node->id);
+                    granted[node->id] = 1;
+                    pthread_cond_signal(cv + node->id);
                     pthread_mutex_unlock(cmtx+node->id);
                     printf("Master thread grants resource request for thread %d\n", node->id);
                     free(node->req);
@@ -398,15 +433,19 @@ int main(){
         }
         printf("\n");
 
+        // if(queue->size>0 && queue->size==threads_alive){
+        //     printf("Deadlock occured.\n");
+        //     freeResources();
+        //     exit(1);
+        // }
+        fflush(stdout);
         pthread_mutex_unlock(&pmtx);
     }
 
     for(int i=0; i<n; i++){
         if (pthread_join(tid[i],NULL)) {
             fprintf(stderr, "Unable to wait for thread [%lu]\n", tid[i]);
-         } else {
-            printf("%d has joined\n", i);
-         }
+        }
     }
     free(queue);
     freeResources();
