@@ -174,7 +174,7 @@ void *tmain(void *targ){
         if(reqtype==RELEASE){
 
             pthread_mutex_lock(&pmtx);
-            printf("\tThread %d is granted its last resource request\n", id);
+            printf("\tThread %d is done with its resource release request\n", id);
             fflush(stdout);
             pthread_mutex_unlock(&pmtx);
             continue;
@@ -186,7 +186,10 @@ void *tmain(void *targ){
         }
         granted[id] = 0; // Reset for next request
         pthread_mutex_unlock(cmtx+id);
+        pthread_mutex_lock(&pmtx);
         printf("\t Thread %d is granted its last resource request\n", id);
+        fflush(stdout);
+        pthread_mutex_unlock(&pmtx);
     }
 
 
@@ -410,7 +413,7 @@ int main(){
                     free(node);
                 }
                 else{
-                    printf("\t+++ Insufficient resources to grant request of thread %d\n", node->id);
+                    printf("\t+++ Unsafe to grant request of thread %d\n", node->id);
                     for(int i=0; i<m; i++){
                         available[i]+=node->req[i];
                         alloc[node->id][i]-=node->req[i];
@@ -433,11 +436,11 @@ int main(){
         }
         printf("\n");
 
-        // if(queue->size>0 && queue->size==threads_alive){
-        //     printf("Deadlock occured.\n");
-        //     freeResources();
-        //     exit(1);
-        // }
+        if(queue->size>0 && queue->size==threads_alive){
+            printf("Deadlock occured.\n");
+            freeResources();
+            exit(1);
+        }
         fflush(stdout);
         pthread_mutex_unlock(&pmtx);
     }
