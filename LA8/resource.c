@@ -33,7 +33,14 @@ typedef struct Queue {
     Node* rear;
 } Queue;
 
-void freeResources(){
+void freeResources(pthread_t* tid){
+
+    if(tid!=NULL){
+        for(int i=0; i<n; i++){
+        pthread_cancel(tid[i]);
+        }
+    }
+
     pthread_mutex_destroy(&rmtx);
     pthread_mutex_destroy(&pmtx);
     for(int i=0; i<n; i++){
@@ -55,7 +62,7 @@ void freeResources(){
 }
 
 void signalhandler(int signum){
-    freeResources();
+    freeResources(NULL);
     exit(0);
 }
 
@@ -94,6 +101,7 @@ void enqueue(Queue* q, Node *newNode) {
 Node* dequeue(Queue* q) {
     if (q->front == NULL) {
         printf("Queue is empty!\n");
+        fflush(stdout);
         return NULL;
     }
     q->size--;
@@ -120,6 +128,7 @@ void *tmain(void *targ){
     FILE*fp=fopen(filename, "r");
     if(fp==NULL){
         printf("Unable to open file %s\n", filename);
+        fflush(stdout);
         pthread_exit(NULL);
     }
     for(int i=0; i<m; i++){
@@ -289,6 +298,7 @@ void printArray(int arr[], int length) {
         printf("%d ", arr[i]);
     }
     printf("\n");
+    fflush(stdout);
 }
 
 int main(){
@@ -338,6 +348,7 @@ int main(){
 
             pthread_mutex_lock(&pmtx);
             printf("Master thread releases resources of thread %d\n", reqfrom);
+            fflush(stdout);
             for(int i=0; i<m; i++){
                 available[i]+=alloc[reqfrom][i];
                 alloc[reqfrom][i]=0;
@@ -392,8 +403,10 @@ int main(){
             enqueue(queue, node);
         }
         printf("\n");
+        fflush(stdout);
 
         printf("Master thread tries to grant pending requests\n");
+        fflush(stdout);
         int cur_que_size=queue->size;
         for(int i=0; i<cur_que_size; i++){
             Node *node=dequeue(queue);
@@ -409,11 +422,13 @@ int main(){
                     pthread_cond_signal(cv + node->id);
                     pthread_mutex_unlock(cmtx+node->id);
                     printf("Master thread grants resource request for thread %d\n", node->id);
+                    fflush(stdout);
                     free(node->req);
                     free(node);
                 }
                 else{
                     printf("\t+++ Unsafe to grant request of thread %d\n", node->id);
+                    fflush(stdout);
                     for(int i=0; i<m; i++){
                         available[i]+=node->req[i];
                         alloc[node->id][i]-=node->req[i];
@@ -424,11 +439,13 @@ int main(){
             }
             else{  
                 printf("\t+++ Insufficient resources to grant request of thread %d\n", node->id);
+                fflush(stdout);
                 enqueue(queue, node);
             }
         }
 
         printf("\t\tWaiting threads: ");
+        fflush(stdout);
         for(int i=0; i<queue->size; i++){
             Node *node=dequeue(queue);
             printf("%d ", node->id);
@@ -437,8 +454,11 @@ int main(){
         printf("\n");
 
         if(queue->size>0 && queue->size==threads_alive){
-            printf("Deadlock occured.\n");
-            freeResources();
+            printf("Deadlock occured as all alive threads are stuck in queue and no one can be allowed to run\n");
+            printf("Threads alive: %d\n", threads_alive);
+            printf("Threads in queue: %d\n", queue->size);
+            fflush(stdout);
+            freeResources(tid);
             exit(1);
         }
         fflush(stdout);
@@ -451,5 +471,5 @@ int main(){
         }
     }
     free(queue);
-    freeResources();
+    freeResources(NULL);
 }

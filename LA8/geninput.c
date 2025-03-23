@@ -33,8 +33,8 @@ int main ( int argc, char *argv[] )
       fprintf(fp, "      ");
       for (j=0; j<m; ++j) {
          /* Use one of the following two lines */
-         MAX[j] = rand() % (TOTAL[j] / 2);  /* Likely to create deadlock */
-         // MAX[j] = rand() % (TOTAL[j] / 3);  /* Likely to create unsafe states without deadlock */
+         // MAX[j] = rand() % (TOTAL[j] / 2);  /* Likely to create deadlock */
+         MAX[j] = rand() % (TOTAL[j] / 3);  /* Likely to create unsafe states without deadlock */
          ALLOC[j] = 0;
          fprintf(fp, "%3d%c", MAX[j], (j == m-1) ? '\n' : ' ');
       }
