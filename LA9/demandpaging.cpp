@@ -8,12 +8,9 @@ using namespace std;
 
 typedef struct Process {
     int id;
-    int arraySize;
     int *searchKeys;
     unsigned short pageTable[2048];  // Page table for the process
     int cur;
-    int L;
-    int R;
     int upperlimit;
 }Process;
 
@@ -54,10 +51,9 @@ void swapOutProcess(int id) {
     swappedOut.push(proc->id);
     freePage(id);
     swapOps++;
-
-    minAct = min(minAct, (int)readyQueue.size());
-
-    printf("+++ Swapping out process %4d  [%d active processes]\n", id, (int)readyQueue.size());
+    active--;
+    minAct = min(minAct, active);
+    printf("+++ Swapping out process %4d  [%d active processes]\n", id, active);
 }
 
 int loadPage(int id, int page){
@@ -72,7 +68,7 @@ int loadPage(int id, int page){
     freeFrames.pop();
 
     // Update page table
-    proc->pageTable[page] = VALID | frame;
+    proc->pageTable[page] = (VALID | frame);
 
     return 1;
 }
@@ -88,12 +84,9 @@ int main(){
     for(int i=0; i<n; i++){
         processes[i] = new Process;
         processes[i]->id = i;
-        processes[i]->arraySize = m;
         processes[i]->searchKeys = new int[m];
         processes[i]->cur = 0;
-        processes[i]->L = 0;
         fscanf(file, "%d", &processes[i]->upperlimit);
-        processes[i]->R = processes[i]->upperlimit - 1;
         for(int j=0; j<m; j++){
             fscanf(file, "%d", &processes[i]->searchKeys[j]);
         }
@@ -116,7 +109,7 @@ int main(){
 
     for(int i=0; i<n; i++){
         for(int j=0; j<10; j++){
-            processes[i]->pageTable[j] = VALID | freeFrames.front();
+            processes[i]->pageTable[j] = (VALID | freeFrames.front());
             freeFrames.pop();
         }
     }
@@ -126,10 +119,10 @@ int main(){
     Process *p=processes[id];
 
     int remaining = n;
-
+    active = n;
     while(remaining > 0){
-        int L=p->L;
-        int R=p->R;
+        int L=0;
+        int R=p->upperlimit-1;
         int key=p->searchKeys[p->cur];
         int M;
 
@@ -160,14 +153,12 @@ int main(){
                     }
                 }
                 else{
-                    // p->L=L;
-                    // p->R=R;
                     swapOutProcess(id);
                     id = readyQueue.front();
                     readyQueue.pop();
                     p=processes[id];
-                    L=p->L;
-                    R=p->R;
+                    L=0;
+                    R=p->upperlimit-1;
                     key=p->searchKeys[p->cur];
                     flag=0;
                     break;
@@ -179,41 +170,39 @@ int main(){
             p->cur++;
             if(p->cur>=m){   
                 remaining--; 
+                active--;
                 if(remaining==0)break;    
                 freePage(id);
                 if(swappedOut.size() > 0){
                     id = swappedOut.front();
                     swappedOut.pop();
                     p=processes[id];
-                    L=p->L;
-                    R=p->R;
+                    L=0;
+                    R=p->upperlimit-1;
                     key=p->searchKeys[p->cur];
                     for(int i=0; i<10; i++){
                         p->pageTable[i] = (VALID | freeFrames.front());
                         freeFrames.pop();
                     }
-                    printf("+++ Swapping in process  %4d  [%d active processes]\n", id, (int)readyQueue.size()+1);
+                    active++;
+                    printf("+++ Swapping in process  %4d  [%d active processes]\n", id, active);
                 }
                 else{
                     id = readyQueue.front();
                     readyQueue.pop();
                     p=processes[id];
-                    L=p->L;
-                    R=p->R;
+                    L=0;
+                    R=p->upperlimit-1;
                     key=p->searchKeys[p->cur];
                 }
             }
             else{
-                L=0;
-                R=p->upperlimit-1;
-                p->L=L;
-                p->R=R;
                 readyQueue.push(id);
                 id = readyQueue.front();
                 readyQueue.pop();
                 p=processes[id];
-                L=p->L;
-                R=p->R;
+                L=0;
+                R=p->upperlimit-1;
                 key=p->searchKeys[p->cur];
             }
         }
