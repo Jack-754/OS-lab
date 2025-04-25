@@ -4,6 +4,7 @@
         "header.h": "c",
         "unistd.h": "c",
         "signal.h": "c",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "pthread.h": "c"
     }
 }
